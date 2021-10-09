@@ -91,7 +91,6 @@ const uint8_t sineWave[] = {
 };
 
 //Your game variables (RAM) here-------------------------------------------------------------------------------
-uint8_t point = 0;
 uint8_t heroFrame = 0;
 uint8_t gamePad;
 
@@ -184,7 +183,7 @@ void systemLoop() {
 
 void gameFrame() {							//This function is called at 50Hz
 
-	gamePad = screenLoad(point);			//Draw the screen and get the buttons
+	gamePad = screenLoad();			//Draw the screen and get the buttons
 
 	drawTiles(tileData, tileMap);
 	

@@ -1,0 +1,2537 @@
+
+MGC Test App.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .data         0000000a  00803800  000011c8  0000125c  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  1 .text         000011c8  00000000  00000000  00000094  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  2 .bss          00000528  0080380a  0080380a  00001266  2**0
+                  ALLOC
+  3 .comment      00000030  00000000  00000000  00001266  2**0
+                  CONTENTS, READONLY
+  4 .note.gnu.avr.deviceinfo 00000040  00000000  00000000  00001298  2**2
+                  CONTENTS, READONLY
+  5 .debug_aranges 00000120  00000000  00000000  000012d8  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_info   00004718  00000000  00000000  000013f8  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_abbrev 00001ec4  00000000  00000000  00005b10  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_line   00000f51  00000000  00000000  000079d4  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_frame  00000354  00000000  00000000  00008928  2**2
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_str    0000183e  00000000  00000000  00008c7c  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_loc    00000efc  00000000  00000000  0000a4ba  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 12 .debug_ranges 000001b8  00000000  00000000  0000b3b6  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+       0:	0c 94 92 02 	jmp	0x524	; 0x524 <__ctors_end>
+       4:	0c 94 af 02 	jmp	0x55e	; 0x55e <__bad_interrupt>
+       8:	0c 94 af 02 	jmp	0x55e	; 0x55e <__bad_interrupt>
+       c:	0c 94 0c 08 	jmp	0x1018	; 0x1018 <__vector_3>
+      10:	0c 94 af 02 	jmp	0x55e	; 0x55e <__bad_interrupt>
+      14:	0c 94 af 02 	jmp	0x55e	; 0x55e <__bad_interrupt>
+      18:	0c 94 af 02 	jmp	0x55e	; 0x55e <__bad_interrupt>
+      1c:	0c 94 3a 08 	jmp	0x1074	; 0x1074 <__vector_7>
+      20:	0c 94 af 02 	jmp	0x55e	; 0x55e <__bad_interrupt>
+      24:	0c 94 af 02 	jmp	0x55e	; 0x55e <__bad_interrupt>
+      28:	0c 94 af 02 	jmp	0x55e	; 0x55e <__bad_interrupt>
+      2c:	0c 94 af 02 	jmp	0x55e	; 0x55e <__bad_interrupt>
+      30:	0c 94 af 02 	jmp	0x55e	; 0x55e <__bad_interrupt>
+      34:	0c 94 e0 07 	jmp	0xfc0	; 0xfc0 <__vector_13>
+      38:	0c 94 af 02 	jmp	0x55e	; 0x55e <__bad_interrupt>
+      3c:	0c 94 af 02 	jmp	0x55e	; 0x55e <__bad_interrupt>
+      40:	0c 94 af 02 	jmp	0x55e	; 0x55e <__bad_interrupt>
+      44:	0c 94 af 02 	jmp	0x55e	; 0x55e <__bad_interrupt>
+      48:	0c 94 af 02 	jmp	0x55e	; 0x55e <__bad_interrupt>
+      4c:	0c 94 af 02 	jmp	0x55e	; 0x55e <__bad_interrupt>
+      50:	0c 94 af 02 	jmp	0x55e	; 0x55e <__bad_interrupt>
+      54:	0c 94 af 02 	jmp	0x55e	; 0x55e <__bad_interrupt>
+      58:	0c 94 af 02 	jmp	0x55e	; 0x55e <__bad_interrupt>
+      5c:	0c 94 af 02 	jmp	0x55e	; 0x55e <__bad_interrupt>
+      60:	0c 94 af 02 	jmp	0x55e	; 0x55e <__bad_interrupt>
+      64:	0c 94 af 02 	jmp	0x55e	; 0x55e <__bad_interrupt>
+      68:	0c 94 af 02 	jmp	0x55e	; 0x55e <__bad_interrupt>
+      6c:	0c 94 af 02 	jmp	0x55e	; 0x55e <__bad_interrupt>
+      70:	0c 94 af 02 	jmp	0x55e	; 0x55e <__bad_interrupt>
+      74:	0c 94 af 02 	jmp	0x55e	; 0x55e <__bad_interrupt>
+      78:	0c 94 af 02 	jmp	0x55e	; 0x55e <__bad_interrupt>
+
+0000007c <__trampolines_end>:
+      7c:	00 40       	sbci	r16, 0x00	; 0
+      7e:	40 40       	sbci	r20, 0x00	; 0
+      80:	58 7c       	andi	r21, 0xC8	; 200
+      82:	7c 7e       	andi	r23, 0xEC	; 236
+      84:	7e 7a       	andi	r23, 0xAE	; 174
+      86:	76 7c       	andi	r23, 0xC6	; 198
+      88:	78 7a       	andi	r23, 0xA8	; 168
+      8a:	7c 78       	andi	r23, 0x8C	; 140
+      8c:	7e 7f       	andi	r23, 0xFE	; 254
+      8e:	7f 7f       	andi	r23, 0xFF	; 255
+      90:	7f 7d       	andi	r23, 0xDF	; 223
+      92:	63 3e       	cpi	r22, 0xE3	; 227
+      94:	00 40       	sbci	r16, 0x00	; 0
+      96:	00 40       	sbci	r16, 0x00	; 0
+      98:	00 40       	sbci	r16, 0x00	; 0
+      9a:	40 40       	sbci	r20, 0x00	; 0
+      9c:	40 60       	ori	r20, 0x00	; 0
+      9e:	60 70       	andi	r22, 0x00	; 0
+      a0:	74 74       	andi	r23, 0x44	; 68
+      a2:	7c 7e       	andi	r23, 0xEC	; 236
+      a4:	7e 7e       	andi	r23, 0xEE	; 238
+      a6:	7e 7a       	andi	r23, 0xAE	; 174
+      a8:	74 48       	sbci	r23, 0x84	; 132
+      aa:	30 00       	.word	0x0030	; ????
+      ac:	00 20       	and	r0, r0
+      ae:	20 20       	and	r2, r0
+      b0:	20 30       	cpi	r18, 0x00	; 0
+      b2:	34 30       	cpi	r19, 0x04	; 4
+      b4:	34 34       	cpi	r19, 0x44	; 68
+      b6:	3e 3e       	cpi	r19, 0xEE	; 238
+      b8:	3e 2a       	or	r3, r30
+      ba:	34 18       	sub	r3, r4
+      bc:	00 10       	cpse	r0, r0
+      be:	00 10       	cpse	r0, r0
+      c0:	10 18       	sub	r1, r0
+      c2:	18 1c       	adc	r1, r8
+      c4:	1c 1c       	adc	r1, r12
+      c6:	1c 1c       	adc	r1, r12
+      c8:	14 1c       	adc	r1, r4
+      ca:	0c 08       	sbc	r0, r12
+      cc:	00 10       	cpse	r0, r0
+      ce:	00 10       	cpse	r0, r0
+      d0:	10 18       	sub	r1, r0
+      d2:	10 10       	cpse	r1, r0
+      d4:	10 10       	cpse	r1, r0
+      d6:	18 18       	sub	r1, r8
+      d8:	18 14       	cp	r1, r8
+      da:	18 10       	cpse	r1, r8
+      dc:	1f ef       	ldi	r17, 0xFF	; 255
+      de:	f7 fb       	bst	r31, 7
+      e0:	3e df       	rcall	.-388    	; 0xffffff5e <__eeprom_end+0xff7eff5e>
+      e2:	ff ff       	.word	0xffff	; ????
+      e4:	7b b7       	in	r23, 0x3b	; 59
+      e6:	cf fe       	.word	0xfecf	; ????
+      e8:	7f 8f       	std	Y+31, r23	; 0x1f
+      ea:	77 ff       	sbrs	r23, 7
+      ec:	3f df       	rcall	.-386    	; 0xffffff6c <__eeprom_end+0xff7eff6c>
+      ee:	ef f7       	brid	.-6      	; 0xea <__trampolines_end+0x6e>
+      f0:	b7 f6       	brid	.-84     	; 0x9e <__trampolines_end+0x22>
+      f2:	7b df       	rcall	.-266    	; 0xffffffea <__eeprom_end+0xff7effea>
+      f4:	ff ff       	.word	0xffff	; ????
+      f6:	ff ff       	.word	0xffff	; ????
+      f8:	ff ff       	.word	0xffff	; ????
+      fa:	ff ff       	.word	0xffff	; ????
+      fc:	d4 d4       	rcall	.+2472   	; 0xaa6 <displayInit+0x5c>
+      fe:	e8 e8       	ldi	r30, 0x88	; 136
+     100:	f4 f4       	brge	.+60     	; 0x13e <__EEPROM_REGION_LENGTH__+0x3e>
+     102:	ea ea       	ldi	r30, 0xAA	; 170
+     104:	80 c0       	rjmp	.+256    	; 0x206 <debrisTop+0xa>
+     106:	a0 90 a8 88 	lds	r10, 0x88A8	; 0x8088a8 <__bss_end+0x4b76>
+     10a:	94 83       	std	Z+4, r25	; 0x04
+     10c:	84 80       	ldd	r8, Z+4	; 0x04
+     10e:	80 80       	ld	r8, Z
+     110:	80 80       	ld	r8, Z
+     112:	80 80       	ld	r8, Z
+     114:	80 88       	ldd	r8, Z+16	; 0x10
+     116:	80 81       	ld	r24, Z
+     118:	84 88       	ldd	r8, Z+20	; 0x14
+     11a:	90 a2       	std	Z+32, r9	; 0x20
+     11c:	a1 82       	std	Z+1, r10	; 0x01
+     11e:	8c 90       	ld	r8, X
+     120:	90 a0       	ldd	r9, Z+32	; 0x20
+     122:	a0 c0       	rjmp	.+320    	; 0x264 <debris+0x46>
+     124:	80 e0       	ldi	r24, 0x00	; 0
+     126:	9c a3       	std	Y+36, r25	; 0x24
+     128:	84 80       	ldd	r8, Z+4	; 0x04
+     12a:	80 81       	ld	r24, Z
+     12c:	86 80       	ldd	r8, Z+6	; 0x06
+     12e:	80 80       	ld	r8, Z
+     130:	81 80       	ldd	r8, Z+1	; 0x01
+     132:	81 83       	std	Z+1, r24	; 0x01
+     134:	8f 91       	pop	r24
+     136:	81 83       	std	Z+1, r24	; 0x01
+     138:	8f 97       	sbiw	r24, 0x2f	; 47
+     13a:	82 82       	std	Z+2, r8	; 0x02
+     13c:	84 a8       	ldd	r8, Z+52	; 0x34
+     13e:	90 a0       	ldd	r9, Z+32	; 0x20
+     140:	c0 c0       	rjmp	.+384    	; 0x2c2 <ship+0x52>
+     142:	c0 80       	ld	r12, Z
+     144:	80 60       	ori	r24, 0x00	; 0
+     146:	90 3e       	cpi	r25, 0xE0	; 224
+     148:	67 fb       	bst	r22, 7
+     14a:	7f 3f       	cpi	r23, 0xFF	; 255
+     14c:	3f 7f       	andi	r19, 0xFF	; 255
+     14e:	ff fe       	.word	0xfeff	; ????
+     150:	78 f0       	brcs	.+30     	; 0x170 <__EEPROM_REGION_LENGTH__+0x70>
+     152:	40 80       	ld	r4, Z
+     154:	00 00       	nop
+     156:	00 00       	nop
+     158:	00 fc       	sbrc	r0, 0
+     15a:	b8 f0       	brcs	.+46     	; 0x18a <__EEPROM_REGION_LENGTH__+0x8a>
+     15c:	c0 c0       	rjmp	.+384    	; 0x2de <ship+0x6e>
+     15e:	80 00       	.word	0x0080	; ????
+     160:	00 00       	nop
+     162:	00 00       	nop
+     164:	00 00       	nop
+     166:	00 e0       	ldi	r16, 0x00	; 0
+     168:	3e 7f       	andi	r19, 0xFE	; 254
+     16a:	fb fe       	.word	0xfefb	; ????
+     16c:	3e 1c       	adc	r3, r14
+     16e:	38 60       	ori	r19, 0x08	; 8
+     170:	40 80       	ld	r4, Z
+     172:	80 80       	ld	r8, Z
+     174:	c0 f0       	brcs	.+48     	; 0x1a6 <__EEPROM_REGION_LENGTH__+0xa6>
+     176:	b8 f0       	brcs	.+46     	; 0x1a6 <__EEPROM_REGION_LENGTH__+0xa6>
+     178:	c0 00       	.word	0x00c0	; ????
+     17a:	00 00       	nop
+     17c:	01 07       	cpc	r16, r17
+     17e:	17 1f       	adc	r17, r23
+     180:	3f 3f       	cpi	r19, 0xFF	; 255
+     182:	2f 37       	cpi	r18, 0x7F	; 127
+     184:	1f 1f       	adc	r17, r31
+     186:	0f 0b       	sbc	r16, r31
+     188:	0b 0f       	add	r16, r27
+     18a:	0f 07       	cpc	r16, r31
+     18c:	0f 0f       	add	r16, r31
+     18e:	4f 5f       	subi	r20, 0xFF	; 255
+     190:	7f 3f       	cpi	r23, 0xFF	; 255
+     192:	3f 3f       	cpi	r19, 0xFF	; 255
+     194:	3f 2f       	mov	r19, r31
+     196:	2f 2f       	mov	r18, r31
+     198:	37 1f       	adc	r19, r23
+     19a:	07 0f       	add	r16, r23
+     19c:	0f 0f       	add	r16, r31
+     19e:	0f 0f       	add	r16, r31
+     1a0:	0f 4f       	sbci	r16, 0xFF	; 255
+     1a2:	5f 5f       	subi	r21, 0xFF	; 255
+     1a4:	5f 5f       	subi	r21, 0xFF	; 255
+     1a6:	7f 3f       	cpi	r23, 0xFF	; 255
+     1a8:	3f 2f       	mov	r19, r31
+     1aa:	2f 37       	cpi	r18, 0x7F	; 127
+     1ac:	1b 0f       	add	r17, r27
+     1ae:	07 07       	cpc	r16, r23
+     1b0:	07 07       	cpc	r16, r23
+     1b2:	17 17       	cp	r17, r23
+     1b4:	1f 1f       	adc	r17, r31
+     1b6:	0b 0d       	add	r16, r11
+     1b8:	07 03       	mulsu	r16, r23
+     1ba:	03 01       	movw	r0, r6
+	...
+
+000001fc <debrisTop>:
+     1fc:	10 08 00 00 80 c0 e0 e0 f0 f8 fc fc fc fc fc fc     ................
+     20c:	b8 90 00 00 00 00 80 40 20 20 10 28 04 84 44 44     .......@  .(..DD
+     21c:	a8 90                                               ..
+
+0000021e <debris>:
+     21e:	28 08 80 c0 e0 e0 f0 f8 fc fc fe ff ff 7f 7f 7f     (...............
+     22e:	7f ff ff f7 e7 cf 8f 0f 1f 1f 3f 3f 7e 7e fc fc     ..........??~~..
+     23e:	f8 f8 f0 f0 e0 e0 c0 c0 80 80 00 00 80 40 20 20     .............@  
+     24e:	50 08 04 04 8a 41 41 20 31 28 58 b4 62 c3 84 04     P....AA 1(X.b...
+     25e:	04 08 09 11 12 22 24 44 48 88 90 10 20 20 40 40     ....."$DH...  @@
+     26e:	80 80                                               ..
+
+00000270 <ship>:
+     270:	18 10 04 1e fe fe fe fe fe fc fc fc fc f8 f8 f8     ................
+     280:	f0 f0 e0 e0 c0 c0 c0 80 80 00 10 39 3f 3f 3f 1f     ...........9???.
+     290:	1f 1f 0f 0f 0f 0f 0f 07 03 03 03 03 03 03 03 03     ................
+     2a0:	03 01 00 04 1c f4 f4 b4 fc 88 88 88 98 90 90 90     ................
+     2b0:	a0 e0 c0 c0 00 80 80 00 00 00 00 10 19 1d 1d 0d     ................
+     2c0:	0d 0d 05 05 05 05 05 01 01 01 00 00 01 01 01 01     ................
+     2d0:	01 00 12 7f ff ff ff fe fe fc fc fc fc fc fc f8     ................
+     2e0:	f0 e0 e0 c0 c0 c0 c0 80 80 00 40 e2 ff ff ff 7f     ..........@.....
+     2f0:	7f 7f 3f 3f 3f 3f 3f 1f 07 07 07 07 07 07 07 03     ..?????.........
+     300:	03 01 00 12 72 d6 d6 d4 f4 28 28 28 28 28 28 60     ....r....((((((`
+     310:	40 c0 c0 80 00 80 80 00 00 00 00 40 62 7b 7b 3a     @..........@b{{:
+     320:	3b 3a 1a 1a 1a 1a 1a 02 02 03 03 01 02 03 03 01     ;:..............
+     330:	01 00 04 0e fe fe fe fc fc fc f8 f8 f8 f8 f0 f0     ................
+     340:	e0 e0 c0 c0 c0 c0 c0 80 80 00 20 79 7f 7f 7f 3f     .......... y...?
+     350:	3f 1f 1f 1f 1f 1f 1f 0f 07 07 07 07 07 07 07 03     ?...............
+     360:	03 01 00 04 0c 3c 7c 78 78 78 70 70 70 70 60 00     .....<|xxxpppp`.
+     370:	80 80 00 00 80 80 80 00 00 00 00 20 31 3b 3b 1b     ........... 1;;.
+     380:	1b 0b 0b 0b 0b 0b 0b 03 03 03 03 03 03 03 03 01     ................
+     390:	01 00                                               ..
+
+00000392 <beastTree>:
+     392:	28 28 00 80 f8 fc fc fc fc fe ff ff ff ff ff ff     ((..............
+     3a2:	ff ff ff ff ff ff ff fe fe fe ff ff fe fe fc f8     ................
+     3b2:	e0 c0 80 00 00 00 00 00 00 00 00 07 0f ff ff ff     ................
+     3c2:	ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff     ................
+     3d2:	ff ff ff ff ff ff ff ff ff 7f 7f 7f 06 00 00 00     ................
+     3e2:	00 00 00 00 0f 0f ff ff ff ff ff ff ff ff ff ff     ................
+     3f2:	ff ff ff ff 7f ff ff ff ff ff ff e3 81 00 00 00     ................
+     402:	e0 f8 f0 c0 80 c0 80 00 00 00 00 00 00 00 03 03     ................
+     412:	03 07 1f 1f ff ff 1f 1f 0f 07 c1 c0 f0 f1 f1 e7     ................
+     422:	6f ff ff ff ff fc fe ff df 8f cf e3 c1 01 00 00     o...............
+	...
+     43e:	07 07 00 00 00 00 00 0c 8c d8 d8 f0 f8 ff ff ff     ................
+     44e:	ff ff ff ff ff ff ff ff e3 c0 c0 80 00 00 00 00     ................
+     45e:	00 10 b8 50 a8 a8 54 54 aa aa 44 04 0a 8a 14 14     ...P..TT..D.....
+     46e:	aa 88 50 fc a8 a8 54 54 14 28 88 40 40 80 00 00     ..P...TT.(.@@...
+	...
+     486:	06 0b f5 55 aa aa 15 45 2a ae 5d 5d ba ea d4 50     ...U...E*.]]...P
+     496:	b0 e2 d5 55 be e2 55 55 d1 aa 2a 10 55 2a 0a 7d     ...U..UU..*.U*.}
+     4a6:	04 00 00 00 00 00 00 00 00 06 0d f5 2a 6a 40 14     ............*j@.
+     4b6:	aa a0 45 55 aa aa 55 d7 6e 7a f7 dd 8a 0f 1d 63     ..EU..U.nz.....c
+     4c6:	81 00 00 00 00 c0 30 c0 00 00 80 00 00 00 00 00     ......0.........
+     4d6:	00 00 00 03 00 00 07 15 0a fa 11 18 0a 06 01 80     ................
+     4e6:	80 a0 a1 e1 46 48 f0 00 03 04 08 24 d2 09 0c 82     ....FH.....$....
+     4f6:	c1 01 00 00 00 00 80 80 80 80 80 80 80 80 80 80     ................
+     506:	80 87 80 80 80 80 80 80 88 88 90 90 60 30 18 07     ............`0..
+     516:	00 8c 72 82 8c 71 01 3c 63 40 80 80 80 80           ..r..q.<c@....
+
+00000524 <__ctors_end>:
+     524:	11 24       	eor	r1, r1
+     526:	1f be       	out	0x3f, r1	; 63
+     528:	cf ef       	ldi	r28, 0xFF	; 255
+     52a:	cd bf       	out	0x3d, r28	; 61
+     52c:	df e3       	ldi	r29, 0x3F	; 63
+     52e:	de bf       	out	0x3e, r29	; 62
+
+00000530 <__do_copy_data>:
+     530:	18 e3       	ldi	r17, 0x38	; 56
+     532:	a0 e0       	ldi	r26, 0x00	; 0
+     534:	b8 e3       	ldi	r27, 0x38	; 56
+     536:	e8 ec       	ldi	r30, 0xC8	; 200
+     538:	f1 e1       	ldi	r31, 0x11	; 17
+     53a:	02 c0       	rjmp	.+4      	; 0x540 <__do_copy_data+0x10>
+     53c:	05 90       	lpm	r0, Z+
+     53e:	0d 92       	st	X+, r0
+     540:	aa 30       	cpi	r26, 0x0A	; 10
+     542:	b1 07       	cpc	r27, r17
+     544:	d9 f7       	brne	.-10     	; 0x53c <__do_copy_data+0xc>
+
+00000546 <__do_clear_bss>:
+     546:	2d e3       	ldi	r18, 0x3D	; 61
+     548:	aa e0       	ldi	r26, 0x0A	; 10
+     54a:	b8 e3       	ldi	r27, 0x38	; 56
+     54c:	01 c0       	rjmp	.+2      	; 0x550 <.do_clear_bss_start>
+
+0000054e <.do_clear_bss_loop>:
+     54e:	1d 92       	st	X+, r1
+
+00000550 <.do_clear_bss_start>:
+     550:	a2 33       	cpi	r26, 0x32	; 50
+     552:	b2 07       	cpc	r27, r18
+     554:	e1 f7       	brne	.-8      	; 0x54e <.do_clear_bss_loop>
+     556:	0e 94 77 08 	call	0x10ee	; 0x10ee <main>
+     55a:	0c 94 e2 08 	jmp	0x11c4	; 0x11c4 <_exit>
+
+0000055e <__bad_interrupt>:
+     55e:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+00000562 <toneLogic>:
+		winXfine[row] = x & 0x07;
+		winY = y >> 3;
+		winYfine = y & 0x07;		
+	}
+	
+}
+     562:	80 91 0b 38 	lds	r24, 0x380B	; 0x80380b <toneTimer>
+     566:	90 91 0c 38 	lds	r25, 0x380C	; 0x80380c <toneTimer+0x1>
+     56a:	00 97       	sbiw	r24, 0x00	; 0
+     56c:	61 f0       	breq	.+24     	; 0x586 <toneLogic+0x24>
+     56e:	01 97       	sbiw	r24, 0x01	; 1
+     570:	80 93 0b 38 	sts	0x380B, r24	; 0x80380b <toneTimer>
+     574:	90 93 0c 38 	sts	0x380C, r25	; 0x80380c <toneTimer+0x1>
+     578:	89 2b       	or	r24, r25
+     57a:	29 f4       	brne	.+10     	; 0x586 <toneLogic+0x24>
+     57c:	e0 e0       	ldi	r30, 0x00	; 0
+     57e:	fa e0       	ldi	r31, 0x0A	; 10
+     580:	80 81       	ld	r24, Z
+     582:	8e 7f       	andi	r24, 0xFE	; 254
+     584:	80 83       	st	Z, r24
+     586:	08 95       	ret
+
+00000588 <tone>:
+     588:	e0 e0       	ldi	r30, 0x00	; 0
+     58a:	fa e0       	ldi	r31, 0x0A	; 10
+     58c:	80 a7       	std	Z+40, r24	; 0x28
+     58e:	91 a7       	std	Z+41, r25	; 0x29
+     590:	80 81       	ld	r24, Z
+     592:	81 60       	ori	r24, 0x01	; 1
+     594:	80 83       	st	Z, r24
+     596:	60 93 0b 38 	sts	0x380B, r22	; 0x80380b <toneTimer>
+     59a:	70 93 0c 38 	sts	0x380C, r23	; 0x80380c <toneTimer+0x1>
+     59e:	08 95       	ret
+
+000005a0 <ledState>:
+     5a0:	88 23       	and	r24, r24
+     5a2:	21 f0       	breq	.+8      	; 0x5ac <ledState+0xc>
+     5a4:	80 e1       	ldi	r24, 0x10	; 16
+     5a6:	80 93 25 04 	sts	0x0425, r24	; 0x800425 <__RODATA_PM_OFFSET__+0x7f8425>
+     5aa:	08 95       	ret
+     5ac:	80 e1       	ldi	r24, 0x10	; 16
+     5ae:	80 93 26 04 	sts	0x0426, r24	; 0x800426 <__RODATA_PM_OFFSET__+0x7f8426>
+     5b2:	08 95       	ret
+
+000005b4 <setRowScroll>:
+
+void setRowScroll(uint8_t x, uint8_t row) {
+
+	winX[row] = x >> 3;
+     5b4:	70 e0       	ldi	r23, 0x00	; 0
+     5b6:	fb 01       	movw	r30, r22
+     5b8:	e7 5d       	subi	r30, 0xD7	; 215
+     5ba:	f7 4c       	sbci	r31, 0xC7	; 199
+     5bc:	98 2f       	mov	r25, r24
+     5be:	96 95       	lsr	r25
+     5c0:	96 95       	lsr	r25
+     5c2:	96 95       	lsr	r25
+     5c4:	90 83       	st	Z, r25
+	winXfine[row] = x & 0x07;
+     5c6:	fb 01       	movw	r30, r22
+     5c8:	ef 5d       	subi	r30, 0xDF	; 223
+     5ca:	f7 4c       	sbci	r31, 0xC7	; 199
+     5cc:	87 70       	andi	r24, 0x07	; 7
+     5ce:	80 83       	st	Z, r24
+     5d0:	08 95       	ret
+
+000005d2 <drawSprite>:
+
+}
+
+void drawSprite(const char *bitmap, int8_t xPos, int8_t yPos, uint8_t frameNumber, int8_t mirror) {
+     5d2:	6f 92       	push	r6
+     5d4:	7f 92       	push	r7
+     5d6:	8f 92       	push	r8
+     5d8:	9f 92       	push	r9
+     5da:	af 92       	push	r10
+     5dc:	bf 92       	push	r11
+     5de:	cf 92       	push	r12
+     5e0:	df 92       	push	r13
+     5e2:	ef 92       	push	r14
+     5e4:	ff 92       	push	r15
+     5e6:	0f 93       	push	r16
+     5e8:	1f 93       	push	r17
+     5ea:	cf 93       	push	r28
+     5ec:	df 93       	push	r29
+
+	uint8_t xSize = pgm_read_byte(bitmap++);				//Get bitmap width from flash
+     5ee:	dc 01       	movw	r26, r24
+     5f0:	11 96       	adiw	r26, 0x01	; 1
+     5f2:	fc 01       	movw	r30, r24
+     5f4:	64 90       	lpm	r6, Z
+	uint8_t ySize = pgm_read_byte(bitmap++) >> 3;			//Get bitmap height from flash, convert to bytes (8 pixels per byte)
+     5f6:	02 96       	adiw	r24, 0x02	; 2
+     5f8:	fd 01       	movw	r30, r26
+     5fa:	a4 91       	lpm	r26, Z
+     5fc:	a6 95       	lsr	r26
+     5fe:	a6 95       	lsr	r26
+     600:	a6 95       	lsr	r26
+
+	uint16_t sizeInBytes = xSize * ySize;					//Get total sprite size
+     602:	c6 2d       	mov	r28, r6
+     604:	d0 e0       	ldi	r29, 0x00	; 0
+     606:	aa 2e       	mov	r10, r26
+     608:	b1 2c       	mov	r11, r1
+     60a:	ca 9d       	mul	r28, r10
+     60c:	60 01       	movw	r12, r0
+     60e:	cb 9d       	mul	r28, r11
+     610:	d0 0c       	add	r13, r0
+     612:	da 9d       	mul	r29, r10
+     614:	d0 0c       	add	r13, r0
+     616:	11 24       	eor	r1, r1
+
+	uint8_t offset = yPos & 0x07;
+     618:	74 2f       	mov	r23, r20
+     61a:	77 70       	andi	r23, 0x07	; 7
+	uint8_t offsetInv = 8 - offset;
+     61c:	18 e0       	ldi	r17, 0x08	; 8
+     61e:	17 1b       	sub	r17, r23
+	
+	int16_t bPointer = ((yPos >> 3) * 128) + xPos;			//Where the screen buffer pointer starts
+     620:	45 95       	asr	r20
+     622:	45 95       	asr	r20
+     624:	45 95       	asr	r20
+     626:	a6 2f       	mov	r26, r22
+     628:	06 2e       	mov	r0, r22
+     62a:	00 0c       	add	r0, r0
+     62c:	bb 0b       	sbc	r27, r27
+     62e:	30 e8       	ldi	r19, 0x80	; 128
+     630:	43 03       	mulsu	r20, r19
+     632:	a0 0d       	add	r26, r0
+     634:	b1 1d       	adc	r27, r1
+     636:	11 24       	eor	r1, r1
+
+	bitmap += frameNumber * (sizeInBytes * 2);				//Advance to frame pointer in sprite char memory
+     638:	2c 9d       	mul	r18, r12
+     63a:	a0 01       	movw	r20, r0
+     63c:	2d 9d       	mul	r18, r13
+     63e:	50 0d       	add	r21, r0
+     640:	11 24       	eor	r1, r1
+     642:	9a 01       	movw	r18, r20
+     644:	22 0f       	add	r18, r18
+     646:	33 1f       	adc	r19, r19
+     648:	82 0f       	add	r24, r18
+     64a:	93 1f       	adc	r25, r19
+
+	if (mirror == -1) {										//If mirror draw sprites from right to left
+     64c:	0f 3f       	cpi	r16, 0xFF	; 255
+     64e:	11 f4       	brne	.+4      	; 0x654 <drawSprite+0x82>
+		bitmap += xSize;
+     650:	86 0d       	add	r24, r6
+     652:	91 1d       	adc	r25, r1
+	}
+	
+	uint8_t yOffset = 0;
+	
+	if (offset) {											//If sprite is on a byte boundry we can save a lot of time, so set flag if so
+     654:	71 11       	cpse	r23, r1
+     656:	02 c0       	rjmp	.+4      	; 0x65c <drawSprite+0x8a>
+
+	if (mirror == -1) {										//If mirror draw sprites from right to left
+		bitmap += xSize;
+	}
+	
+	uint8_t yOffset = 0;
+     658:	71 2c       	mov	r7, r1
+     65a:	02 c0       	rjmp	.+4      	; 0x660 <drawSprite+0x8e>
+	
+	if (offset) {											//If sprite is on a byte boundry we can save a lot of time, so set flag if so
+		yOffset = 1;
+     65c:	77 24       	eor	r7, r7
+     65e:	73 94       	inc	r7
+	}
+
+	for (int y = 0 ; y < (ySize + yOffset) ; y++) {			//Do all rows of a sprite+1 if offset (since lowest row will go past a byte boundry) or if no offset, just do ySize rows
+     660:	e1 2c       	mov	r14, r1
+     662:	f1 2c       	mov	r15, r1
+     664:	75 c0       	rjmp	.+234    	; 0x750 <drawSprite+0x17e>
+
+		int8_t xTemp = xPos;
+
+		for (int16_t x = bPointer ; x < xSize + bPointer ; x++) {					//Select column
+
+			if (!(x & 0xFC00) && !(xTemp & 0x80)) {									//Don't fill bytes outside of the screen buffer or past the left and right edges of the screen (xTemp)
+     666:	f9 01       	movw	r30, r18
+     668:	ee 27       	eor	r30, r30
+     66a:	fc 7f       	andi	r31, 0xFC	; 252
+     66c:	ef 2b       	or	r30, r31
+     66e:	09 f0       	breq	.+2      	; 0x672 <drawSprite+0xa0>
+     670:	50 c0       	rjmp	.+160    	; 0x712 <drawSprite+0x140>
+     672:	44 23       	and	r20, r20
+     674:	0c f4       	brge	.+2      	; 0x678 <drawSprite+0xa6>
+     676:	4d c0       	rjmp	.+154    	; 0x712 <drawSprite+0x140>
+				
+				uint8_t buildMask = 0;
+				uint8_t buildPixels = 0;
+				
+				if (offset) {														//Get offset pixels from adjacent rows
+     678:	77 23       	and	r23, r23
+     67a:	09 f4       	brne	.+2      	; 0x67e <drawSprite+0xac>
+     67c:	3d c0       	rjmp	.+122    	; 0x6f8 <drawSprite+0x126>
+					if (y) {
+     67e:	e1 14       	cp	r14, r1
+     680:	f1 04       	cpc	r15, r1
+     682:	e9 f0       	breq	.+58     	; 0x6be <drawSprite+0xec>
+						buildMask = pgm_read_byte(bitmap - xSize) >> offsetInv;
+     684:	86 2c       	mov	r8, r6
+     686:	91 2c       	mov	r9, r1
+     688:	fc 01       	movw	r30, r24
+     68a:	e8 19       	sub	r30, r8
+     68c:	f9 09       	sbc	r31, r9
+     68e:	e4 91       	lpm	r30, Z
+     690:	f0 e0       	ldi	r31, 0x00	; 0
+     692:	01 2e       	mov	r0, r17
+     694:	02 c0       	rjmp	.+4      	; 0x69a <drawSprite+0xc8>
+     696:	f5 95       	asr	r31
+     698:	e7 95       	ror	r30
+     69a:	0a 94       	dec	r0
+     69c:	e2 f7       	brpl	.-8      	; 0x696 <drawSprite+0xc4>
+     69e:	5e 2f       	mov	r21, r30
+						buildPixels = pgm_read_byte((bitmap + sizeInBytes) - xSize) >> offsetInv;
+     6a0:	f6 01       	movw	r30, r12
+     6a2:	e8 19       	sub	r30, r8
+     6a4:	f9 09       	sbc	r31, r9
+     6a6:	e8 0f       	add	r30, r24
+     6a8:	f9 1f       	adc	r31, r25
+     6aa:	e4 91       	lpm	r30, Z
+     6ac:	f0 e0       	ldi	r31, 0x00	; 0
+     6ae:	01 2e       	mov	r0, r17
+     6b0:	02 c0       	rjmp	.+4      	; 0x6b6 <drawSprite+0xe4>
+     6b2:	f5 95       	asr	r31
+     6b4:	e7 95       	ror	r30
+     6b6:	0a 94       	dec	r0
+     6b8:	e2 f7       	brpl	.-8      	; 0x6b2 <drawSprite+0xe0>
+     6ba:	8e 2e       	mov	r8, r30
+     6bc:	02 c0       	rjmp	.+4      	; 0x6c2 <drawSprite+0xf0>
+		for (int16_t x = bPointer ; x < xSize + bPointer ; x++) {					//Select column
+
+			if (!(x & 0xFC00) && !(xTemp & 0x80)) {									//Don't fill bytes outside of the screen buffer or past the left and right edges of the screen (xTemp)
+				
+				uint8_t buildMask = 0;
+				uint8_t buildPixels = 0;
+     6be:	81 2c       	mov	r8, r1
+
+		for (int16_t x = bPointer ; x < xSize + bPointer ; x++) {					//Select column
+
+			if (!(x & 0xFC00) && !(xTemp & 0x80)) {									//Don't fill bytes outside of the screen buffer or past the left and right edges of the screen (xTemp)
+				
+				uint8_t buildMask = 0;
+     6c0:	50 e0       	ldi	r21, 0x00	; 0
+				if (offset) {														//Get offset pixels from adjacent rows
+					if (y) {
+						buildMask = pgm_read_byte(bitmap - xSize) >> offsetInv;
+						buildPixels = pgm_read_byte((bitmap + sizeInBytes) - xSize) >> offsetInv;
+					}
+					if (y < ySize) {
+     6c2:	ea 14       	cp	r14, r10
+     6c4:	fb 04       	cpc	r15, r11
+     6c6:	ec f4       	brge	.+58     	; 0x702 <drawSprite+0x130>
+						buildMask |= pgm_read_byte(bitmap) << offset;
+     6c8:	fc 01       	movw	r30, r24
+     6ca:	94 90       	lpm	r9, Z
+     6cc:	e9 2d       	mov	r30, r9
+     6ce:	f0 e0       	ldi	r31, 0x00	; 0
+     6d0:	07 2e       	mov	r0, r23
+     6d2:	02 c0       	rjmp	.+4      	; 0x6d8 <drawSprite+0x106>
+     6d4:	ee 0f       	add	r30, r30
+     6d6:	ff 1f       	adc	r31, r31
+     6d8:	0a 94       	dec	r0
+     6da:	e2 f7       	brpl	.-8      	; 0x6d4 <drawSprite+0x102>
+     6dc:	5e 2b       	or	r21, r30
+						buildPixels |= pgm_read_byte(bitmap + sizeInBytes) << offset;
+     6de:	fc 01       	movw	r30, r24
+     6e0:	ec 0d       	add	r30, r12
+     6e2:	fd 1d       	adc	r31, r13
+     6e4:	e4 91       	lpm	r30, Z
+     6e6:	f0 e0       	ldi	r31, 0x00	; 0
+     6e8:	07 2e       	mov	r0, r23
+     6ea:	02 c0       	rjmp	.+4      	; 0x6f0 <drawSprite+0x11e>
+     6ec:	ee 0f       	add	r30, r30
+     6ee:	ff 1f       	adc	r31, r31
+     6f0:	0a 94       	dec	r0
+     6f2:	e2 f7       	brpl	.-8      	; 0x6ec <drawSprite+0x11a>
+     6f4:	8e 2a       	or	r8, r30
+     6f6:	05 c0       	rjmp	.+10     	; 0x702 <drawSprite+0x130>
+					}
+				}
+				else {																//Falls on byte boundry - simple and fast!
+					buildMask = pgm_read_byte(bitmap);	
+     6f8:	fc 01       	movw	r30, r24
+     6fa:	54 91       	lpm	r21, Z
+					buildPixels = pgm_read_byte(bitmap + sizeInBytes);				
+     6fc:	ec 0d       	add	r30, r12
+     6fe:	fd 1d       	adc	r31, r13
+     700:	84 90       	lpm	r8, Z
+				}
+								
+				buffer[x] &= ~buildMask;											//AND in mask
+     702:	f9 01       	movw	r30, r18
+     704:	ef 5c       	subi	r30, 0xCF	; 207
+     706:	f7 4c       	sbci	r31, 0xC7	; 199
+     708:	50 95       	com	r21
+     70a:	90 80       	ld	r9, Z
+     70c:	59 21       	and	r21, r9
+				buffer[x] |= buildPixels;											//OR in pixels
+     70e:	58 29       	or	r21, r8
+     710:	50 83       	st	Z, r21
+			}
+
+			bitmap += mirror;															//Advance bitmap pointer and xTemp counter
+     712:	80 0f       	add	r24, r16
+     714:	91 1d       	adc	r25, r1
+     716:	07 fd       	sbrc	r16, 7
+     718:	9a 95       	dec	r25
+			xTemp++;
+     71a:	4f 5f       	subi	r20, 0xFF	; 255
+
+	for (int y = 0 ; y < (ySize + yOffset) ; y++) {			//Do all rows of a sprite+1 if offset (since lowest row will go past a byte boundry) or if no offset, just do ySize rows
+
+		int8_t xTemp = xPos;
+
+		for (int16_t x = bPointer ; x < xSize + bPointer ; x++) {					//Select column
+     71c:	2f 5f       	subi	r18, 0xFF	; 255
+     71e:	3f 4f       	sbci	r19, 0xFF	; 255
+     720:	02 c0       	rjmp	.+4      	; 0x726 <drawSprite+0x154>
+     722:	9d 01       	movw	r18, r26
+     724:	46 2f       	mov	r20, r22
+     726:	fd 01       	movw	r30, r26
+     728:	ec 0f       	add	r30, r28
+     72a:	fd 1f       	adc	r31, r29
+     72c:	2e 17       	cp	r18, r30
+     72e:	3f 07       	cpc	r19, r31
+     730:	0c f4       	brge	.+2      	; 0x734 <drawSprite+0x162>
+     732:	99 cf       	rjmp	.-206    	; 0x666 <drawSprite+0x94>
+			bitmap += mirror;															//Advance bitmap pointer and xTemp counter
+			xTemp++;
+		
+		}
+			
+		bPointer += 128;														//Increment buffer line buffer by 1 byte-boundary line
+     734:	a0 58       	subi	r26, 0x80	; 128
+     736:	bf 4f       	sbci	r27, 0xFF	; 255
+
+		if (mirror == -1) {														//Since mirrored = going backwards in memory we have to skip 2 row widths to get to the right-hand start of the next one
+     738:	0f 3f       	cpi	r16, 0xFF	; 255
+     73a:	39 f4       	brne	.+14     	; 0x74a <drawSprite+0x178>
+			bitmap += (xSize * 2) - 1;
+     73c:	9e 01       	movw	r18, r28
+     73e:	22 0f       	add	r18, r18
+     740:	33 1f       	adc	r19, r19
+     742:	21 50       	subi	r18, 0x01	; 1
+     744:	31 09       	sbc	r19, r1
+     746:	82 0f       	add	r24, r18
+     748:	93 1f       	adc	r25, r19
+	
+	if (offset) {											//If sprite is on a byte boundry we can save a lot of time, so set flag if so
+		yOffset = 1;
+	}
+
+	for (int y = 0 ; y < (ySize + yOffset) ; y++) {			//Do all rows of a sprite+1 if offset (since lowest row will go past a byte boundry) or if no offset, just do ySize rows
+     74a:	ff ef       	ldi	r31, 0xFF	; 255
+     74c:	ef 1a       	sub	r14, r31
+     74e:	ff 0a       	sbc	r15, r31
+     750:	95 01       	movw	r18, r10
+     752:	27 0d       	add	r18, r7
+     754:	31 1d       	adc	r19, r1
+     756:	e2 16       	cp	r14, r18
+     758:	f3 06       	cpc	r15, r19
+     75a:	1c f3       	brlt	.-58     	; 0x722 <drawSprite+0x150>
+			bitmap += (xSize * 2) - 1;
+		}
+
+	}
+
+}
+     75c:	df 91       	pop	r29
+     75e:	cf 91       	pop	r28
+     760:	1f 91       	pop	r17
+     762:	0f 91       	pop	r16
+     764:	ff 90       	pop	r15
+     766:	ef 90       	pop	r14
+     768:	df 90       	pop	r13
+     76a:	cf 90       	pop	r12
+     76c:	bf 90       	pop	r11
+     76e:	af 90       	pop	r10
+     770:	9f 90       	pop	r9
+     772:	8f 90       	pop	r8
+     774:	7f 90       	pop	r7
+     776:	6f 90       	pop	r6
+     778:	08 95       	ret
+
+0000077a <setScrollDirection>:
+
+void setScrollDirection(uint8_t mirrorType) {
+
+	scrollDirection = mirrorType;	
+     77a:	80 93 0f 38 	sts	0x380F, r24	; 0x80380f <scrollDirection>
+     77e:	08 95       	ret
+
+00000780 <sendSPI>:
+
+}
+
+void sendSPI(uint8_t theData) {
+	
+	SPI0.DATA = theData;
+     780:	80 93 24 08 	sts	0x0824, r24	; 0x800824 <__RODATA_PM_OFFSET__+0x7f8824>
+	while(!(SPI0.INTFLAGS & SPI_IF_bm)) {}		//Wait for transfer
+     784:	80 91 23 08 	lds	r24, 0x0823	; 0x800823 <__RODATA_PM_OFFSET__+0x7f8823>
+     788:	88 23       	and	r24, r24
+     78a:	e4 f7       	brge	.-8      	; 0x784 <sendSPI+0x4>
+	
+}
+     78c:	08 95       	ret
+
+0000078e <dcHigh>:
+
+void dcHigh() {
+
+	PORTB_OUTSET = 0x02;
+     78e:	82 e0       	ldi	r24, 0x02	; 2
+     790:	80 93 25 04 	sts	0x0425, r24	; 0x800425 <__RODATA_PM_OFFSET__+0x7f8425>
+     794:	08 95       	ret
+
+00000796 <dcLow>:
+	
+}
+
+void dcLow() {
+
+	PORTB_OUTCLR = 0x02;
+     796:	82 e0       	ldi	r24, 0x02	; 2
+     798:	80 93 26 04 	sts	0x0426, r24	; 0x800426 <__RODATA_PM_OFFSET__+0x7f8426>
+     79c:	08 95       	ret
+
+0000079e <csHigh>:
+	
+}
+
+void csHigh() {
+
+	PORTB_OUTSET = 0x01;
+     79e:	81 e0       	ldi	r24, 0x01	; 1
+     7a0:	80 93 25 04 	sts	0x0425, r24	; 0x800425 <__RODATA_PM_OFFSET__+0x7f8425>
+     7a4:	08 95       	ret
+
+000007a6 <csLow>:
+	
+}
+
+void csLow() {
+
+	PORTB_OUTCLR = 0x01;
+     7a6:	81 e0       	ldi	r24, 0x01	; 1
+     7a8:	80 93 26 04 	sts	0x0426, r24	; 0x800426 <__RODATA_PM_OFFSET__+0x7f8426>
+     7ac:	08 95       	ret
+
+000007ae <screenLoad>:
+
+uint8_t screenLoad() {						//This should be called beginning of each frame. Takes just under 1ms
+
+	uint16_t pointer = 0;
+
+	if (!displaySleep) {									//Don't bother with this if display is asleep (main code should do this, but this a sanity check)		
+     7ae:	80 91 0a 38 	lds	r24, 0x380A	; 0x80380a <__data_end>
+     7b2:	81 11       	cpse	r24, r1
+     7b4:	26 c0       	rjmp	.+76     	; 0x802 <__DATA_REGION_LENGTH__+0x2>
+		csLow();
+     7b6:	0e 94 d3 03 	call	0x7a6	; 0x7a6 <csLow>
+	
+		for (int x = 0 ; x < 512 ; x++) {					//Send 512 pairs of 2 bytes over SPI in hardware buffer mode
+     7ba:	40 e0       	ldi	r20, 0x00	; 0
+     7bc:	50 e0       	ldi	r21, 0x00	; 0
+
+}
+
+uint8_t screenLoad() {						//This should be called beginning of each frame. Takes just under 1ms
+
+	uint16_t pointer = 0;
+     7be:	20 e0       	ldi	r18, 0x00	; 0
+     7c0:	30 e0       	ldi	r19, 0x00	; 0
+
+	if (!displaySleep) {									//Don't bother with this if display is asleep (main code should do this, but this a sanity check)		
+		csLow();
+	
+		for (int x = 0 ; x < 512 ; x++) {					//Send 512 pairs of 2 bytes over SPI in hardware buffer mode
+     7c2:	19 c0       	rjmp	.+50     	; 0x7f6 <screenLoad+0x48>
+			SPI0.DATA = buffer[pointer++];
+     7c4:	f9 01       	movw	r30, r18
+     7c6:	31 96       	adiw	r30, 0x01	; 1
+     7c8:	d9 01       	movw	r26, r18
+     7ca:	af 5c       	subi	r26, 0xCF	; 207
+     7cc:	b7 4c       	sbci	r27, 0xC7	; 199
+     7ce:	8c 91       	ld	r24, X
+     7d0:	80 93 24 08 	sts	0x0824, r24	; 0x800824 <__RODATA_PM_OFFSET__+0x7f8824>
+			while(!(SPI0.INTFLAGS & SPI_DREIF_bm)) {}
+     7d4:	80 91 23 08 	lds	r24, 0x0823	; 0x800823 <__RODATA_PM_OFFSET__+0x7f8823>
+     7d8:	85 ff       	sbrs	r24, 5
+     7da:	fc cf       	rjmp	.-8      	; 0x7d4 <screenLoad+0x26>
+			SPI0.DATA = buffer[pointer++];
+     7dc:	2e 5f       	subi	r18, 0xFE	; 254
+     7de:	3f 4f       	sbci	r19, 0xFF	; 255
+     7e0:	ef 5c       	subi	r30, 0xCF	; 207
+     7e2:	f7 4c       	sbci	r31, 0xC7	; 199
+     7e4:	80 81       	ld	r24, Z
+     7e6:	80 93 24 08 	sts	0x0824, r24	; 0x800824 <__RODATA_PM_OFFSET__+0x7f8824>
+			while(!(SPI0.INTFLAGS & SPI_DREIF_bm)) {}
+     7ea:	80 91 23 08 	lds	r24, 0x0823	; 0x800823 <__RODATA_PM_OFFSET__+0x7f8823>
+     7ee:	85 ff       	sbrs	r24, 5
+     7f0:	fc cf       	rjmp	.-8      	; 0x7ea <screenLoad+0x3c>
+	uint16_t pointer = 0;
+
+	if (!displaySleep) {									//Don't bother with this if display is asleep (main code should do this, but this a sanity check)		
+		csLow();
+	
+		for (int x = 0 ; x < 512 ; x++) {					//Send 512 pairs of 2 bytes over SPI in hardware buffer mode
+     7f2:	4f 5f       	subi	r20, 0xFF	; 255
+     7f4:	5f 4f       	sbci	r21, 0xFF	; 255
+     7f6:	41 15       	cp	r20, r1
+     7f8:	82 e0       	ldi	r24, 0x02	; 2
+     7fa:	58 07       	cpc	r21, r24
+     7fc:	1c f3       	brlt	.-58     	; 0x7c4 <screenLoad+0x16>
+			while(!(SPI0.INTFLAGS & SPI_DREIF_bm)) {}
+			SPI0.DATA = buffer[pointer++];
+			while(!(SPI0.INTFLAGS & SPI_DREIF_bm)) {}
+		}
+	
+		csHigh();
+     7fe:	0e 94 cf 03 	call	0x79e	; 0x79e <csHigh>
+	}
+
+	uint8_t buttons = PORTC_IN & 0x0F;					//Grab lower nibble of C (d-pad)
+     802:	90 91 48 04 	lds	r25, 0x0448	; 0x800448 <__RODATA_PM_OFFSET__+0x7f8448>
+     806:	9f 70       	andi	r25, 0x0F	; 15
+	buttons |= PORTA_IN & 0xE0;							//OR in upper 3 bits of Port A
+     808:	80 91 08 04 	lds	r24, 0x0408	; 0x800408 <__RODATA_PM_OFFSET__+0x7f8408>
+     80c:	80 7e       	andi	r24, 0xE0	; 224
+	return buttons;									//Return inverse for easy logic
+		
+}
+     80e:	89 2b       	or	r24, r25
+     810:	08 95       	ret
+
+00000812 <drawTiles>:
+		PORTB_OUTCLR = 0x10;
+	}
+	
+}
+
+void drawTiles(const char *tileData, uint8_t *tileMapPointer) {
+     812:	5f 92       	push	r5
+     814:	6f 92       	push	r6
+     816:	7f 92       	push	r7
+     818:	8f 92       	push	r8
+     81a:	9f 92       	push	r9
+     81c:	af 92       	push	r10
+     81e:	bf 92       	push	r11
+     820:	cf 92       	push	r12
+     822:	df 92       	push	r13
+     824:	ef 92       	push	r14
+     826:	ff 92       	push	r15
+     828:	0f 93       	push	r16
+     82a:	1f 93       	push	r17
+     82c:	cf 93       	push	r28
+     82e:	df 93       	push	r29
+     830:	ec 01       	movw	r28, r24
+     832:	8b 01       	movw	r16, r22
+
+	uint16_t bufPoint = 0;
+
+	csLow();
+     834:	0e 94 d3 03 	call	0x7a6	; 0x7a6 <csLow>
+
+	if (scrollDirection) {					//Vertical?
+     838:	80 91 0f 38 	lds	r24, 0x380F	; 0x80380f <scrollDirection>
+     83c:	88 23       	and	r24, r24
+     83e:	09 f4       	brne	.+2      	; 0x842 <drawTiles+0x30>
+     840:	db c0       	rjmp	.+438    	; 0x9f8 <drawTiles+0x1e6>
+		
+		uint8_t winYfineINV = 8 - winYfine;				//Get remainder of Y fine scrolling to OR in next line of pixels
+     842:	70 90 0d 38 	lds	r7, 0x380D	; 0x80380d <winYfine>
+     846:	88 e0       	ldi	r24, 0x08	; 8
+     848:	88 2e       	mov	r8, r24
+     84a:	87 18       	sub	r8, r7
+		uint8_t coarseY = winY * 16;                           //Get the course Y value for top line of visible screen
+     84c:	60 90 0e 38 	lds	r6, 0x380E	; 0x80380e <winY>
+     850:	66 0c       	add	r6, r6
+     852:	66 0c       	add	r6, r6
+     854:	66 0c       	add	r6, r6
+     856:	66 0c       	add	r6, r6
+		
+		for (uint8_t row = 0 ; row < 8 ; row++) {               //Draw the 8 tile row high display
+     858:	51 2c       	mov	r5, r1
+	
+}
+
+void drawTiles(const char *tileData, uint8_t *tileMapPointer) {
+
+	uint16_t bufPoint = 0;
+     85a:	40 e0       	ldi	r20, 0x00	; 0
+     85c:	50 e0       	ldi	r21, 0x00	; 0
+	if (scrollDirection) {					//Vertical?
+		
+		uint8_t winYfineINV = 8 - winYfine;				//Get remainder of Y fine scrolling to OR in next line of pixels
+		uint8_t coarseY = winY * 16;                           //Get the course Y value for top line of visible screen
+		
+		for (uint8_t row = 0 ; row < 8 ; row++) {               //Draw the 8 tile row high display
+     85e:	7f c0       	rjmp	.+254    	; 0x95e <drawTiles+0x14c>
+
+			uint8_t finePointer = winXfine[row];						//Copy the fine scrolling amount so we can use it as a byte pointer when scanning in graphics
+     860:	e5 2d       	mov	r30, r5
+     862:	f0 e0       	ldi	r31, 0x00	; 0
+     864:	ef 5d       	subi	r30, 0xDF	; 223
+     866:	f7 4c       	sbci	r31, 0xC7	; 199
+     868:	a0 81       	ld	r26, Z
+			uint8_t coarseXpointerU = (tileMapPointer[coarseY] * 8) + finePointer;
+     86a:	e6 2c       	mov	r14, r6
+     86c:	f1 2c       	mov	r15, r1
+     86e:	68 01       	movw	r12, r16
+     870:	ce 0c       	add	r12, r14
+     872:	df 1c       	adc	r13, r15
+     874:	f6 01       	movw	r30, r12
+     876:	20 81       	ld	r18, Z
+     878:	22 0f       	add	r18, r18
+     87a:	22 0f       	add	r18, r18
+     87c:	22 0f       	add	r18, r18
+     87e:	2a 0f       	add	r18, r26
+			uint16_t coarseXpointerL; // = (tileMapPointer[coarseY + 16] * 8) + finePointer;
+			if (coarseY == 240) {
+     880:	f0 ef       	ldi	r31, 0xF0	; 240
+     882:	6f 12       	cpse	r6, r31
+     884:	0d c0       	rjmp	.+26     	; 0x8a0 <drawTiles+0x8e>
+				coarseXpointerL = (tileMapPointer[0] * 8) + finePointer;
+     886:	f8 01       	movw	r30, r16
+     888:	80 81       	ld	r24, Z
+     88a:	90 e0       	ldi	r25, 0x00	; 0
+     88c:	88 0f       	add	r24, r24
+     88e:	99 1f       	adc	r25, r25
+     890:	88 0f       	add	r24, r24
+     892:	99 1f       	adc	r25, r25
+     894:	88 0f       	add	r24, r24
+     896:	99 1f       	adc	r25, r25
+     898:	8a 0f       	add	r24, r26
+     89a:	91 1d       	adc	r25, r1
+				uint8_t lower = pgm_read_byte(tileData + coarseXpointerL++) << winYfineINV;
+				
+				buffer[bufPoint++] = upper | lower;
+	
+				if (++finePointer == 8) {								//Done drawing this tile?
+					finePointer = 0;                                //Reset fine scroll counter
+     89c:	b0 e0       	ldi	r27, 0x00	; 0
+     89e:	59 c0       	rjmp	.+178    	; 0x952 <drawTiles+0x140>
+			uint16_t coarseXpointerL; // = (tileMapPointer[coarseY + 16] * 8) + finePointer;
+			if (coarseY == 240) {
+				coarseXpointerL = (tileMapPointer[0] * 8) + finePointer;
+			}
+			else {
+				coarseXpointerL = (tileMapPointer[coarseY + 16] * 8) + finePointer;
+     8a0:	f8 01       	movw	r30, r16
+     8a2:	ee 0d       	add	r30, r14
+     8a4:	ff 1d       	adc	r31, r15
+     8a6:	80 89       	ldd	r24, Z+16	; 0x10
+     8a8:	90 e0       	ldi	r25, 0x00	; 0
+     8aa:	88 0f       	add	r24, r24
+     8ac:	99 1f       	adc	r25, r25
+     8ae:	88 0f       	add	r24, r24
+     8b0:	99 1f       	adc	r25, r25
+     8b2:	88 0f       	add	r24, r24
+     8b4:	99 1f       	adc	r25, r25
+     8b6:	8a 0f       	add	r24, r26
+     8b8:	91 1d       	adc	r25, r1
+     8ba:	f0 cf       	rjmp	.-32     	; 0x89c <drawTiles+0x8a>
+			}
+					
+			for (uint8_t colB = 0 ; colB < 128 ; colB++) {         //Draw 16 column wide display (8 pixels / 1 char at a time)
+
+				uint8_t upper = pgm_read_byte(tileData + coarseXpointerU++) >> winYfine;
+     8bc:	99 24       	eor	r9, r9
+     8be:	93 94       	inc	r9
+     8c0:	92 0e       	add	r9, r18
+     8c2:	fe 01       	movw	r30, r28
+     8c4:	e2 0f       	add	r30, r18
+     8c6:	f1 1d       	adc	r31, r1
+     8c8:	24 91       	lpm	r18, Z
+     8ca:	30 e0       	ldi	r19, 0x00	; 0
+     8cc:	07 2c       	mov	r0, r7
+     8ce:	02 c0       	rjmp	.+4      	; 0x8d4 <drawTiles+0xc2>
+     8d0:	35 95       	asr	r19
+     8d2:	27 95       	ror	r18
+     8d4:	0a 94       	dec	r0
+     8d6:	e2 f7       	brpl	.-8      	; 0x8d0 <drawTiles+0xbe>
+				uint8_t lower = pgm_read_byte(tileData + coarseXpointerL++) << winYfineINV;
+     8d8:	bc 01       	movw	r22, r24
+     8da:	6f 5f       	subi	r22, 0xFF	; 255
+     8dc:	7f 4f       	sbci	r23, 0xFF	; 255
+     8de:	fe 01       	movw	r30, r28
+     8e0:	e8 0f       	add	r30, r24
+     8e2:	f9 1f       	adc	r31, r25
+     8e4:	e4 91       	lpm	r30, Z
+     8e6:	f0 e0       	ldi	r31, 0x00	; 0
+     8e8:	08 2c       	mov	r0, r8
+     8ea:	02 c0       	rjmp	.+4      	; 0x8f0 <drawTiles+0xde>
+     8ec:	ee 0f       	add	r30, r30
+     8ee:	ff 1f       	adc	r31, r31
+     8f0:	0a 94       	dec	r0
+     8f2:	e2 f7       	brpl	.-8      	; 0x8ec <drawTiles+0xda>
+				
+				buffer[bufPoint++] = upper | lower;
+     8f4:	5a 01       	movw	r10, r20
+     8f6:	8f ef       	ldi	r24, 0xFF	; 255
+     8f8:	a8 1a       	sub	r10, r24
+     8fa:	b8 0a       	sbc	r11, r24
+     8fc:	4f 5c       	subi	r20, 0xCF	; 207
+     8fe:	57 4c       	sbci	r21, 0xC7	; 199
+     900:	2e 2b       	or	r18, r30
+     902:	fa 01       	movw	r30, r20
+     904:	20 83       	st	Z, r18
+	
+				if (++finePointer == 8) {								//Done drawing this tile?
+     906:	af 5f       	subi	r26, 0xFF	; 255
+     908:	a8 30       	cpi	r26, 0x08	; 8
+     90a:	f9 f4       	brne	.+62     	; 0x94a <drawTiles+0x138>
+					finePointer = 0;                                //Reset fine scroll counter
+					coarseXpointerU = tileMapPointer[coarseY] * 8;		//Get new tile pointer from memory
+     90c:	f6 01       	movw	r30, r12
+     90e:	90 80       	ld	r9, Z
+     910:	99 0c       	add	r9, r9
+     912:	99 0c       	add	r9, r9
+     914:	99 0c       	add	r9, r9
+					if (coarseY == 240) {						
+     916:	f0 ef       	ldi	r31, 0xF0	; 240
+     918:	6f 12       	cpse	r6, r31
+     91a:	0b c0       	rjmp	.+22     	; 0x932 <drawTiles+0x120>
+						coarseXpointerL = tileMapPointer[0] * 8;						
+     91c:	f8 01       	movw	r30, r16
+     91e:	60 81       	ld	r22, Z
+     920:	70 e0       	ldi	r23, 0x00	; 0
+     922:	66 0f       	add	r22, r22
+     924:	77 1f       	adc	r23, r23
+     926:	66 0f       	add	r22, r22
+     928:	77 1f       	adc	r23, r23
+     92a:	66 0f       	add	r22, r22
+     92c:	77 1f       	adc	r23, r23
+				uint8_t lower = pgm_read_byte(tileData + coarseXpointerL++) << winYfineINV;
+				
+				buffer[bufPoint++] = upper | lower;
+	
+				if (++finePointer == 8) {								//Done drawing this tile?
+					finePointer = 0;                                //Reset fine scroll counter
+     92e:	a0 e0       	ldi	r26, 0x00	; 0
+     930:	0c c0       	rjmp	.+24     	; 0x94a <drawTiles+0x138>
+					coarseXpointerU = tileMapPointer[coarseY] * 8;		//Get new tile pointer from memory
+					if (coarseY == 240) {						
+						coarseXpointerL = tileMapPointer[0] * 8;						
+					}
+					else {
+						coarseXpointerL = tileMapPointer[coarseY + 16] * 8;						
+     932:	f8 01       	movw	r30, r16
+     934:	ee 0d       	add	r30, r14
+     936:	ff 1d       	adc	r31, r15
+     938:	60 89       	ldd	r22, Z+16	; 0x10
+     93a:	70 e0       	ldi	r23, 0x00	; 0
+     93c:	66 0f       	add	r22, r22
+     93e:	77 1f       	adc	r23, r23
+     940:	66 0f       	add	r22, r22
+     942:	77 1f       	adc	r23, r23
+     944:	66 0f       	add	r22, r22
+     946:	77 1f       	adc	r23, r23
+				uint8_t lower = pgm_read_byte(tileData + coarseXpointerL++) << winYfineINV;
+				
+				buffer[bufPoint++] = upper | lower;
+	
+				if (++finePointer == 8) {								//Done drawing this tile?
+					finePointer = 0;                                //Reset fine scroll counter
+     948:	a0 e0       	ldi	r26, 0x00	; 0
+			}
+			else {
+				coarseXpointerL = (tileMapPointer[coarseY + 16] * 8) + finePointer;
+			}
+					
+			for (uint8_t colB = 0 ; colB < 128 ; colB++) {         //Draw 16 column wide display (8 pixels / 1 char at a time)
+     94a:	bf 5f       	subi	r27, 0xFF	; 255
+     94c:	cb 01       	movw	r24, r22
+     94e:	29 2d       	mov	r18, r9
+
+				uint8_t upper = pgm_read_byte(tileData + coarseXpointerU++) >> winYfine;
+				uint8_t lower = pgm_read_byte(tileData + coarseXpointerL++) << winYfineINV;
+				
+				buffer[bufPoint++] = upper | lower;
+     950:	a5 01       	movw	r20, r10
+			}
+			else {
+				coarseXpointerL = (tileMapPointer[coarseY + 16] * 8) + finePointer;
+			}
+					
+			for (uint8_t colB = 0 ; colB < 128 ; colB++) {         //Draw 16 column wide display (8 pixels / 1 char at a time)
+     952:	bb 23       	and	r27, r27
+     954:	0c f0       	brlt	.+2      	; 0x958 <drawTiles+0x146>
+     956:	b2 cf       	rjmp	.-156    	; 0x8bc <drawTiles+0xaa>
+						coarseXpointerL = tileMapPointer[coarseY + 16] * 8;						
+					}	
+				}				
+			}
+
+			coarseY += 16;                                            //Increment coarse pointer to next row
+     958:	f0 e1       	ldi	r31, 0x10	; 16
+     95a:	6f 0e       	add	r6, r31
+	if (scrollDirection) {					//Vertical?
+		
+		uint8_t winYfineINV = 8 - winYfine;				//Get remainder of Y fine scrolling to OR in next line of pixels
+		uint8_t coarseY = winY * 16;                           //Get the course Y value for top line of visible screen
+		
+		for (uint8_t row = 0 ; row < 8 ; row++) {               //Draw the 8 tile row high display
+     95c:	53 94       	inc	r5
+     95e:	27 e0       	ldi	r18, 0x07	; 7
+     960:	25 15       	cp	r18, r5
+     962:	08 f0       	brcs	.+2      	; 0x966 <drawTiles+0x154>
+     964:	7d cf       	rjmp	.-262    	; 0x860 <drawTiles+0x4e>
+     966:	50 c0       	rjmp	.+160    	; 0xa08 <drawTiles+0x1f6>
+		
+		uint8_t coarseY = 0;                           //Get the course Y value for top line of visible screen
+  	
+		for (uint8_t row = 0 ; row < 8 ; row++) {               //Draw the 8 tile row high display
+
+			uint8_t finePointer = winXfine[row];						//Copy the fine scrolling amount so we can use it as a byte pointer when scanning in graphics
+     968:	2e 2d       	mov	r18, r14
+     96a:	30 e0       	ldi	r19, 0x00	; 0
+     96c:	f9 01       	movw	r30, r18
+     96e:	ef 5d       	subi	r30, 0xDF	; 223
+     970:	f7 4c       	sbci	r31, 0xC7	; 199
+     972:	60 81       	ld	r22, Z
+			uint8_t coarseX = winX[row];								//Find the current coarseX position for this line
+     974:	f9 01       	movw	r30, r18
+     976:	e7 5d       	subi	r30, 0xD7	; 215
+     978:	f7 4c       	sbci	r31, 0xC7	; 199
+     97a:	f0 80       	ld	r15, Z
+			uint16_t coarseXpointer = (tileMapPointer[coarseX + coarseY] * 8) + finePointer;
+     97c:	2d 2d       	mov	r18, r13
+     97e:	30 e0       	ldi	r19, 0x00	; 0
+     980:	f9 01       	movw	r30, r18
+     982:	ef 0d       	add	r30, r15
+     984:	f1 1d       	adc	r31, r1
+     986:	e0 0f       	add	r30, r16
+     988:	f1 1f       	adc	r31, r17
+     98a:	e0 81       	ld	r30, Z
+     98c:	f0 e0       	ldi	r31, 0x00	; 0
+     98e:	ee 0f       	add	r30, r30
+     990:	ff 1f       	adc	r31, r31
+     992:	ee 0f       	add	r30, r30
+     994:	ff 1f       	adc	r31, r31
+     996:	ee 0f       	add	r30, r30
+     998:	ff 1f       	adc	r31, r31
+     99a:	e6 0f       	add	r30, r22
+     99c:	f1 1d       	adc	r31, r1
+
+			for (uint8_t colB = 0 ; colB < 128 ; colB++) {         //Draw 16 column wide display (8 pixels / 1 char at a time)
+     99e:	70 e0       	ldi	r23, 0x00	; 0
+     9a0:	25 c0       	rjmp	.+74     	; 0x9ec <drawTiles+0x1da>
+
+				buffer[bufPoint++] = pgm_read_byte(tileData + coarseXpointer++);
+     9a2:	dc 01       	movw	r26, r24
+     9a4:	11 96       	adiw	r26, 0x01	; 1
+     9a6:	af 01       	movw	r20, r30
+     9a8:	4f 5f       	subi	r20, 0xFF	; 255
+     9aa:	5f 4f       	sbci	r21, 0xFF	; 255
+     9ac:	ec 0f       	add	r30, r28
+     9ae:	fd 1f       	adc	r31, r29
+     9b0:	c4 90       	lpm	r12, Z
+     9b2:	8f 5c       	subi	r24, 0xCF	; 207
+     9b4:	97 4c       	sbci	r25, 0xC7	; 199
+     9b6:	fc 01       	movw	r30, r24
+     9b8:	c0 82       	st	Z, r12
+	
+				if (++finePointer == 8) {									//Done drawing this tile?
+     9ba:	6f 5f       	subi	r22, 0xFF	; 255
+     9bc:	68 30       	cpi	r22, 0x08	; 8
+     9be:	99 f4       	brne	.+38     	; 0x9e6 <drawTiles+0x1d4>
+					finePointer = 0;										//Reset fine scroll counter
+					if (++coarseX > 31) {
+     9c0:	f3 94       	inc	r15
+     9c2:	ff e1       	ldi	r31, 0x1F	; 31
+     9c4:	ff 15       	cp	r31, r15
+     9c6:	08 f4       	brcc	.+2      	; 0x9ca <drawTiles+0x1b8>
+						coarseX = 0;
+     9c8:	f1 2c       	mov	r15, r1
+					}
+					coarseXpointer = tileMapPointer[coarseX + coarseY] * 8;		//Get new tile pointer from memory
+     9ca:	f9 01       	movw	r30, r18
+     9cc:	ef 0d       	add	r30, r15
+     9ce:	f1 1d       	adc	r31, r1
+     9d0:	e0 0f       	add	r30, r16
+     9d2:	f1 1f       	adc	r31, r17
+     9d4:	40 81       	ld	r20, Z
+     9d6:	50 e0       	ldi	r21, 0x00	; 0
+     9d8:	44 0f       	add	r20, r20
+     9da:	55 1f       	adc	r21, r21
+     9dc:	44 0f       	add	r20, r20
+     9de:	55 1f       	adc	r21, r21
+     9e0:	44 0f       	add	r20, r20
+     9e2:	55 1f       	adc	r21, r21
+			for (uint8_t colB = 0 ; colB < 128 ; colB++) {         //Draw 16 column wide display (8 pixels / 1 char at a time)
+
+				buffer[bufPoint++] = pgm_read_byte(tileData + coarseXpointer++);
+	
+				if (++finePointer == 8) {									//Done drawing this tile?
+					finePointer = 0;										//Reset fine scroll counter
+     9e4:	60 e0       	ldi	r22, 0x00	; 0
+
+			uint8_t finePointer = winXfine[row];						//Copy the fine scrolling amount so we can use it as a byte pointer when scanning in graphics
+			uint8_t coarseX = winX[row];								//Find the current coarseX position for this line
+			uint16_t coarseXpointer = (tileMapPointer[coarseX + coarseY] * 8) + finePointer;
+
+			for (uint8_t colB = 0 ; colB < 128 ; colB++) {         //Draw 16 column wide display (8 pixels / 1 char at a time)
+     9e6:	7f 5f       	subi	r23, 0xFF	; 255
+     9e8:	fa 01       	movw	r30, r20
+
+				buffer[bufPoint++] = pgm_read_byte(tileData + coarseXpointer++);
+     9ea:	cd 01       	movw	r24, r26
+
+			uint8_t finePointer = winXfine[row];						//Copy the fine scrolling amount so we can use it as a byte pointer when scanning in graphics
+			uint8_t coarseX = winX[row];								//Find the current coarseX position for this line
+			uint16_t coarseXpointer = (tileMapPointer[coarseX + coarseY] * 8) + finePointer;
+
+			for (uint8_t colB = 0 ; colB < 128 ; colB++) {         //Draw 16 column wide display (8 pixels / 1 char at a time)
+     9ec:	77 23       	and	r23, r23
+     9ee:	cc f6       	brge	.-78     	; 0x9a2 <drawTiles+0x190>
+					coarseXpointer = tileMapPointer[coarseX + coarseY] * 8;		//Get new tile pointer from memory
+				}
+			
+			}
+
+			coarseY += 32;                                            //Increment coarse pointer to next row
+     9f0:	20 e2       	ldi	r18, 0x20	; 32
+     9f2:	d2 0e       	add	r13, r18
+	}
+	else {								//Horizontal?
+		
+		uint8_t coarseY = 0;                           //Get the course Y value for top line of visible screen
+  	
+		for (uint8_t row = 0 ; row < 8 ; row++) {               //Draw the 8 tile row high display
+     9f4:	e3 94       	inc	r14
+     9f6:	04 c0       	rjmp	.+8      	; 0xa00 <drawTiles+0x1ee>
+     9f8:	e1 2c       	mov	r14, r1
+     9fa:	d1 2c       	mov	r13, r1
+     9fc:	80 e0       	ldi	r24, 0x00	; 0
+     9fe:	90 e0       	ldi	r25, 0x00	; 0
+     a00:	e7 e0       	ldi	r30, 0x07	; 7
+     a02:	ee 15       	cp	r30, r14
+     a04:	08 f0       	brcs	.+2      	; 0xa08 <drawTiles+0x1f6>
+     a06:	b0 cf       	rjmp	.-160    	; 0x968 <drawTiles+0x156>
+			coarseY += 32;                                            //Increment coarse pointer to next row
+		
+		}		
+	}
+
+	csHigh();
+     a08:	0e 94 cf 03 	call	0x79e	; 0x79e <csHigh>
+
+}
+     a0c:	df 91       	pop	r29
+     a0e:	cf 91       	pop	r28
+     a10:	1f 91       	pop	r17
+     a12:	0f 91       	pop	r16
+     a14:	ff 90       	pop	r15
+     a16:	ef 90       	pop	r14
+     a18:	df 90       	pop	r13
+     a1a:	cf 90       	pop	r12
+     a1c:	bf 90       	pop	r11
+     a1e:	af 90       	pop	r10
+     a20:	9f 90       	pop	r9
+     a22:	8f 90       	pop	r8
+     a24:	7f 90       	pop	r7
+     a26:	6f 90       	pop	r6
+     a28:	5f 90       	pop	r5
+     a2a:	08 95       	ret
+
+00000a2c <writecommand>:
+	
+	SPI0_CTRLB = SPI_BUFEN_bm;								//Resume SPI buffer mode
+	
+}
+
+void writecommand(uint8_t c) {
+     a2c:	cf 93       	push	r28
+     a2e:	c8 2f       	mov	r28, r24
+
+	dcLow();
+     a30:	0e 94 cb 03 	call	0x796	; 0x796 <dcLow>
+	csLow();
+     a34:	0e 94 d3 03 	call	0x7a6	; 0x7a6 <csLow>
+	sendSPI(c);
+     a38:	8c 2f       	mov	r24, r28
+     a3a:	0e 94 c0 03 	call	0x780	; 0x780 <sendSPI>
+	csHigh();
+     a3e:	0e 94 cf 03 	call	0x79e	; 0x79e <csHigh>
+	dcHigh();
+     a42:	0e 94 c7 03 	call	0x78e	; 0x78e <dcHigh>
+		
+}
+     a46:	cf 91       	pop	r28
+     a48:	08 95       	ret
+
+00000a4a <displayInit>:
+
+uint8_t displaySleep = 0;
+
+void displayInit() {
+
+	csLow();	
+     a4a:	0e 94 d3 03 	call	0x7a6	; 0x7a6 <csLow>
+	PORTA_OUTCLR = 0x10;				//LCD reset
+     a4e:	80 e1       	ldi	r24, 0x10	; 16
+     a50:	80 93 06 04 	sts	0x0406, r24	; 0x800406 <__RODATA_PM_OFFSET__+0x7f8406>
+	PORTA_OUTSET = 0x10;				//LCD reset
+     a54:	80 93 05 04 	sts	0x0405, r24	; 0x800405 <__RODATA_PM_OFFSET__+0x7f8405>
+	csHigh();
+     a58:	0e 94 cf 03 	call	0x79e	; 0x79e <csHigh>
+
+    // Init sequence for 128x64 OLED module
+    writecommand(SSD1306_DISPLAYOFF);                    // 0xAE
+     a5c:	8e ea       	ldi	r24, 0xAE	; 174
+     a5e:	0e 94 16 05 	call	0xa2c	; 0xa2c <writecommand>
+	
+    writecommand(SSD1306_SETDISPLAYCLOCKDIV);            // 0xD5
+     a62:	85 ed       	ldi	r24, 0xD5	; 213
+     a64:	0e 94 16 05 	call	0xa2c	; 0xa2c <writecommand>
+    writecommand(0x80);									// the suggested ratio 0x80
+     a68:	80 e8       	ldi	r24, 0x80	; 128
+     a6a:	0e 94 16 05 	call	0xa2c	; 0xa2c <writecommand>
+    
+    writecommand(SSD1306_SETMULTIPLEX);                  // 0xA8
+     a6e:	88 ea       	ldi	r24, 0xA8	; 168
+     a70:	0e 94 16 05 	call	0xa2c	; 0xa2c <writecommand>
+    writecommand(0x3F);
+     a74:	8f e3       	ldi	r24, 0x3F	; 63
+     a76:	0e 94 16 05 	call	0xa2c	; 0xa2c <writecommand>
+    
+    writecommand(SSD1306_SETDISPLAYOFFSET);              // 0xD3
+     a7a:	83 ed       	ldi	r24, 0xD3	; 211
+     a7c:	0e 94 16 05 	call	0xa2c	; 0xa2c <writecommand>
+    writecommand(0x0);                                   // no offset
+     a80:	80 e0       	ldi	r24, 0x00	; 0
+     a82:	0e 94 16 05 	call	0xa2c	; 0xa2c <writecommand>
+    
+    writecommand(SSD1306_SETSTARTLINE);// | 0x0);        // line #0
+     a86:	80 e4       	ldi	r24, 0x40	; 64
+     a88:	0e 94 16 05 	call	0xa2c	; 0xa2c <writecommand>
+    
+    writecommand(SSD1306_CHARGEPUMP);                    // 0x8D
+     a8c:	8d e8       	ldi	r24, 0x8D	; 141
+     a8e:	0e 94 16 05 	call	0xa2c	; 0xa2c <writecommand>
+    writecommand(0x14);  // using internal VCC
+     a92:	84 e1       	ldi	r24, 0x14	; 20
+     a94:	0e 94 16 05 	call	0xa2c	; 0xa2c <writecommand>
+    
+    writecommand(SSD1306_MEMORYMODE);                    // 0x20
+     a98:	80 e2       	ldi	r24, 0x20	; 32
+     a9a:	0e 94 16 05 	call	0xa2c	; 0xa2c <writecommand>
+    //writecommand(0x01);									// 0x00 vertical addressing
+    writecommand(0x00);									// 0x00 horizontal addressing
+     a9e:	80 e0       	ldi	r24, 0x00	; 0
+     aa0:	0e 94 16 05 	call	0xa2c	; 0xa2c <writecommand>
+    
+    writecommand(SSD1306_SEGREMAP | 0x01);				// rotate screen 180
+     aa4:	81 ea       	ldi	r24, 0xA1	; 161
+     aa6:	0e 94 16 05 	call	0xa2c	; 0xa2c <writecommand>
+    
+    writecommand(SSD1306_COMSCANDEC);					// rotate screen 180
+     aaa:	88 ec       	ldi	r24, 0xC8	; 200
+     aac:	0e 94 16 05 	call	0xa2c	; 0xa2c <writecommand>
+    
+    writecommand(SSD1306_SETCOMPINS);                    // 0xDA
+     ab0:	8a ed       	ldi	r24, 0xDA	; 218
+     ab2:	0e 94 16 05 	call	0xa2c	; 0xa2c <writecommand>
+    writecommand(0x12);
+     ab6:	82 e1       	ldi	r24, 0x12	; 18
+     ab8:	0e 94 16 05 	call	0xa2c	; 0xa2c <writecommand>
+    
+    writecommand(SSD1306_SETCONTRAST);                   // 0x81
+     abc:	81 e8       	ldi	r24, 0x81	; 129
+     abe:	0e 94 16 05 	call	0xa2c	; 0xa2c <writecommand>
+    writecommand(0x8F);
+     ac2:	8f e8       	ldi	r24, 0x8F	; 143
+     ac4:	0e 94 16 05 	call	0xa2c	; 0xa2c <writecommand>
+    
+    writecommand(SSD1306_SETPRECHARGE);                  // 0xd9
+     ac8:	89 ed       	ldi	r24, 0xD9	; 217
+     aca:	0e 94 16 05 	call	0xa2c	; 0xa2c <writecommand>
+    writecommand(0xF1);
+     ace:	81 ef       	ldi	r24, 0xF1	; 241
+     ad0:	0e 94 16 05 	call	0xa2c	; 0xa2c <writecommand>
+    
+    writecommand(SSD1306_SETVCOMDETECT);                 // 0xDB
+     ad4:	8b ed       	ldi	r24, 0xDB	; 219
+     ad6:	0e 94 16 05 	call	0xa2c	; 0xa2c <writecommand>
+    writecommand(0x40);
+     ada:	80 e4       	ldi	r24, 0x40	; 64
+     adc:	0e 94 16 05 	call	0xa2c	; 0xa2c <writecommand>
+    
+    writecommand(SSD1306_DISPLAYALLON_RESUME);           // 0xA4
+     ae0:	84 ea       	ldi	r24, 0xA4	; 164
+     ae2:	0e 94 16 05 	call	0xa2c	; 0xa2c <writecommand>
+    
+    writecommand(SSD1306_NORMALDISPLAY);                 // 0xA6
+     ae6:	86 ea       	ldi	r24, 0xA6	; 166
+     ae8:	0e 94 16 05 	call	0xa2c	; 0xa2c <writecommand>
+    
+    writecommand(SSD1306_DISPLAYON);                     //switch on OLED
+     aec:	8f ea       	ldi	r24, 0xAF	; 175
+     aee:	0e 94 16 05 	call	0xa2c	; 0xa2c <writecommand>
+     af2:	08 95       	ret
+
+00000af4 <displayOnOff>:
+	
+}
+
+void displayOnOff(uint8_t whatState) {
+	
+	SPI0_CTRLB = 0;											//Disable SPI buffer mode since we are sending single byte commands
+     af4:	10 92 21 08 	sts	0x0821, r1	; 0x800821 <__RODATA_PM_OFFSET__+0x7f8821>
+
+	if (whatState) {
+     af8:	88 23       	and	r24, r24
+     afa:	29 f0       	breq	.+10     	; 0xb06 <displayOnOff+0x12>
+		displayInit();
+     afc:	0e 94 25 05 	call	0xa4a	; 0xa4a <displayInit>
+		displaySleep = 0;									//Reset OLED to wake it back up
+     b00:	10 92 0a 38 	sts	0x380A, r1	; 0x80380a <__data_end>
+     b04:	06 c0       	rjmp	.+12     	; 0xb12 <displayOnOff+0x1e>
+	}
+	else {
+		writecommand(SSD1306_DISPLAYOFF);                   //Sleep the OLED
+     b06:	8e ea       	ldi	r24, 0xAE	; 174
+     b08:	0e 94 16 05 	call	0xa2c	; 0xa2c <writecommand>
+		displaySleep = 1;
+     b0c:	81 e0       	ldi	r24, 0x01	; 1
+     b0e:	80 93 0a 38 	sts	0x380A, r24	; 0x80380a <__data_end>
+	}
+	
+	SPI0_CTRLB = SPI_BUFEN_bm;								//Resume SPI buffer mode
+     b12:	80 e8       	ldi	r24, 0x80	; 128
+     b14:	80 93 21 08 	sts	0x0821, r24	; 0x800821 <__RODATA_PM_OFFSET__+0x7f8821>
+     b18:	08 95       	ret
+
+00000b1a <gotoSleep>:
+	
+}
+
+void gotoSleep() {
+
+	sleepState = 1;
+     b1a:	81 e0       	ldi	r24, 0x01	; 1
+     b1c:	80 93 1e 38 	sts	0x381E, r24	; 0x80381e <sleepState>
+	displayOnOff(0);
+     b20:	80 e0       	ldi	r24, 0x00	; 0
+     b22:	0e 94 7a 05 	call	0xaf4	; 0xaf4 <displayOnOff>
+	ledState(0);
+     b26:	80 e0       	ldi	r24, 0x00	; 0
+     b28:	0e 94 d0 02 	call	0x5a0	; 0x5a0 <ledState>
+     b2c:	08 95       	ret
+
+00000b2e <gameFrame>:
+		}
+    }
+	
+}
+
+void gameFrame() {							//This function is called at 50Hz
+     b2e:	0f 93       	push	r16
+     b30:	cf 93       	push	r28
+     b32:	df 93       	push	r29
+
+	gamePad = screenLoad();			//Draw the screen and get the buttons
+     b34:	0e 94 d7 03 	call	0x7ae	; 0x7ae <screenLoad>
+     b38:	80 93 31 3d 	sts	0x3D31, r24	; 0x803d31 <gamePad>
+
+	drawTiles(tileData, tileMap);
+     b3c:	61 e3       	ldi	r22, 0x31	; 49
+     b3e:	7c e3       	ldi	r23, 0x3C	; 60
+     b40:	8c e7       	ldi	r24, 0x7C	; 124
+     b42:	90 e0       	ldi	r25, 0x00	; 0
+     b44:	0e 94 09 04 	call	0x812	; 0x812 <drawTiles>
+	
+	drawSprite(beastTree, beastTreeX, 8, 0, treeFlip);				//Tree Y pos on byte boundry = MOAR SPEED
+     b48:	00 91 05 38 	lds	r16, 0x3805	; 0x803805 <treeFlip>
+     b4c:	20 e0       	ldi	r18, 0x00	; 0
+     b4e:	48 e0       	ldi	r20, 0x08	; 8
+     b50:	60 91 06 38 	lds	r22, 0x3806	; 0x803806 <beastTreeX>
+     b54:	82 e9       	ldi	r24, 0x92	; 146
+     b56:	93 e0       	ldi	r25, 0x03	; 3
+     b58:	0e 94 e9 02 	call	0x5d2	; 0x5d2 <drawSprite>
+	
+	drawSprite(ship, 20, y, shipFrame, shipDir);
+     b5c:	00 91 02 38 	lds	r16, 0x3802	; 0x803802 <shipDir>
+     b60:	20 91 14 38 	lds	r18, 0x3814	; 0x803814 <shipFrame>
+     b64:	40 91 03 38 	lds	r20, 0x3803	; 0x803803 <y>
+     b68:	64 e1       	ldi	r22, 0x14	; 20
+     b6a:	80 e7       	ldi	r24, 0x70	; 112
+     b6c:	92 e0       	ldi	r25, 0x02	; 2
+     b6e:	0e 94 e9 02 	call	0x5d2	; 0x5d2 <drawSprite>
+	//if (--floaty < -40) {
+		//floaty = 150;
+		//sinePointer[0] = 0;
+	//}
+	
+	drawSprite(debris, debrisX, 56, 0, normalSprite);					//Attaching fake parallax sprites on row boundries = faster sprite blit
+     b72:	c5 e1       	ldi	r28, 0x15	; 21
+     b74:	d8 e3       	ldi	r29, 0x38	; 56
+     b76:	01 e0       	ldi	r16, 0x01	; 1
+     b78:	20 e0       	ldi	r18, 0x00	; 0
+     b7a:	48 e3       	ldi	r20, 0x38	; 56
+     b7c:	68 81       	ld	r22, Y
+     b7e:	8e e1       	ldi	r24, 0x1E	; 30
+     b80:	92 e0       	ldi	r25, 0x02	; 2
+     b82:	0e 94 e9 02 	call	0x5d2	; 0x5d2 <drawSprite>
+	drawSprite(debrisTop, debrisX + 8, 48, 0, normalSprite);
+     b86:	68 81       	ld	r22, Y
+     b88:	68 5f       	subi	r22, 0xF8	; 248
+     b8a:	20 e0       	ldi	r18, 0x00	; 0
+     b8c:	40 e3       	ldi	r20, 0x30	; 48
+     b8e:	8c ef       	ldi	r24, 0xFC	; 252
+     b90:	91 e0       	ldi	r25, 0x01	; 1
+     b92:	0e 94 e9 02 	call	0x5d2	; 0x5d2 <drawSprite>
+
+	shipFrame = 0;			//Default
+     b96:	10 92 14 38 	sts	0x3814, r1	; 0x803814 <shipFrame>
+
+	if (gamePad & dB) {
+     b9a:	80 91 31 3d 	lds	r24, 0x3D31	; 0x803d31 <gamePad>
+     b9e:	86 fd       	sbrc	r24, 6
+		gotoSleep();
+     ba0:	0e 94 8d 05 	call	0xb1a	; 0xb1a <gotoSleep>
+	}
+
+	if (gamePad & dUp && y > 0) {
+     ba4:	80 91 31 3d 	lds	r24, 0x3D31	; 0x803d31 <gamePad>
+     ba8:	80 ff       	sbrs	r24, 0
+     baa:	10 c0       	rjmp	.+32     	; 0xbcc <gameFrame+0x9e>
+     bac:	20 91 03 38 	lds	r18, 0x3803	; 0x803803 <y>
+     bb0:	30 91 04 38 	lds	r19, 0x3804	; 0x803804 <y+0x1>
+     bb4:	12 16       	cp	r1, r18
+     bb6:	13 06       	cpc	r1, r19
+     bb8:	4c f4       	brge	.+18     	; 0xbcc <gameFrame+0x9e>
+		y--;
+     bba:	21 50       	subi	r18, 0x01	; 1
+     bbc:	31 09       	sbc	r19, r1
+     bbe:	20 93 03 38 	sts	0x3803, r18	; 0x803803 <y>
+     bc2:	30 93 04 38 	sts	0x3804, r19	; 0x803804 <y+0x1>
+		shipFrame = 2;
+     bc6:	92 e0       	ldi	r25, 0x02	; 2
+     bc8:	90 93 14 38 	sts	0x3814, r25	; 0x803814 <shipFrame>
+	}
+	if (gamePad & dDown && y < 48) {
+     bcc:	81 ff       	sbrs	r24, 1
+     bce:	10 c0       	rjmp	.+32     	; 0xbf0 <gameFrame+0xc2>
+     bd0:	20 91 03 38 	lds	r18, 0x3803	; 0x803803 <y>
+     bd4:	30 91 04 38 	lds	r19, 0x3804	; 0x803804 <y+0x1>
+     bd8:	20 33       	cpi	r18, 0x30	; 48
+     bda:	31 05       	cpc	r19, r1
+     bdc:	4c f4       	brge	.+18     	; 0xbf0 <gameFrame+0xc2>
+		y++;
+     bde:	2f 5f       	subi	r18, 0xFF	; 255
+     be0:	3f 4f       	sbci	r19, 0xFF	; 255
+     be2:	20 93 03 38 	sts	0x3803, r18	; 0x803803 <y>
+     be6:	30 93 04 38 	sts	0x3804, r19	; 0x803804 <y+0x1>
+		shipFrame = 1;
+     bea:	91 e0       	ldi	r25, 0x01	; 1
+     bec:	90 93 14 38 	sts	0x3814, r25	; 0x803814 <shipFrame>
+	}
+	
+	if (gamePad & dLeft) {
+     bf0:	82 ff       	sbrs	r24, 2
+     bf2:	51 c0       	rjmp	.+162    	; 0xc96 <gameFrame+0x168>
+		shipDir = -1;
+     bf4:	8f ef       	ldi	r24, 0xFF	; 255
+     bf6:	80 93 02 38 	sts	0x3802, r24	; 0x803802 <shipDir>
+		x -= 1;
+     bfa:	80 91 17 38 	lds	r24, 0x3817	; 0x803817 <x>
+     bfe:	90 91 18 38 	lds	r25, 0x3818	; 0x803818 <x+0x1>
+     c02:	01 97       	sbiw	r24, 0x01	; 1
+     c04:	80 93 17 38 	sts	0x3817, r24	; 0x803817 <x>
+     c08:	90 93 18 38 	sts	0x3818, r25	; 0x803818 <x+0x1>
+		xx -= 3;
+     c0c:	80 91 10 38 	lds	r24, 0x3810	; 0x803810 <xx>
+     c10:	90 91 11 38 	lds	r25, 0x3811	; 0x803811 <xx+0x1>
+     c14:	03 97       	sbiw	r24, 0x03	; 3
+     c16:	80 93 10 38 	sts	0x3810, r24	; 0x803810 <xx>
+     c1a:	90 93 11 38 	sts	0x3811, r25	; 0x803811 <xx+0x1>
+		floaty++;
+     c1e:	80 91 00 38 	lds	r24, 0x3800	; 0x803800 <__DATA_REGION_ORIGIN__>
+     c22:	90 91 01 38 	lds	r25, 0x3801	; 0x803801 <__DATA_REGION_ORIGIN__+0x1>
+     c26:	01 96       	adiw	r24, 0x01	; 1
+     c28:	80 93 00 38 	sts	0x3800, r24	; 0x803800 <__DATA_REGION_ORIGIN__>
+     c2c:	90 93 01 38 	sts	0x3801, r25	; 0x803801 <__DATA_REGION_ORIGIN__+0x1>
+		if (++beastTreeX == 128) {
+     c30:	80 91 06 38 	lds	r24, 0x3806	; 0x803806 <beastTreeX>
+     c34:	90 91 07 38 	lds	r25, 0x3807	; 0x803807 <beastTreeX+0x1>
+     c38:	01 96       	adiw	r24, 0x01	; 1
+     c3a:	80 93 06 38 	sts	0x3806, r24	; 0x803806 <beastTreeX>
+     c3e:	90 93 07 38 	sts	0x3807, r25	; 0x803807 <beastTreeX+0x1>
+     c42:	80 38       	cpi	r24, 0x80	; 128
+     c44:	91 05       	cpc	r25, r1
+     c46:	31 f4       	brne	.+12     	; 0xc54 <gameFrame+0x126>
+			beastTreeX = -40;
+     c48:	88 ed       	ldi	r24, 0xD8	; 216
+     c4a:	9f ef       	ldi	r25, 0xFF	; 255
+     c4c:	80 93 06 38 	sts	0x3806, r24	; 0x803806 <beastTreeX>
+     c50:	90 93 07 38 	sts	0x3807, r25	; 0x803807 <beastTreeX+0x1>
+		}
+		clouds--;;
+     c54:	80 91 12 38 	lds	r24, 0x3812	; 0x803812 <clouds>
+     c58:	90 91 13 38 	lds	r25, 0x3813	; 0x803813 <clouds+0x1>
+     c5c:	01 97       	sbiw	r24, 0x01	; 1
+     c5e:	80 93 12 38 	sts	0x3812, r24	; 0x803812 <clouds>
+     c62:	90 93 13 38 	sts	0x3813, r25	; 0x803813 <clouds+0x1>
+		debrisX += 4;
+     c66:	80 91 15 38 	lds	r24, 0x3815	; 0x803815 <debrisX>
+     c6a:	90 91 16 38 	lds	r25, 0x3816	; 0x803816 <debrisX+0x1>
+     c6e:	04 96       	adiw	r24, 0x04	; 4
+     c70:	80 93 15 38 	sts	0x3815, r24	; 0x803815 <debrisX>
+     c74:	90 93 16 38 	sts	0x3816, r25	; 0x803816 <debrisX+0x1>
+		if (debrisX > 127) {
+     c78:	80 38       	cpi	r24, 0x80	; 128
+     c7a:	91 05       	cpc	r25, r1
+     c7c:	34 f0       	brlt	.+12     	; 0xc8a <gameFrame+0x15c>
+			debrisX = -40;
+     c7e:	88 ed       	ldi	r24, 0xD8	; 216
+     c80:	9f ef       	ldi	r25, 0xFF	; 255
+     c82:	80 93 15 38 	sts	0x3815, r24	; 0x803815 <debrisX>
+     c86:	90 93 16 38 	sts	0x3816, r25	; 0x803816 <debrisX+0x1>
+		}
+		
+		tone(600, 200);
+     c8a:	68 ec       	ldi	r22, 0xC8	; 200
+     c8c:	70 e0       	ldi	r23, 0x00	; 0
+     c8e:	88 e5       	ldi	r24, 0x58	; 88
+     c90:	92 e0       	ldi	r25, 0x02	; 2
+     c92:	0e 94 c4 02 	call	0x588	; 0x588 <tone>
+	}
+	if (gamePad & dRight) {
+     c96:	80 91 31 3d 	lds	r24, 0x3D31	; 0x803d31 <gamePad>
+     c9a:	83 ff       	sbrs	r24, 3
+     c9c:	52 c0       	rjmp	.+164    	; 0xd42 <gameFrame+0x214>
+		shipDir = 1;
+     c9e:	81 e0       	ldi	r24, 0x01	; 1
+     ca0:	80 93 02 38 	sts	0x3802, r24	; 0x803802 <shipDir>
+		x += 1;
+     ca4:	80 91 17 38 	lds	r24, 0x3817	; 0x803817 <x>
+     ca8:	90 91 18 38 	lds	r25, 0x3818	; 0x803818 <x+0x1>
+     cac:	01 96       	adiw	r24, 0x01	; 1
+     cae:	80 93 17 38 	sts	0x3817, r24	; 0x803817 <x>
+     cb2:	90 93 18 38 	sts	0x3818, r25	; 0x803818 <x+0x1>
+		clouds += 2;
+     cb6:	80 91 12 38 	lds	r24, 0x3812	; 0x803812 <clouds>
+     cba:	90 91 13 38 	lds	r25, 0x3813	; 0x803813 <clouds+0x1>
+     cbe:	02 96       	adiw	r24, 0x02	; 2
+     cc0:	80 93 12 38 	sts	0x3812, r24	; 0x803812 <clouds>
+     cc4:	90 93 13 38 	sts	0x3813, r25	; 0x803813 <clouds+0x1>
+		floaty--;
+     cc8:	80 91 00 38 	lds	r24, 0x3800	; 0x803800 <__DATA_REGION_ORIGIN__>
+     ccc:	90 91 01 38 	lds	r25, 0x3801	; 0x803801 <__DATA_REGION_ORIGIN__+0x1>
+     cd0:	01 97       	sbiw	r24, 0x01	; 1
+     cd2:	80 93 00 38 	sts	0x3800, r24	; 0x803800 <__DATA_REGION_ORIGIN__>
+     cd6:	90 93 01 38 	sts	0x3801, r25	; 0x803801 <__DATA_REGION_ORIGIN__+0x1>
+		if (--beastTreeX == -40) {
+     cda:	80 91 06 38 	lds	r24, 0x3806	; 0x803806 <beastTreeX>
+     cde:	90 91 07 38 	lds	r25, 0x3807	; 0x803807 <beastTreeX+0x1>
+     ce2:	01 97       	sbiw	r24, 0x01	; 1
+     ce4:	80 93 06 38 	sts	0x3806, r24	; 0x803806 <beastTreeX>
+     ce8:	90 93 07 38 	sts	0x3807, r25	; 0x803807 <beastTreeX+0x1>
+     cec:	88 96       	adiw	r24, 0x28	; 40
+     cee:	89 f4       	brne	.+34     	; 0xd12 <gameFrame+0x1e4>
+			beastTreeX = 128;
+     cf0:	80 e8       	ldi	r24, 0x80	; 128
+     cf2:	90 e0       	ldi	r25, 0x00	; 0
+     cf4:	80 93 06 38 	sts	0x3806, r24	; 0x803806 <beastTreeX>
+     cf8:	90 93 07 38 	sts	0x3807, r25	; 0x803807 <beastTreeX+0x1>
+			if (treeFlip == 1) {
+     cfc:	80 91 05 38 	lds	r24, 0x3805	; 0x803805 <treeFlip>
+     d00:	81 30       	cpi	r24, 0x01	; 1
+     d02:	21 f4       	brne	.+8      	; 0xd0c <gameFrame+0x1de>
+				treeFlip = -1;
+     d04:	8f ef       	ldi	r24, 0xFF	; 255
+     d06:	80 93 05 38 	sts	0x3805, r24	; 0x803805 <treeFlip>
+     d0a:	03 c0       	rjmp	.+6      	; 0xd12 <gameFrame+0x1e4>
+			}
+			else {
+				treeFlip = 1;
+     d0c:	81 e0       	ldi	r24, 0x01	; 1
+     d0e:	80 93 05 38 	sts	0x3805, r24	; 0x803805 <treeFlip>
+			}
+		}
+		debrisX -= 4;
+     d12:	80 91 15 38 	lds	r24, 0x3815	; 0x803815 <debrisX>
+     d16:	90 91 16 38 	lds	r25, 0x3816	; 0x803816 <debrisX+0x1>
+     d1a:	04 97       	sbiw	r24, 0x04	; 4
+     d1c:	80 93 15 38 	sts	0x3815, r24	; 0x803815 <debrisX>
+     d20:	90 93 16 38 	sts	0x3816, r25	; 0x803816 <debrisX+0x1>
+		
+		if (debrisX < -40) {
+     d24:	88 3d       	cpi	r24, 0xD8	; 216
+     d26:	9f 4f       	sbci	r25, 0xFF	; 255
+     d28:	34 f4       	brge	.+12     	; 0xd36 <gameFrame+0x208>
+			debrisX = 127;
+     d2a:	8f e7       	ldi	r24, 0x7F	; 127
+     d2c:	90 e0       	ldi	r25, 0x00	; 0
+     d2e:	80 93 15 38 	sts	0x3815, r24	; 0x803815 <debrisX>
+     d32:	90 93 16 38 	sts	0x3816, r25	; 0x803816 <debrisX+0x1>
+		}
+
+		tone(1200, 20);
+     d36:	64 e1       	ldi	r22, 0x14	; 20
+     d38:	70 e0       	ldi	r23, 0x00	; 0
+     d3a:	80 eb       	ldi	r24, 0xB0	; 176
+     d3c:	94 e0       	ldi	r25, 0x04	; 4
+     d3e:	0e 94 c4 02 	call	0x588	; 0x588 <tone>
+
+	}
+	
+	if (gamePad & dMenu) {
+     d42:	80 91 31 3d 	lds	r24, 0x3D31	; 0x803d31 <gamePad>
+     d46:	85 ff       	sbrs	r24, 5
+     d48:	03 c0       	rjmp	.+6      	; 0xd50 <gameFrame+0x222>
+		heroFrame = 4;
+     d4a:	94 e0       	ldi	r25, 0x04	; 4
+     d4c:	90 93 19 38 	sts	0x3819, r25	; 0x803819 <heroFrame>
+	}
+	if (gamePad & dA) {
+     d50:	88 23       	and	r24, r24
+     d52:	1c f4       	brge	.+6      	; 0xd5a <gameFrame+0x22c>
+		heroFrame = 5;
+     d54:	95 e0       	ldi	r25, 0x05	; 5
+     d56:	90 93 19 38 	sts	0x3819, r25	; 0x803819 <heroFrame>
+	}
+	if (gamePad & dB) {
+     d5a:	86 ff       	sbrs	r24, 6
+     d5c:	03 c0       	rjmp	.+6      	; 0xd64 <gameFrame+0x236>
+		heroFrame = 6;
+     d5e:	86 e0       	ldi	r24, 0x06	; 6
+     d60:	80 93 19 38 	sts	0x3819, r24	; 0x803819 <heroFrame>
+	}
+
+	clouds--;
+     d64:	80 91 12 38 	lds	r24, 0x3812	; 0x803812 <clouds>
+     d68:	90 91 13 38 	lds	r25, 0x3813	; 0x803813 <clouds+0x1>
+     d6c:	01 97       	sbiw	r24, 0x01	; 1
+     d6e:	80 93 12 38 	sts	0x3812, r24	; 0x803812 <clouds>
+     d72:	90 93 13 38 	sts	0x3813, r25	; 0x803813 <clouds+0x1>
+
+	setRowScroll(clouds >> 1, 0);				//Scroll rows 0 and 1 at a lower speed
+     d76:	96 95       	lsr	r25
+     d78:	87 95       	ror	r24
+     d7a:	60 e0       	ldi	r22, 0x00	; 0
+     d7c:	0e 94 da 02 	call	0x5b4	; 0x5b4 <setRowScroll>
+	setRowScroll(clouds >> 2, 1);		//you
+     d80:	80 91 12 38 	lds	r24, 0x3812	; 0x803812 <clouds>
+     d84:	90 91 13 38 	lds	r25, 0x3813	; 0x803813 <clouds+0x1>
+     d88:	96 95       	lsr	r25
+     d8a:	87 95       	ror	r24
+     d8c:	96 95       	lsr	r25
+     d8e:	87 95       	ror	r24
+     d90:	61 e0       	ldi	r22, 0x01	; 1
+     d92:	0e 94 da 02 	call	0x5b4	; 0x5b4 <setRowScroll>
+	setRowScroll(clouds >> 3, 2);		//you
+     d96:	80 91 12 38 	lds	r24, 0x3812	; 0x803812 <clouds>
+     d9a:	90 91 13 38 	lds	r25, 0x3813	; 0x803813 <clouds+0x1>
+     d9e:	96 95       	lsr	r25
+     da0:	87 95       	ror	r24
+     da2:	96 95       	lsr	r25
+     da4:	87 95       	ror	r24
+     da6:	96 95       	lsr	r25
+     da8:	87 95       	ror	r24
+     daa:	62 e0       	ldi	r22, 0x02	; 2
+     dac:	0e 94 da 02 	call	0x5b4	; 0x5b4 <setRowScroll>
+
+	setRowScroll(x >> 1, 3);
+     db0:	80 91 17 38 	lds	r24, 0x3817	; 0x803817 <x>
+     db4:	90 91 18 38 	lds	r25, 0x3818	; 0x803818 <x+0x1>
+     db8:	95 95       	asr	r25
+     dba:	87 95       	ror	r24
+     dbc:	63 e0       	ldi	r22, 0x03	; 3
+     dbe:	0e 94 da 02 	call	0x5b4	; 0x5b4 <setRowScroll>
+	setRowScroll(x >> 1, 4);
+     dc2:	80 91 17 38 	lds	r24, 0x3817	; 0x803817 <x>
+     dc6:	90 91 18 38 	lds	r25, 0x3818	; 0x803818 <x+0x1>
+     dca:	95 95       	asr	r25
+     dcc:	87 95       	ror	r24
+     dce:	64 e0       	ldi	r22, 0x04	; 4
+     dd0:	0e 94 da 02 	call	0x5b4	; 0x5b4 <setRowScroll>
+	setRowScroll(x >> 1, 5);
+     dd4:	80 91 17 38 	lds	r24, 0x3817	; 0x803817 <x>
+     dd8:	90 91 18 38 	lds	r25, 0x3818	; 0x803818 <x+0x1>
+     ddc:	95 95       	asr	r25
+     dde:	87 95       	ror	r24
+     de0:	65 e0       	ldi	r22, 0x05	; 5
+     de2:	0e 94 da 02 	call	0x5b4	; 0x5b4 <setRowScroll>
+	
+	setRowScroll(x, 6);		//Scroll row 8 at a higher speed
+     de6:	c7 e1       	ldi	r28, 0x17	; 23
+     de8:	d8 e3       	ldi	r29, 0x38	; 56
+     dea:	66 e0       	ldi	r22, 0x06	; 6
+     dec:	88 81       	ld	r24, Y
+     dee:	0e 94 da 02 	call	0x5b4	; 0x5b4 <setRowScroll>
+	setRowScroll(x << 1, 7);			//Scroll row 8 at a higher speed
+     df2:	88 81       	ld	r24, Y
+     df4:	67 e0       	ldi	r22, 0x07	; 7
+     df6:	88 0f       	add	r24, r24
+     df8:	0e 94 da 02 	call	0x5b4	; 0x5b4 <setRowScroll>
+	
+	ledState(0);
+     dfc:	80 e0       	ldi	r24, 0x00	; 0
+     dfe:	0e 94 d0 02 	call	0x5a0	; 0x5a0 <ledState>
+	
+}
+     e02:	df 91       	pop	r29
+     e04:	cf 91       	pop	r28
+     e06:	0f 91       	pop	r16
+     e08:	08 95       	ret
+
+00000e0a <systemLoop>:
+}
+
+void systemLoop() {
+
+    while (1) {
+		if (sleepState) {
+     e0a:	80 91 1e 38 	lds	r24, 0x381E	; 0x80381e <sleepState>
+     e0e:	88 23       	and	r24, r24
+     e10:	11 f0       	breq	.+4      	; 0xe16 <systemLoop+0xc>
+			sleep_cpu();
+     e12:	88 95       	sleep
+     e14:	fa cf       	rjmp	.-12     	; 0xe0a <systemLoop>
+		}				
+		else {
+			if (frameFlag == 20) {		//Time to draw a frame? (50 Hz)
+     e16:	80 91 1d 38 	lds	r24, 0x381D	; 0x80381d <frameFlag>
+     e1a:	84 31       	cpi	r24, 0x14	; 20
+     e1c:	b1 f7       	brne	.-20     	; 0xe0a <systemLoop>
+				frameFlag = 0;			//Reset ms counter
+     e1e:	10 92 1d 38 	sts	0x381D, r1	; 0x80381d <frameFlag>
+				ledState(1);			//LED is "on" for the frame
+     e22:	81 e0       	ldi	r24, 0x01	; 1
+     e24:	0e 94 d0 02 	call	0x5a0	; 0x5a0 <ledState>
+				gameFrame();			//New frame of game logic
+     e28:	0e 94 97 05 	call	0xb2e	; 0xb2e <gameFrame>
+				ledState(0);			//connect scope to this line to see frame time
+     e2c:	80 e0       	ldi	r24, 0x00	; 0
+     e2e:	0e 94 d0 02 	call	0x5a0	; 0x5a0 <ledState>
+     e32:	eb cf       	rjmp	.-42     	; 0xe0a <systemLoop>
+
+00000e34 <fillTiles>:
+
+}
+
+void fillTiles(uint8_t location, uint8_t startingTile, uint8_t howMany) {
+	
+	for (int x = location ; x < location + howMany ; x++) {
+     e34:	a8 2f       	mov	r26, r24
+     e36:	b0 e0       	ldi	r27, 0x00	; 0
+     e38:	cd 01       	movw	r24, r26
+     e3a:	06 c0       	rjmp	.+12     	; 0xe48 <fillTiles+0x14>
+		tileMap[x] = startingTile++;
+     e3c:	fc 01       	movw	r30, r24
+     e3e:	ef 5c       	subi	r30, 0xCF	; 207
+     e40:	f3 4c       	sbci	r31, 0xC3	; 195
+     e42:	60 83       	st	Z, r22
+
+}
+
+void fillTiles(uint8_t location, uint8_t startingTile, uint8_t howMany) {
+	
+	for (int x = location ; x < location + howMany ; x++) {
+     e44:	01 96       	adiw	r24, 0x01	; 1
+		tileMap[x] = startingTile++;
+     e46:	6f 5f       	subi	r22, 0xFF	; 255
+
+}
+
+void fillTiles(uint8_t location, uint8_t startingTile, uint8_t howMany) {
+	
+	for (int x = location ; x < location + howMany ; x++) {
+     e48:	9d 01       	movw	r18, r26
+     e4a:	24 0f       	add	r18, r20
+     e4c:	31 1d       	adc	r19, r1
+     e4e:	82 17       	cp	r24, r18
+     e50:	93 07       	cpc	r25, r19
+     e52:	a4 f3       	brlt	.-24     	; 0xe3c <fillTiles+0x8>
+		tileMap[x] = startingTile++;
+	}
+	
+}
+     e54:	08 95       	ret
+
+00000e56 <gameSetup>:
+
+int16_t baddie = 128;
+
+uint8_t pos = 64;
+
+void gameSetup() {							//This function is called once per boot/program
+     e56:	0f 93       	push	r16
+     e58:	1f 93       	push	r17
+     e5a:	cf 93       	push	r28
+     e5c:	df 93       	push	r29
+
+	setScrollDirection(horizontal);
+     e5e:	80 e0       	ldi	r24, 0x00	; 0
+     e60:	0e 94 bd 03 	call	0x77a	; 0x77a <setScrollDirection>
+	//ledState(1);
+	memset(tileMap, 47, 256);
+     e64:	40 e0       	ldi	r20, 0x00	; 0
+     e66:	51 e0       	ldi	r21, 0x01	; 1
+     e68:	6f e2       	ldi	r22, 0x2F	; 47
+     e6a:	70 e0       	ldi	r23, 0x00	; 0
+     e6c:	81 e3       	ldi	r24, 0x31	; 49
+     e6e:	9c e3       	ldi	r25, 0x3C	; 60
+     e70:	0e 94 db 08 	call	0x11b6	; 0x11b6 <memset>
+
+	for (int x = 0 ; x < 4 ; x++) {			//Top clouds
+     e74:	c0 e0       	ldi	r28, 0x00	; 0
+     e76:	d0 e0       	ldi	r29, 0x00	; 0
+     e78:	09 c0       	rjmp	.+18     	; 0xe8c <gameSetup+0x36>
+		
+		fillTiles(x * 8, 32, 8);
+     e7a:	48 e0       	ldi	r20, 0x08	; 8
+     e7c:	60 e2       	ldi	r22, 0x20	; 32
+     e7e:	8c 2f       	mov	r24, r28
+     e80:	88 0f       	add	r24, r24
+     e82:	88 0f       	add	r24, r24
+     e84:	88 0f       	add	r24, r24
+     e86:	0e 94 1a 07 	call	0xe34	; 0xe34 <fillTiles>
+
+	setScrollDirection(horizontal);
+	//ledState(1);
+	memset(tileMap, 47, 256);
+
+	for (int x = 0 ; x < 4 ; x++) {			//Top clouds
+     e8a:	21 96       	adiw	r28, 0x01	; 1
+     e8c:	c4 30       	cpi	r28, 0x04	; 4
+     e8e:	d1 05       	cpc	r29, r1
+     e90:	a4 f3       	brlt	.-24     	; 0xe7a <gameSetup+0x24>
+     e92:	00 e0       	ldi	r16, 0x00	; 0
+     e94:	10 e0       	ldi	r17, 0x00	; 0
+     e96:	13 c0       	rjmp	.+38     	; 0xebe <gameSetup+0x68>
+		
+	}
+	
+	for (int x = 0 ; x < 4 ; x++) {			//Mid clouds
+		
+		fillTiles(32 + (x * 8), 0, 3);
+     e98:	c8 01       	movw	r24, r16
+     e9a:	04 96       	adiw	r24, 0x04	; 4
+     e9c:	c8 2f       	mov	r28, r24
+     e9e:	cc 0f       	add	r28, r28
+     ea0:	cc 0f       	add	r28, r28
+     ea2:	cc 0f       	add	r28, r28
+     ea4:	43 e0       	ldi	r20, 0x03	; 3
+     ea6:	60 e0       	ldi	r22, 0x00	; 0
+     ea8:	8c 2f       	mov	r24, r28
+     eaa:	0e 94 1a 07 	call	0xe34	; 0xe34 <fillTiles>
+		fillTiles(32 + (x * 8) + 4, 3, 3);		
+     eae:	43 e0       	ldi	r20, 0x03	; 3
+     eb0:	63 e0       	ldi	r22, 0x03	; 3
+     eb2:	84 e0       	ldi	r24, 0x04	; 4
+     eb4:	8c 0f       	add	r24, r28
+     eb6:	0e 94 1a 07 	call	0xe34	; 0xe34 <fillTiles>
+		
+		fillTiles(x * 8, 32, 8);
+		
+	}
+	
+	for (int x = 0 ; x < 4 ; x++) {			//Mid clouds
+     eba:	0f 5f       	subi	r16, 0xFF	; 255
+     ebc:	1f 4f       	sbci	r17, 0xFF	; 255
+     ebe:	04 30       	cpi	r16, 0x04	; 4
+     ec0:	11 05       	cpc	r17, r1
+     ec2:	54 f3       	brlt	.-44     	; 0xe98 <gameSetup+0x42>
+     ec4:	00 e0       	ldi	r16, 0x00	; 0
+     ec6:	10 e0       	ldi	r17, 0x00	; 0
+     ec8:	19 c0       	rjmp	.+50     	; 0xefc <gameSetup+0xa6>
+		
+	}	
+	
+	for (int x = 0 ; x < 2 ; x++) {			//Low clouds
+		
+		fillTiles(64 + (x * 16) + 2, 6, 2);
+     eca:	c8 01       	movw	r24, r16
+     ecc:	04 96       	adiw	r24, 0x04	; 4
+     ece:	c8 2f       	mov	r28, r24
+     ed0:	c2 95       	swap	r28
+     ed2:	c0 7f       	andi	r28, 0xF0	; 240
+     ed4:	42 e0       	ldi	r20, 0x02	; 2
+     ed6:	66 e0       	ldi	r22, 0x06	; 6
+     ed8:	82 e0       	ldi	r24, 0x02	; 2
+     eda:	8c 0f       	add	r24, r28
+     edc:	0e 94 1a 07 	call	0xe34	; 0xe34 <fillTiles>
+		fillTiles(64 + (x * 16) + 7, 8, 2);
+     ee0:	42 e0       	ldi	r20, 0x02	; 2
+     ee2:	68 e0       	ldi	r22, 0x08	; 8
+     ee4:	87 e0       	ldi	r24, 0x07	; 7
+     ee6:	8c 0f       	add	r24, r28
+     ee8:	0e 94 1a 07 	call	0xe34	; 0xe34 <fillTiles>
+		fillTiles(64 + (x * 16) + 11, 10, 2);		
+     eec:	42 e0       	ldi	r20, 0x02	; 2
+     eee:	6a e0       	ldi	r22, 0x0A	; 10
+     ef0:	8b e0       	ldi	r24, 0x0B	; 11
+     ef2:	8c 0f       	add	r24, r28
+     ef4:	0e 94 1a 07 	call	0xe34	; 0xe34 <fillTiles>
+		fillTiles(32 + (x * 8), 0, 3);
+		fillTiles(32 + (x * 8) + 4, 3, 3);		
+		
+	}	
+	
+	for (int x = 0 ; x < 2 ; x++) {			//Low clouds
+     ef8:	0f 5f       	subi	r16, 0xFF	; 255
+     efa:	1f 4f       	sbci	r17, 0xFF	; 255
+     efc:	02 30       	cpi	r16, 0x02	; 2
+     efe:	11 05       	cpc	r17, r1
+     f00:	24 f3       	brlt	.-56     	; 0xeca <gameSetup+0x74>
+     f02:	c0 e0       	ldi	r28, 0x00	; 0
+     f04:	d0 e0       	ldi	r29, 0x00	; 0
+     f06:	26 c0       	rjmp	.+76     	; 0xf54 <gameSetup+0xfe>
+		fillTiles(64 + (x * 16) + 11, 10, 2);		
+		
+	}
+	
+	for (int x = 0 ; x < 4 ; x++) {			//Mountains
+		fillTiles((5*32) + (x * 8), 17, 8);	
+     f08:	ce 01       	movw	r24, r28
+     f0a:	44 96       	adiw	r24, 0x14	; 20
+     f0c:	48 e0       	ldi	r20, 0x08	; 8
+     f0e:	61 e1       	ldi	r22, 0x11	; 17
+     f10:	88 0f       	add	r24, r24
+     f12:	88 0f       	add	r24, r24
+     f14:	88 0f       	add	r24, r24
+     f16:	0e 94 1a 07 	call	0xe34	; 0xe34 <fillTiles>
+		fillTiles((4*32) + (x * 8) + 1, 25, 2);
+     f1a:	ce 01       	movw	r24, r28
+     f1c:	40 96       	adiw	r24, 0x10	; 16
+     f1e:	18 2f       	mov	r17, r24
+     f20:	11 0f       	add	r17, r17
+     f22:	11 0f       	add	r17, r17
+     f24:	11 0f       	add	r17, r17
+     f26:	42 e0       	ldi	r20, 0x02	; 2
+     f28:	69 e1       	ldi	r22, 0x19	; 25
+     f2a:	81 e0       	ldi	r24, 0x01	; 1
+     f2c:	81 0f       	add	r24, r17
+     f2e:	0e 94 1a 07 	call	0xe34	; 0xe34 <fillTiles>
+		fillTiles((4*32) + (x * 8) + 4, 29, 2);	
+     f32:	42 e0       	ldi	r20, 0x02	; 2
+     f34:	6d e1       	ldi	r22, 0x1D	; 29
+     f36:	84 e0       	ldi	r24, 0x04	; 4
+     f38:	81 0f       	add	r24, r17
+     f3a:	0e 94 1a 07 	call	0xe34	; 0xe34 <fillTiles>
+		fillTiles((3*32) + (x * 8) + 1, 27, 2);				
+     f3e:	ce 01       	movw	r24, r28
+     f40:	0c 96       	adiw	r24, 0x0c	; 12
+     f42:	88 0f       	add	r24, r24
+     f44:	88 0f       	add	r24, r24
+     f46:	88 0f       	add	r24, r24
+     f48:	42 e0       	ldi	r20, 0x02	; 2
+     f4a:	6b e1       	ldi	r22, 0x1B	; 27
+     f4c:	8f 5f       	subi	r24, 0xFF	; 255
+     f4e:	0e 94 1a 07 	call	0xe34	; 0xe34 <fillTiles>
+		fillTiles(64 + (x * 16) + 7, 8, 2);
+		fillTiles(64 + (x * 16) + 11, 10, 2);		
+		
+	}
+	
+	for (int x = 0 ; x < 4 ; x++) {			//Mountains
+     f52:	21 96       	adiw	r28, 0x01	; 1
+     f54:	c4 30       	cpi	r28, 0x04	; 4
+     f56:	d1 05       	cpc	r29, r1
+     f58:	bc f2       	brlt	.-82     	; 0xf08 <gameSetup+0xb2>
+     f5a:	80 e0       	ldi	r24, 0x00	; 0
+     f5c:	90 e0       	ldi	r25, 0x00	; 0
+     f5e:	06 c0       	rjmp	.+12     	; 0xf6c <gameSetup+0x116>
+		fillTiles((4*32) + (x * 8) + 4, 29, 2);	
+		fillTiles((3*32) + (x * 8) + 1, 27, 2);				
+	}	
+
+	for (int x = 0 ; x < 32 ; x++) {			//Ground BG	
+		tileMap[(6*32) + x] = 16;		
+     f60:	fc 01       	movw	r30, r24
+     f62:	ef 50       	subi	r30, 0x0F	; 15
+     f64:	f3 4c       	sbci	r31, 0xC3	; 195
+     f66:	20 e1       	ldi	r18, 0x10	; 16
+     f68:	20 83       	st	Z, r18
+		fillTiles((4*32) + (x * 8) + 1, 25, 2);
+		fillTiles((4*32) + (x * 8) + 4, 29, 2);	
+		fillTiles((3*32) + (x * 8) + 1, 27, 2);				
+	}	
+
+	for (int x = 0 ; x < 32 ; x++) {			//Ground BG	
+     f6a:	01 96       	adiw	r24, 0x01	; 1
+     f6c:	80 32       	cpi	r24, 0x20	; 32
+     f6e:	91 05       	cpc	r25, r1
+     f70:	bc f3       	brlt	.-18     	; 0xf60 <gameSetup+0x10a>
+     f72:	20 e0       	ldi	r18, 0x00	; 0
+     f74:	30 e0       	ldi	r19, 0x00	; 0
+     f76:	1c c0       	rjmp	.+56     	; 0xfb0 <gameSetup+0x15a>
+		tileMap[(6*32) + x] = 16;		
+	}
+	
+	for (int x = 0 ; x < 8 ; x++) {				//Ground FG
+		tileMap[(7*32) + (x * 4) + 0] = 12;
+     f78:	c9 01       	movw	r24, r18
+     f7a:	c8 96       	adiw	r24, 0x38	; 56
+     f7c:	88 0f       	add	r24, r24
+     f7e:	99 1f       	adc	r25, r25
+     f80:	88 0f       	add	r24, r24
+     f82:	99 1f       	adc	r25, r25
+     f84:	fc 01       	movw	r30, r24
+     f86:	ef 5c       	subi	r30, 0xCF	; 207
+     f88:	f3 4c       	sbci	r31, 0xC3	; 195
+     f8a:	4c e0       	ldi	r20, 0x0C	; 12
+     f8c:	40 83       	st	Z, r20
+		tileMap[(7*32) + (x * 4) + 1] = 13;
+     f8e:	fc 01       	movw	r30, r24
+     f90:	ee 5c       	subi	r30, 0xCE	; 206
+     f92:	f3 4c       	sbci	r31, 0xC3	; 195
+     f94:	4d e0       	ldi	r20, 0x0D	; 13
+     f96:	40 83       	st	Z, r20
+		tileMap[(7*32) + (x * 4) + 2] = 14;
+     f98:	fc 01       	movw	r30, r24
+     f9a:	ed 5c       	subi	r30, 0xCD	; 205
+     f9c:	f3 4c       	sbci	r31, 0xC3	; 195
+     f9e:	4e e0       	ldi	r20, 0x0E	; 14
+     fa0:	40 83       	st	Z, r20
+		tileMap[(7*32) + (x * 4) + 3] = 15;					
+     fa2:	fc 01       	movw	r30, r24
+     fa4:	ec 5c       	subi	r30, 0xCC	; 204
+     fa6:	f3 4c       	sbci	r31, 0xC3	; 195
+     fa8:	4f e0       	ldi	r20, 0x0F	; 15
+     faa:	40 83       	st	Z, r20
+
+	for (int x = 0 ; x < 32 ; x++) {			//Ground BG	
+		tileMap[(6*32) + x] = 16;		
+	}
+	
+	for (int x = 0 ; x < 8 ; x++) {				//Ground FG
+     fac:	2f 5f       	subi	r18, 0xFF	; 255
+     fae:	3f 4f       	sbci	r19, 0xFF	; 255
+     fb0:	28 30       	cpi	r18, 0x08	; 8
+     fb2:	31 05       	cpc	r19, r1
+     fb4:	0c f3       	brlt	.-62     	; 0xf78 <gameSetup+0x122>
+		tileMap[(7*32) + (x * 4) + 1] = 13;
+		tileMap[(7*32) + (x * 4) + 2] = 14;
+		tileMap[(7*32) + (x * 4) + 3] = 15;					
+	}
+
+}
+     fb6:	df 91       	pop	r29
+     fb8:	cf 91       	pop	r28
+     fba:	1f 91       	pop	r17
+     fbc:	0f 91       	pop	r16
+     fbe:	08 95       	ret
+
+00000fc0 <__vector_13>:
+		tileMap[x] = startingTile++;
+	}
+	
+}
+
+ISR(TCB0_INT_vect) {				//Timer trips? (This timer is disabled in Power-Down sleep mode)
+     fc0:	1f 92       	push	r1
+     fc2:	0f 92       	push	r0
+     fc4:	0f b6       	in	r0, 0x3f	; 63
+     fc6:	0f 92       	push	r0
+     fc8:	11 24       	eor	r1, r1
+     fca:	2f 93       	push	r18
+     fcc:	3f 93       	push	r19
+     fce:	4f 93       	push	r20
+     fd0:	5f 93       	push	r21
+     fd2:	6f 93       	push	r22
+     fd4:	7f 93       	push	r23
+     fd6:	8f 93       	push	r24
+     fd8:	9f 93       	push	r25
+     fda:	af 93       	push	r26
+     fdc:	bf 93       	push	r27
+     fde:	ef 93       	push	r30
+     fe0:	ff 93       	push	r31
+
+	frameFlag++;					//Once 16 ms has passed, run frame (60 FPS... ish)
+     fe2:	80 91 1d 38 	lds	r24, 0x381D	; 0x80381d <frameFlag>
+     fe6:	8f 5f       	subi	r24, 0xFF	; 255
+     fe8:	80 93 1d 38 	sts	0x381D, r24	; 0x80381d <frameFlag>
+	toneLogic();					//Sound checks
+     fec:	0e 94 b1 02 	call	0x562	; 0x562 <toneLogic>
+	TCB0_INTFLAGS = 1;				//Clear flag
+     ff0:	81 e0       	ldi	r24, 0x01	; 1
+     ff2:	80 93 46 0a 	sts	0x0A46, r24	; 0x800a46 <__RODATA_PM_OFFSET__+0x7f8a46>
+	
+}
+     ff6:	ff 91       	pop	r31
+     ff8:	ef 91       	pop	r30
+     ffa:	bf 91       	pop	r27
+     ffc:	af 91       	pop	r26
+     ffe:	9f 91       	pop	r25
+    1000:	8f 91       	pop	r24
+    1002:	7f 91       	pop	r23
+    1004:	6f 91       	pop	r22
+    1006:	5f 91       	pop	r21
+    1008:	4f 91       	pop	r20
+    100a:	3f 91       	pop	r19
+    100c:	2f 91       	pop	r18
+    100e:	0f 90       	pop	r0
+    1010:	0f be       	out	0x3f, r0	; 63
+    1012:	0f 90       	pop	r0
+    1014:	1f 90       	pop	r1
+    1016:	18 95       	reti
+
+00001018 <__vector_3>:
+
+ISR(PORTA_PORT_vect) {				//PORTA ISR tied to Menu button for sleep wake-up
+    1018:	1f 92       	push	r1
+    101a:	0f 92       	push	r0
+    101c:	0f b6       	in	r0, 0x3f	; 63
+    101e:	0f 92       	push	r0
+    1020:	11 24       	eor	r1, r1
+    1022:	2f 93       	push	r18
+    1024:	3f 93       	push	r19
+    1026:	4f 93       	push	r20
+    1028:	5f 93       	push	r21
+    102a:	6f 93       	push	r22
+    102c:	7f 93       	push	r23
+    102e:	8f 93       	push	r24
+    1030:	9f 93       	push	r25
+    1032:	af 93       	push	r26
+    1034:	bf 93       	push	r27
+    1036:	ef 93       	push	r30
+    1038:	ff 93       	push	r31
+
+	if (sleepState) {				//Button change state with sleep mode enabled? WAKE UP! 
+    103a:	80 91 1e 38 	lds	r24, 0x381E	; 0x80381e <sleepState>
+    103e:	88 23       	and	r24, r24
+    1040:	29 f0       	breq	.+10     	; 0x104c <__vector_3+0x34>
+		sleepState = 0;
+    1042:	10 92 1e 38 	sts	0x381E, r1	; 0x80381e <sleepState>
+		displayOnOff(1);
+    1046:	81 e0       	ldi	r24, 0x01	; 1
+    1048:	0e 94 7a 05 	call	0xaf4	; 0xaf4 <displayOnOff>
+	}
+	
+	PORTA.INTFLAGS = 0x20;			//Clear interrupt flag
+    104c:	80 e2       	ldi	r24, 0x20	; 32
+    104e:	80 93 09 04 	sts	0x0409, r24	; 0x800409 <__RODATA_PM_OFFSET__+0x7f8409>
+
+}
+    1052:	ff 91       	pop	r31
+    1054:	ef 91       	pop	r30
+    1056:	bf 91       	pop	r27
+    1058:	af 91       	pop	r26
+    105a:	9f 91       	pop	r25
+    105c:	8f 91       	pop	r24
+    105e:	7f 91       	pop	r23
+    1060:	6f 91       	pop	r22
+    1062:	5f 91       	pop	r21
+    1064:	4f 91       	pop	r20
+    1066:	3f 91       	pop	r19
+    1068:	2f 91       	pop	r18
+    106a:	0f 90       	pop	r0
+    106c:	0f be       	out	0x3f, r0	; 63
+    106e:	0f 90       	pop	r0
+    1070:	1f 90       	pop	r1
+    1072:	18 95       	reti
+
+00001074 <__vector_7>:
+
+ISR(RTC_PIT_vect) {						//ISR called every second
+    1074:	1f 92       	push	r1
+    1076:	0f 92       	push	r0
+    1078:	0f b6       	in	r0, 0x3f	; 63
+    107a:	0f 92       	push	r0
+    107c:	11 24       	eor	r1, r1
+    107e:	8f 93       	push	r24
+
+	if (++seconds == 60) {				//time lord stuff
+    1080:	80 91 1a 38 	lds	r24, 0x381A	; 0x80381a <seconds>
+    1084:	8f 5f       	subi	r24, 0xFF	; 255
+    1086:	80 93 1a 38 	sts	0x381A, r24	; 0x80381a <seconds>
+    108a:	8c 33       	cpi	r24, 0x3C	; 60
+    108c:	01 f5       	brne	.+64     	; 0x10ce <__vector_7+0x5a>
+		seconds = 0;
+    108e:	10 92 1a 38 	sts	0x381A, r1	; 0x80381a <seconds>
+		if (++minutes == 60) {
+    1092:	80 91 08 38 	lds	r24, 0x3808	; 0x803808 <minutes>
+    1096:	8f 5f       	subi	r24, 0xFF	; 255
+    1098:	80 93 08 38 	sts	0x3808, r24	; 0x803808 <minutes>
+    109c:	8c 33       	cpi	r24, 0x3C	; 60
+    109e:	b9 f4       	brne	.+46     	; 0x10ce <__vector_7+0x5a>
+			minutes = 0;
+    10a0:	10 92 08 38 	sts	0x3808, r1	; 0x803808 <minutes>
+			++hours;
+    10a4:	80 91 09 38 	lds	r24, 0x3809	; 0x803809 <hours>
+    10a8:	8f 5f       	subi	r24, 0xFF	; 255
+    10aa:	80 93 09 38 	sts	0x3809, r24	; 0x803809 <hours>
+			if (hours == 12) {
+    10ae:	80 91 09 38 	lds	r24, 0x3809	; 0x803809 <hours>
+    10b2:	8c 30       	cpi	r24, 0x0C	; 12
+    10b4:	29 f4       	brne	.+10     	; 0x10c0 <__vector_7+0x4c>
+				amPM++;					//amPM & 0x01 -> 0 = AM 1 = PM
+    10b6:	80 91 1b 38 	lds	r24, 0x381B	; 0x80381b <amPM>
+    10ba:	8f 5f       	subi	r24, 0xFF	; 255
+    10bc:	80 93 1b 38 	sts	0x381B, r24	; 0x80381b <amPM>
+			}
+			if (hours == 13) {			//Time is so stupid. It's a bunch of rocks spinning around a star.
+    10c0:	80 91 09 38 	lds	r24, 0x3809	; 0x803809 <hours>
+    10c4:	8d 30       	cpi	r24, 0x0D	; 13
+    10c6:	19 f4       	brne	.+6      	; 0x10ce <__vector_7+0x5a>
+				hours = 1;
+    10c8:	81 e0       	ldi	r24, 0x01	; 1
+    10ca:	80 93 09 38 	sts	0x3809, r24	; 0x803809 <hours>
+			}
+		}
+	}
+
+	if (!sleepState) {					//If awake, change flag to indicate the seconds changed (for the display)
+    10ce:	80 91 1e 38 	lds	r24, 0x381E	; 0x80381e <sleepState>
+    10d2:	81 11       	cpse	r24, r1
+    10d4:	03 c0       	rjmp	.+6      	; 0x10dc <__vector_7+0x68>
+		secFlag = 1;
+    10d6:	81 e0       	ldi	r24, 0x01	; 1
+    10d8:	80 93 1c 38 	sts	0x381C, r24	; 0x80381c <secFlag>
+	}
+
+	RTC.PITINTFLAGS = RTC_PI_bm;
+    10dc:	81 e0       	ldi	r24, 0x01	; 1
+    10de:	80 93 53 01 	sts	0x0153, r24	; 0x800153 <__RODATA_PM_OFFSET__+0x7f8153>
+
+    10e2:	8f 91       	pop	r24
+    10e4:	0f 90       	pop	r0
+    10e6:	0f be       	out	0x3f, r0	; 63
+    10e8:	0f 90       	pop	r0
+    10ea:	1f 90       	pop	r1
+    10ec:	18 95       	reti
+
+000010ee <main>:
+#include "drivers/gameBadge.h"
+#include "game.h"
+
+int main(void) {
+	
+	CCP = 0xD8;	
+    10ee:	88 ed       	ldi	r24, 0xD8	; 216
+    10f0:	84 bf       	out	0x34, r24	; 52
+	CLKCTRL.MCLKCTRLB = 0;							//Run CPU at full speed, disregarding speed considerings of the datasheet
+    10f2:	10 92 61 00 	sts	0x0061, r1	; 0x800061 <__RODATA_PM_OFFSET__+0x7f8061>
+	//CLKCTRL.MCLKCTRLB = 1;							//Enable prescaler for 10MHz / 2 (10MHz) required for 3.3v operation
+	while(!(CLKCTRL.MCLKSTATUS & 0x10)) {}			//Sync
+    10f6:	80 91 63 00 	lds	r24, 0x0063	; 0x800063 <__RODATA_PM_OFFSET__+0x7f8063>
+    10fa:	84 ff       	sbrs	r24, 4
+    10fc:	fc cf       	rjmp	.-8      	; 0x10f6 <main+0x8>
+	
+	PORTA_DIR = 0b00011010;							//Set pin directions
+    10fe:	8a e1       	ldi	r24, 0x1A	; 26
+    1100:	80 93 00 04 	sts	0x0400, r24	; 0x800400 <__RODATA_PM_OFFSET__+0x7f8400>
+	PORTB_DIR = 0b00110011;							//Speaker and LED out
+    1104:	83 e3       	ldi	r24, 0x33	; 51
+    1106:	80 93 20 04 	sts	0x0420, r24	; 0x800420 <__RODATA_PM_OFFSET__+0x7f8420>
+	PORTC_DIR = 0b00000000;
+    110a:	10 92 40 04 	sts	0x0440, r1	; 0x800440 <__RODATA_PM_OFFSET__+0x7f8440>
+	
+	PORTC_PIN0CTRL = 0x88;							//Set pullups for control buttons, with inverse output (easier logic)
+    110e:	88 e8       	ldi	r24, 0x88	; 136
+    1110:	80 93 50 04 	sts	0x0450, r24	; 0x800450 <__RODATA_PM_OFFSET__+0x7f8450>
+	PORTC_PIN1CTRL = 0x88;
+    1114:	80 93 51 04 	sts	0x0451, r24	; 0x800451 <__RODATA_PM_OFFSET__+0x7f8451>
+	PORTC_PIN2CTRL = 0x88;
+    1118:	80 93 52 04 	sts	0x0452, r24	; 0x800452 <__RODATA_PM_OFFSET__+0x7f8452>
+	PORTC_PIN3CTRL = 0x88;	
+    111c:	80 93 53 04 	sts	0x0453, r24	; 0x800453 <__RODATA_PM_OFFSET__+0x7f8453>
+	PORTA_PIN5CTRL = 0x88 | 0x01;					//Menu button, can also wake from sleep (ISR on either edge)
+    1120:	99 e8       	ldi	r25, 0x89	; 137
+    1122:	90 93 15 04 	sts	0x0415, r25	; 0x800415 <__RODATA_PM_OFFSET__+0x7f8415>
+	PORTA_PIN6CTRL = 0x88;
+    1126:	80 93 16 04 	sts	0x0416, r24	; 0x800416 <__RODATA_PM_OFFSET__+0x7f8416>
+	PORTA_PIN7CTRL = 0x88;				
+    112a:	80 93 17 04 	sts	0x0417, r24	; 0x800417 <__RODATA_PM_OFFSET__+0x7f8417>
+
+//--Setup SPI bus and intialize OLED display----------------------------------------------------	
+	SPI0.CTRLA = SPI_MASTER_bm | SPI_ENABLE_bm | SPI_CLK2X_bm;	//Start SPI bus
+    112e:	81 e3       	ldi	r24, 0x31	; 49
+    1130:	80 93 20 08 	sts	0x0820, r24	; 0x800820 <__RODATA_PM_OFFSET__+0x7f8820>
+
+	displayInit(0);									//Setup display	
+    1134:	80 e0       	ldi	r24, 0x00	; 0
+    1136:	90 e0       	ldi	r25, 0x00	; 0
+    1138:	0e 94 25 05 	call	0xa4a	; 0xa4a <displayInit>
+	
+	SPI0_CTRLB = SPI_BUFEN_bm;						//Set high speed buffer SPI mode now that the OLED is set up
+    113c:	80 e8       	ldi	r24, 0x80	; 128
+    113e:	80 93 21 08 	sts	0x0821, r24	; 0x800821 <__RODATA_PM_OFFSET__+0x7f8821>
+
+//--Setup FRAMERATE TIMER (eat this PS5!)------------------------------------------------------
+	TCB0.INTCTRL = TCB_CAPT_bm;						//Setup Timer B as compare capture mode that will trigger an interrupt
+    1142:	e0 e4       	ldi	r30, 0x40	; 64
+    1144:	fa e0       	ldi	r31, 0x0A	; 10
+    1146:	81 e0       	ldi	r24, 0x01	; 1
+    1148:	85 83       	std	Z+5, r24	; 0x05
+	TCB0_CCMP = 10000;								//CLK   (20MHz, 3.3 less safe mode) -> DIV2 prescaler = 10000 ticks/ms
+    114a:	20 e1       	ldi	r18, 0x10	; 16
+    114c:	37 e2       	ldi	r19, 0x27	; 39
+    114e:	20 93 4c 0a 	sts	0x0A4C, r18	; 0x800a4c <__RODATA_PM_OFFSET__+0x7f8a4c>
+    1152:	30 93 4d 0a 	sts	0x0A4D, r19	; 0x800a4d <__RODATA_PM_OFFSET__+0x7f8a4d>
+	//TCB0_CCMP = 5000;								//CLK/2 (10MHz, 3.3 safe mode) -> DIV2 prescaler = 5000 ticks/ms	
+	TCB0_CTRLA = (1 << 1) | TCB_ENABLE_bm;
+    1156:	93 e0       	ldi	r25, 0x03	; 3
+    1158:	90 83       	st	Z, r25
+
+//--Setup PIEZO SOUND (the new Dolby Atmos)---------------------------------------------------
+    TCA0.SINGLE.CTRLB =
+    115a:	e0 e0       	ldi	r30, 0x00	; 0
+    115c:	fa e0       	ldi	r31, 0x0A	; 10
+    115e:	91 e4       	ldi	r25, 0x41	; 65
+    1160:	91 83       	std	Z+1, r25	; 0x01
+    TCA_SINGLE_CMP2EN_bm |							// Enables Compare Channel 2 (output port WO2 (alt pin per PORTMUX below) = PB5)
+    TCA_SINGLE_WGMODE_FRQ_gc;						// FRQ Waveform Generation
+	
+    TCA0.SINGLE.CMP0 = 0;
+    1162:	10 a6       	std	Z+40, r1	; 0x28
+    1164:	11 a6       	std	Z+41, r1	; 0x29
+    //TCA0.SINGLE.CTRLA = TCA_SINGLE_CLKSEL_DIV8_gc;	//10MHz mode
+    TCA0.SINGLE.CTRLA = TCA_SINGLE_CLKSEL_DIV16_gc;		//20MHz mode
+    1166:	98 e0       	ldi	r25, 0x08	; 8
+    1168:	90 83       	st	Z, r25
+	
+	PORTMUX_CTRLC = 0x04;							//Write this bit to '1' to select the alternative output pin for TCA0 waveform output 2.
+    116a:	94 e0       	ldi	r25, 0x04	; 4
+    116c:	90 93 02 02 	sts	0x0202, r25	; 0x800202 <__RODATA_PM_OFFSET__+0x7f8202>
+
+//--Setup Real Time Counter (RTC) for clock use-----------------------------------------------
+
+	CCP = 0xD8;
+    1170:	98 ed       	ldi	r25, 0xD8	; 216
+    1172:	94 bf       	out	0x34, r25	; 52
+	CLKCTRL.XOSC32KCTRLA = CLKCTRL_ENABLE_bm;		//Enable the external crystal
+    1174:	80 93 7c 00 	sts	0x007C, r24	; 0x80007c <__RODATA_PM_OFFSET__+0x7f807c>
+	while (RTC.STATUS > 0) {} /* Wait for all register to be synchronized */
+    1178:	80 91 41 01 	lds	r24, 0x0141	; 0x800141 <__RODATA_PM_OFFSET__+0x7f8141>
+    117c:	81 11       	cpse	r24, r1
+    117e:	fc cf       	rjmp	.-8      	; 0x1178 <main+0x8a>
+	
+	RTC.CTRLA = RTC_PRESCALER_DIV1_gc   /* 1 */
+    1180:	e0 e4       	ldi	r30, 0x40	; 64
+    1182:	f1 e0       	ldi	r31, 0x01	; 1
+    1184:	80 e8       	ldi	r24, 0x80	; 128
+    1186:	80 83       	st	Z, r24
+	| 0 << RTC_RTCEN_bp     /* Enable: disabled */
+	| 1 << RTC_RUNSTDBY_bp; /* Run In Standby: enabled */
+
+	RTC.CLKSEL = RTC_CLKSEL_TOSC32K_gc; /* 32.768kHz External Crystal Oscillator (XOSC32K) */
+    1188:	82 e0       	ldi	r24, 0x02	; 2
+    118a:	87 83       	std	Z+7, r24	; 0x07
+	while (RTC.PITSTATUS > 0) {} /* Wait for all register to be synchronized */
+    118c:	80 91 51 01 	lds	r24, 0x0151	; 0x800151 <__RODATA_PM_OFFSET__+0x7f8151>
+    1190:	81 11       	cpse	r24, r1
+    1192:	fc cf       	rjmp	.-8      	; 0x118c <main+0x9e>
+
+	RTC.PITCTRLA = RTC_PERIOD_CYC32768_gc /* RTC Clock Cycles 32768 */
+    1194:	e0 e4       	ldi	r30, 0x40	; 64
+    1196:	f1 e0       	ldi	r31, 0x01	; 1
+    1198:	81 e7       	ldi	r24, 0x71	; 113
+    119a:	80 8b       	std	Z+16, r24	; 0x10
+	| 1 << RTC_PITEN_bp;   /* Enable: enabled */
+
+	RTC.PITINTCTRL = 1 << RTC_PI_bp; /* Periodic Interrupt: enabled */
+    119c:	81 e0       	ldi	r24, 0x01	; 1
+    119e:	82 8b       	std	Z+18, r24	; 0x12
+
+//--Setup deep sleep mode---------------------------------------------------------------------
+
+	SLPCTRL.CTRLA = (0x02 << 1) | 1;				//Set sleep mode (enabled, power-down mode, deepest sleep mode)
+    11a0:	85 e0       	ldi	r24, 0x05	; 5
+    11a2:	80 93 50 00 	sts	0x0050, r24	; 0x800050 <__RODATA_PM_OFFSET__+0x7f8050>
+
+//--Game Start and Main Loop------------------------------------------------------------------
+
+	sei();							//Enable interrupts
+    11a6:	78 94       	sei
+	
+	gameSetup();					//One-time user game setup code
+    11a8:	0e 94 2b 07 	call	0xe56	; 0xe56 <gameSetup>
+
+	systemLoop();					//Jump to the main loop in the code
+    11ac:	0e 94 05 07 	call	0xe0a	; 0xe0a <systemLoop>
+
+}
+    11b0:	80 e0       	ldi	r24, 0x00	; 0
+    11b2:	90 e0       	ldi	r25, 0x00	; 0
+    11b4:	08 95       	ret
+
+000011b6 <memset>:
+    11b6:	dc 01       	movw	r26, r24
+    11b8:	01 c0       	rjmp	.+2      	; 0x11bc <memset+0x6>
+    11ba:	6d 93       	st	X+, r22
+    11bc:	41 50       	subi	r20, 0x01	; 1
+    11be:	50 40       	sbci	r21, 0x00	; 0
+    11c0:	e0 f7       	brcc	.-8      	; 0x11ba <memset+0x4>
+    11c2:	08 95       	ret
+
+000011c4 <_exit>:
+    11c4:	f8 94       	cli
+
+000011c6 <__stop_program>:
+    11c6:	ff cf       	rjmp	.-2      	; 0x11c6 <__stop_program>

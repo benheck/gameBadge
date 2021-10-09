@@ -70,7 +70,9 @@ void displayInit() {
 
 }
 
-uint8_t screenLoad(uint16_t pointer) {						//This should be called beginning of each frame. Takes just under 1ms
+uint8_t screenLoad() {						//This should be called beginning of each frame. Takes just under 1ms
+
+	uint16_t pointer = 0;
 
 	if (!displaySleep) {									//Don't bother with this if display is asleep (main code should do this, but this a sanity check)		
 		csLow();

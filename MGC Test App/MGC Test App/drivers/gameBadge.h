@@ -54,7 +54,7 @@
 
 void displayInit();
 void tileLoad(uint16_t dataStart, uint8_t *data, uint16_t dataSize);
-uint8_t screenLoad(uint16_t pointer);
+uint8_t screenLoad();
 void drawTiles(const char *tileData, uint8_t *tileMap);
 void setWindow(uint8_t x, uint8_t y);
 void setRowScroll(uint8_t x, uint8_t row);
