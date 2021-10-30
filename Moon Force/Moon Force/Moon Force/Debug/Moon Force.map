@@ -1,0 +1,876 @@
+Archive member included to satisfy reference by file (symbol)
+
+c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega3\libgcc.a(_udivmodsi4.o)
+                              game.o (__udivmodsi4)
+c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega3\libgcc.a(_exit.o)
+                              C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATtiny_DFP/1.8.332/gcc/dev/attiny1616/avrxmega3/crtattiny1616.o (exit)
+c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega3\libgcc.a(_copy_data.o)
+                              game.o (__do_copy_data)
+c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega3\libgcc.a(_clear_bss.o)
+                              drivers/gameBadge.o (__do_clear_bss)
+c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega3\libc.a(memset.o)
+                              game.o (memset)
+
+Allocating common symbols
+Common symbol       size              file
+
+skyEnemies          0x1               game.o
+gameState           0x1               game.o
+tonePitch           0x2               drivers/gameBadge.o
+heroShots           0x12              game.o
+tileMap             0x100             game.o
+winXfine            0x8               drivers/gameBadge.o
+distance            0x1               game.o
+winX                0x8               drivers/gameBadge.o
+gamePad             0x1               game.o
+numberSpawned       0x1               game.o
+stage               0x1               game.o
+score               0x4               game.o
+padSeed             0x2               game.o
+numberOfWaves       0x1               game.o
+buffer              0x400             drivers/gameBadge.o
+seed                0x2               drivers/gameBadge.o
+lives               0x1               game.o
+enemy               0xd0              game.o
+byDistance          0x1               game.o
+killedPerWave       0x1               game.o
+checkPoint          0x1               game.o
+isDrawn             0x1               game.o
+distanceGoal        0x1               game.o
+spawnPerWave        0x1               game.o
+
+Discarded input sections
+
+ .data          0x00000000        0x0 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATtiny_DFP/1.8.332/gcc/dev/attiny1616/avrxmega3/crtattiny1616.o
+ .bss           0x00000000        0x0 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATtiny_DFP/1.8.332/gcc/dev/attiny1616/avrxmega3/crtattiny1616.o
+ .text          0x00000000        0x0 drivers/gameBadge.o
+ .data          0x00000000        0x0 drivers/gameBadge.o
+ .bss           0x00000000        0x0 drivers/gameBadge.o
+ .text.writedata
+                0x00000000       0x1a drivers/gameBadge.o
+ .text          0x00000000        0x0 game.o
+ .data          0x00000000        0x0 game.o
+ .bss           0x00000000        0x0 game.o
+ .bss.bugXfine  0x00000000        0x1 game.o
+ .bss.day       0x00000000        0x1 game.o
+ .text          0x00000000        0x0 main.o
+ .data          0x00000000        0x0 main.o
+ .bss           0x00000000        0x0 main.o
+ .text          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega3\libgcc.a(_udivmodsi4.o)
+ .data          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega3\libgcc.a(_udivmodsi4.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega3\libgcc.a(_udivmodsi4.o)
+ .text.libgcc.mul
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega3\libgcc.a(_udivmodsi4.o)
+ .text.libgcc   0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega3\libgcc.a(_udivmodsi4.o)
+ .text.libgcc.prologue
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega3\libgcc.a(_udivmodsi4.o)
+ .text.libgcc.builtins
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega3\libgcc.a(_udivmodsi4.o)
+ .text.libgcc.fmul
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega3\libgcc.a(_udivmodsi4.o)
+ .text.libgcc.fixed
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega3\libgcc.a(_udivmodsi4.o)
+ .text          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega3\libgcc.a(_exit.o)
+ .data          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega3\libgcc.a(_exit.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega3\libgcc.a(_exit.o)
+ .text.libgcc.mul
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega3\libgcc.a(_exit.o)
+ .text.libgcc.div
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega3\libgcc.a(_exit.o)
+ .text.libgcc   0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega3\libgcc.a(_exit.o)
+ .text.libgcc.prologue
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega3\libgcc.a(_exit.o)
+ .text.libgcc.builtins
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega3\libgcc.a(_exit.o)
+ .text.libgcc.fmul
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega3\libgcc.a(_exit.o)
+ .text.libgcc.fixed
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega3\libgcc.a(_exit.o)
+ .text          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega3\libgcc.a(_copy_data.o)
+ .data          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega3\libgcc.a(_copy_data.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega3\libgcc.a(_copy_data.o)
+ .text.libgcc.mul
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega3\libgcc.a(_copy_data.o)
+ .text.libgcc.div
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega3\libgcc.a(_copy_data.o)
+ .text.libgcc   0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega3\libgcc.a(_copy_data.o)
+ .text.libgcc.prologue
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega3\libgcc.a(_copy_data.o)
+ .text.libgcc.builtins
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega3\libgcc.a(_copy_data.o)
+ .text.libgcc.fmul
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega3\libgcc.a(_copy_data.o)
+ .text.libgcc.fixed
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega3\libgcc.a(_copy_data.o)
+ .text          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega3\libgcc.a(_clear_bss.o)
+ .data          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega3\libgcc.a(_clear_bss.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega3\libgcc.a(_clear_bss.o)
+ .text.libgcc.mul
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega3\libgcc.a(_clear_bss.o)
+ .text.libgcc.div
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega3\libgcc.a(_clear_bss.o)
+ .text.libgcc   0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega3\libgcc.a(_clear_bss.o)
+ .text.libgcc.prologue
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega3\libgcc.a(_clear_bss.o)
+ .text.libgcc.builtins
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega3\libgcc.a(_clear_bss.o)
+ .text.libgcc.fmul
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega3\libgcc.a(_clear_bss.o)
+ .text.libgcc.fixed
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega3\libgcc.a(_clear_bss.o)
+ .text          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega3\libc.a(memset.o)
+ .data          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega3\libc.a(memset.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega3\libc.a(memset.o)
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+text             0x00000000         0x00004000         xr
+data             0x00803800         0x00000800         rw !x
+eeprom           0x00810000         0x00000100         rw !x
+fuse             0x00820000         0x0000000a         rw !x
+lock             0x00830000         0x00000400         rw !x
+signature        0x00840000         0x00000400         rw !x
+user_signatures  0x00850000         0x00000400         rw !x
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+Address of section .data set to 0x803800
+                0x00008000                __RODATA_PM_OFFSET__ = 0x8000
+LOAD C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATtiny_DFP/1.8.332/gcc/dev/attiny1616/avrxmega3/crtattiny1616.o
+LOAD drivers/gameBadge.o
+LOAD game.o
+LOAD main.o
+START GROUP
+LOAD c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega3\libm.a
+END GROUP
+START GROUP
+LOAD c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega3\libgcc.a
+LOAD c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega3\libm.a
+LOAD c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega3\libc.a
+LOAD C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATtiny_DFP/1.8.332/gcc/dev/attiny1616/avrxmega3\libattiny1616.a
+END GROUP
+                [0x00000000]                __TEXT_REGION_ORIGIN__ = DEFINED (__TEXT_REGION_ORIGIN__)?__TEXT_REGION_ORIGIN__:0x0
+                [0x00803800]                __DATA_REGION_ORIGIN__ = DEFINED (__DATA_REGION_ORIGIN__)?__DATA_REGION_ORIGIN__:0x802000
+                [0x00004000]                __TEXT_REGION_LENGTH__ = DEFINED (__TEXT_REGION_LENGTH__)?__TEXT_REGION_LENGTH__:0x100000
+                [0x00000800]                __DATA_REGION_LENGTH__ = DEFINED (__DATA_REGION_LENGTH__)?__DATA_REGION_LENGTH__:0xffa0
+                [0x00000100]                __EEPROM_REGION_LENGTH__ = DEFINED (__EEPROM_REGION_LENGTH__)?__EEPROM_REGION_LENGTH__:0x10000
+                [0x0000000a]                __FUSE_REGION_LENGTH__ = DEFINED (__FUSE_REGION_LENGTH__)?__FUSE_REGION_LENGTH__:0x400
+                0x00000400                __LOCK_REGION_LENGTH__ = DEFINED (__LOCK_REGION_LENGTH__)?__LOCK_REGION_LENGTH__:0x400
+                0x00000400                __SIGNATURE_REGION_LENGTH__ = DEFINED (__SIGNATURE_REGION_LENGTH__)?__SIGNATURE_REGION_LENGTH__:0x400
+                0x00000400                __USER_SIGNATURE_REGION_LENGTH__ = DEFINED (__USER_SIGNATURE_REGION_LENGTH__)?__USER_SIGNATURE_REGION_LENGTH__:0x400
+                0x00008000                __RODATA_PM_OFFSET__ = DEFINED (__RODATA_PM_OFFSET__)?__RODATA_PM_OFFSET__:0x8000
+
+.hash
+ *(.hash)
+
+.dynsym
+ *(.dynsym)
+
+.dynstr
+ *(.dynstr)
+
+.gnu.version
+ *(.gnu.version)
+
+.gnu.version_d
+ *(.gnu.version_d)
+
+.gnu.version_r
+ *(.gnu.version_r)
+
+.rel.init
+ *(.rel.init)
+
+.rela.init
+ *(.rela.init)
+
+.rel.text
+ *(.rel.text)
+ *(.rel.text.*)
+ *(.rel.gnu.linkonce.t*)
+
+.rela.text
+ *(.rela.text)
+ *(.rela.text.*)
+ *(.rela.gnu.linkonce.t*)
+
+.rel.fini
+ *(.rel.fini)
+
+.rela.fini
+ *(.rela.fini)
+
+.rel.rodata
+ *(.rel.rodata)
+ *(.rel.rodata.*)
+ *(.rel.gnu.linkonce.r*)
+
+.rela.rodata
+ *(.rela.rodata)
+ *(.rela.rodata.*)
+ *(.rela.gnu.linkonce.r*)
+
+.rel.data
+ *(.rel.data)
+ *(.rel.data.*)
+ *(.rel.gnu.linkonce.d*)
+
+.rela.data
+ *(.rela.data)
+ *(.rela.data.*)
+ *(.rela.gnu.linkonce.d*)
+
+.rel.ctors
+ *(.rel.ctors)
+
+.rela.ctors
+ *(.rela.ctors)
+
+.rel.dtors
+ *(.rel.dtors)
+
+.rela.dtors
+ *(.rela.dtors)
+
+.rel.got
+ *(.rel.got)
+
+.rela.got
+ *(.rela.got)
+
+.rel.bss
+ *(.rel.bss)
+
+.rela.bss
+ *(.rela.bss)
+
+.rel.plt
+ *(.rel.plt)
+
+.rela.plt
+ *(.rela.plt)
+
+.text           0x00000000     0x2dc0
+ *(.vectors)
+ .vectors       0x00000000       0x7c C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATtiny_DFP/1.8.332/gcc/dev/attiny1616/avrxmega3/crtattiny1616.o
+                0x00000000                __vector_default
+                0x00000000                __vectors
+ *(.vectors)
+ *(.progmem.gcc*)
+                0x0000007c                . = ALIGN (0x2)
+                0x0000007c                __trampolines_start = .
+ *(.trampolines)
+ .trampolines   0x0000007c        0x0 linker stubs
+ *(.trampolines*)
+                0x0000007c                __trampolines_end = .
+ *libprintf_flt.a:*(.progmem.data)
+ *libc.a:*(.progmem.data)
+ *(.progmem*)
+ .progmem.data.vertExplode
+                0x0000007c      0x182 game.o
+                0x0000007c                vertExplode
+ .progmem.data.evilBomb
+                0x000001fe       0x12 game.o
+                0x000001fe                evilBomb
+ .progmem.data.evilWave
+                0x00000210       0x12 game.o
+                0x00000210                evilWave
+ .progmem.data.balls
+                0x00000222       0x42 game.o
+                0x00000222                balls
+ .progmem.data.ufo
+                0x00000264       0x22 game.o
+                0x00000264                ufo
+ .progmem.data.largePit
+                0x00000286       0x32 game.o
+                0x00000286                largePit
+ .progmem.data.smallPit
+                0x000002b8       0x22 game.o
+                0x000002b8                smallPit
+ .progmem.data.largeRock
+                0x000002da       0x42 game.o
+                0x000002da                largeRock
+ .progmem.data.smallRock
+                0x0000031c       0x22 game.o
+                0x0000031c                smallRock
+ .progmem.data.dualShot
+                0x0000033e       0x12 game.o
+                0x0000033e                dualShot
+ .progmem.data.blaster
+                0x00000350       0x42 game.o
+                0x00000350                blaster
+ .progmem.data.buggie
+                0x00000392       0x32 game.o
+                0x00000392                buggie
+ .progmem.data.wheel
+                0x000003c4       0x12 game.o
+                0x000003c4                wheel
+ .progmem.data.tileData
+                0x000003d6      0x500 game.o
+                0x000003d6                tileData
+                0x000008d6                . = ALIGN (0x2)
+ *(.jumptables)
+ *(.jumptables*)
+ *(.lowtext)
+ *(.lowtext*)
+                0x000008d6                __ctors_start = .
+ *(.ctors)
+                0x000008d6                __ctors_end = .
+                0x000008d6                __dtors_start = .
+ *(.dtors)
+                0x000008d6                __dtors_end = .
+ SORT(*)(.ctors)
+ SORT(*)(.dtors)
+ *(.init0)
+ .init0         0x000008d6        0x0 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATtiny_DFP/1.8.332/gcc/dev/attiny1616/avrxmega3/crtattiny1616.o
+                0x000008d6                __init
+ *(.init0)
+ *(.init1)
+ *(.init1)
+ *(.init2)
+ .init2         0x000008d6        0xc C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATtiny_DFP/1.8.332/gcc/dev/attiny1616/avrxmega3/crtattiny1616.o
+ *(.init2)
+ *(.init3)
+ *(.init3)
+ *(.init4)
+ .init4         0x000008e2       0x16 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega3\libgcc.a(_copy_data.o)
+                0x000008e2                __do_copy_data
+ .init4         0x000008f8       0x10 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega3\libgcc.a(_clear_bss.o)
+                0x000008f8                __do_clear_bss
+ *(.init4)
+ *(.init5)
+ *(.init5)
+ *(.init6)
+ *(.init6)
+ *(.init7)
+ *(.init7)
+ *(.init8)
+ *(.init8)
+ *(.init9)
+ .init9         0x00000908        0x8 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATtiny_DFP/1.8.332/gcc/dev/attiny1616/avrxmega3/crtattiny1616.o
+ *(.init9)
+ *(.text)
+ .text          0x00000910        0x4 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATtiny_DFP/1.8.332/gcc/dev/attiny1616/avrxmega3/crtattiny1616.o
+                0x00000910                __vector_22
+                0x00000910                __vector_28
+                0x00000910                __vector_1
+                0x00000910                __vector_24
+                0x00000910                __vector_12
+                0x00000910                __bad_interrupt
+                0x00000910                __vector_6
+                0x00000910                __vector_23
+                0x00000910                __vector_30
+                0x00000910                __vector_25
+                0x00000910                __vector_11
+                0x00000910                __vector_17
+                0x00000910                __vector_19
+                0x00000910                __vector_27
+                0x00000910                __vector_5
+                0x00000910                __vector_4
+                0x00000910                __vector_9
+                0x00000910                __vector_2
+                0x00000910                __vector_21
+                0x00000910                __vector_15
+                0x00000910                __vector_29
+                0x00000910                __vector_8
+                0x00000910                __vector_26
+                0x00000910                __vector_14
+                0x00000910                __vector_10
+                0x00000910                __vector_16
+                0x00000910                __vector_18
+                0x00000910                __vector_20
+                0x00000914                . = ALIGN (0x2)
+ *(.text.*)
+ .text.rowLoad  0x00000914       0x58 drivers/gameBadge.o
+                0x00000914                rowLoad
+ .text.getButtons
+                0x0000096c       0x10 drivers/gameBadge.o
+                0x0000096c                getButtons
+ .text.toneLogic
+                0x0000097c       0x46 drivers/gameBadge.o
+                0x0000097c                toneLogic
+ .text.tone     0x000009c2       0x2e drivers/gameBadge.o
+                0x000009c2                tone
+ .text.ledState
+                0x000009f0       0x14 drivers/gameBadge.o
+                0x000009f0                ledState
+ .text.getRandom
+                0x00000a04       0x20 drivers/gameBadge.o
+                0x00000a04                getRandom
+ .text.setWindow
+                0x00000a24       0x42 drivers/gameBadge.o
+                0x00000a24                setWindow
+ .text.setRowScroll
+                0x00000a66       0x1e drivers/gameBadge.o
+                0x00000a66                setRowScroll
+ .text.drawSprite
+                0x00000a84      0x1aa drivers/gameBadge.o
+                0x00000a84                drawSprite
+ .text.setScrollDirection
+                0x00000c2e        0x6 drivers/gameBadge.o
+                0x00000c2e                setScrollDirection
+ .text.sendSPI  0x00000c34        0xe drivers/gameBadge.o
+                0x00000c34                sendSPI
+ .text.dcHigh   0x00000c42        0x8 drivers/gameBadge.o
+                0x00000c42                dcHigh
+ .text.dcLow    0x00000c4a        0x8 drivers/gameBadge.o
+                0x00000c4a                dcLow
+ .text.csHigh   0x00000c52        0x8 drivers/gameBadge.o
+                0x00000c52                csHigh
+ .text.csLow    0x00000c5a        0x8 drivers/gameBadge.o
+                0x00000c5a                csLow
+ .text.screenLoad
+                0x00000c62       0x76 drivers/gameBadge.o
+                0x00000c62                screenLoad
+ .text.drawTiles
+                0x00000cd8      0x21a drivers/gameBadge.o
+                0x00000cd8                drawTiles
+ .text.writecommand
+                0x00000ef2       0x1e drivers/gameBadge.o
+                0x00000ef2                writecommand
+ .text.displayInit
+                0x00000f10       0xaa drivers/gameBadge.o
+                0x00000f10                displayInit
+ .text.displayOnOff
+                0x00000fba       0x26 drivers/gameBadge.o
+                0x00000fba                displayOnOff
+ .text.gameSetup
+                0x00000fe0        0xc game.o
+                0x00000fe0                gameSetup
+ .text.nextRow  0x00000fec       0x20 game.o
+                0x00000fec                nextRow
+ .text.setGoal  0x0000100c       0x10 game.o
+                0x0000100c                setGoal
+ .text.phaseStart
+                0x0000101c       0xfe game.o
+                0x0000101c                phaseStart
+ .text.spawnObstacle
+                0x0000111a       0xb6 game.o
+                0x0000111a                spawnObstacle
+ .text.spawnShot
+                0x000011d0       0x6e game.o
+                0x000011d0                spawnShot
+ .text.spawnEnemy
+                0x0000123e       0x7e game.o
+                0x0000123e                spawnEnemy
+ .text.shotLogic
+                0x000012bc       0x82 game.o
+                0x000012bc                shotLogic
+ .text.gotoSleep
+                0x0000133e       0x14 game.o
+                0x0000133e                gotoSleep
+ .text.getGround
+                0x00001352       0x2e game.o
+                0x00001352                getGround
+ .text.killPlayer
+                0x00001380       0x1c game.o
+                0x00001380                killPlayer
+ .text.enemies  0x0000139c      0x8d0 game.o
+                0x0000139c                enemies
+ .text.clearObjects
+                0x00001c6c       0x52 game.o
+                0x00001c6c                clearObjects
+ .text.startNewLife
+                0x00001cbe       0x36 game.o
+                0x00001cbe                startNewLife
+ .text.playerLogic
+                0x00001cf4      0x490 game.o
+                0x00001cf4                playerLogic
+ .text.startNewGame
+                0x00002184       0x28 game.o
+                0x00002184                startNewGame
+ .text.fillTiles
+                0x000021ac       0x22 game.o
+                0x000021ac                fillTiles
+ .text.drawMountains2
+                0x000021ce       0x72 game.o
+                0x000021ce                drawMountains2
+ .text.drawDecimal
+                0x00002240       0xc8 game.o
+                0x00002240                drawDecimal
+ .text.drawText
+                0x00002308       0x14 game.o
+                0x00002308                drawText
+ .text.gameStatus
+                0x0000231c      0x17a game.o
+                0x0000231c                gameStatus
+ .text.gameAction
+                0x00002496      0x36a game.o
+                0x00002496                gameAction
+ .text.cls      0x00002800       0x12 game.o
+                0x00002800                cls
+ .text.drawTitle
+                0x00002812       0x56 game.o
+                0x00002812                drawTitle
+ .text.drawMoonscape
+                0x00002868      0x17a game.o
+                0x00002868                drawMoonscape
+ .text.gameFrame
+                0x000029e2      0x144 game.o
+                0x000029e2                gameFrame
+ .text.systemLoop
+                0x00002b26       0x2a game.o
+                0x00002b26                systemLoop
+ .text.__vector_13
+                0x00002b50       0x58 game.o
+                0x00002b50                __vector_13
+ .text.__vector_3
+                0x00002ba8       0x62 game.o
+                0x00002ba8                __vector_3
+ .text.__vector_7
+                0x00002c0a       0x7a game.o
+                0x00002c0a                __vector_7
+ .text.main     0x00002c84       0xe6 main.o
+                0x00002c84                main
+ .text.libgcc.div
+                0x00002d6a       0x44 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega3\libgcc.a(_udivmodsi4.o)
+                0x00002d6a                __udivmodsi4
+ .text.avr-libc
+                0x00002dae        0xe c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega3\libc.a(memset.o)
+                0x00002dae                memset
+                0x00002dbc                . = ALIGN (0x2)
+ *(.fini9)
+ .fini9         0x00002dbc        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega3\libgcc.a(_exit.o)
+                0x00002dbc                _exit
+                0x00002dbc                exit
+ *(.fini9)
+ *(.fini8)
+ *(.fini8)
+ *(.fini7)
+ *(.fini7)
+ *(.fini6)
+ *(.fini6)
+ *(.fini5)
+ *(.fini5)
+ *(.fini4)
+ *(.fini4)
+ *(.fini3)
+ *(.fini3)
+ *(.fini2)
+ *(.fini2)
+ *(.fini1)
+ *(.fini1)
+ *(.fini0)
+ .fini0         0x00002dbc        0x4 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega3\libgcc.a(_exit.o)
+ *(.fini0)
+                0x00002dc0                _etext = .
+
+.rodata         0x0000adc0       0xe8 load address 0x00002dc0
+ *(.rodata)
+ *(.rodata*)
+ .rodata.str1.1
+                0x0000adc0       0xc4 game.o
+ .rodata.enemySpawnSide
+                0x0000ae84        0x4 game.o
+                0x0000ae84                enemySpawnSide
+ .rodata.jumpVelocity
+                0x0000ae88       0x20 game.o
+                0x0000ae88                jumpVelocity
+ *(.gnu.linkonce.r*)
+
+.data           0x00803800       0x12 load address 0x00002ea8
+                0x00803800                PROVIDE (__data_start, .)
+ *(.data)
+ *(.data*)
+ .data.obstacleTimerBase
+                0x00803800        0x1 game.o
+                0x00803800                obstacleTimerBase
+ .data.obstacleTimer
+                0x00803801        0x1 game.o
+                0x00803801                obstacleTimer
+ .data.blasterX
+                0x00803802        0x1 game.o
+                0x00803802                blasterX
+ .data.messageFlash
+                0x00803803        0x2 game.o
+                0x00803803                messageFlash
+ .data.stagePhase
+                0x00803805        0x1 game.o
+                0x00803805                stagePhase
+ .data.speed    0x00803806        0x1 game.o
+                0x00803806                speed
+ .data.groundSlope
+                0x00803807        0x1 game.o
+                0x00803807                groundSlope
+ .data.spawnPointer
+                0x00803808        0x1 game.o
+                0x00803808                spawnPointer
+ .data.wheelSpin
+                0x00803809        0x1 game.o
+                0x00803809                wheelSpin
+ .data.wheelXcoarseTile
+                0x0080380a        0x3 game.o
+                0x0080380a                wheelXcoarseTile
+ .data.bugY     0x0080380d        0x1 game.o
+                0x0080380d                bugY
+ .data.bugX     0x0080380e        0x1 game.o
+                0x0080380e                bugX
+ .data.attackSpeed
+                0x0080380f        0x1 game.o
+                0x0080380f                attackSpeed
+ .data.minutes  0x00803810        0x1 game.o
+ .data.hours    0x00803811        0x1 game.o
+ *(.gnu.linkonce.d*)
+                0x00803812                . = ALIGN (0x2)
+                0x00803812                _edata = .
+                0x00803812                PROVIDE (__data_end, .)
+
+.bss            0x00803812      0x62f
+                0x00803812                PROVIDE (__bss_start, .)
+ *(.bss)
+ *(.bss*)
+ .bss.displaySleep
+                0x00803812        0x1 drivers/gameBadge.o
+                0x00803812                displaySleep
+ .bss.toneDir   0x00803813        0x2 drivers/gameBadge.o
+                0x00803813                toneDir
+ .bss.tonePriority
+                0x00803815        0x1 drivers/gameBadge.o
+                0x00803815                tonePriority
+ .bss.toneTimer
+                0x00803816        0x2 drivers/gameBadge.o
+                0x00803816                toneTimer
+ .bss.winYfine  0x00803818        0x1 drivers/gameBadge.o
+                0x00803818                winYfine
+ .bss.winY      0x00803819        0x1 drivers/gameBadge.o
+                0x00803819                winY
+ .bss.scrollDirection
+                0x0080381a        0x1 drivers/gameBadge.o
+                0x0080381a                scrollDirection
+ .bss.buttonFire
+                0x0080381b        0x1 game.o
+                0x0080381b                buttonFire
+ .bss.blasterY  0x0080381c        0x1 game.o
+                0x0080381c                blasterY
+ .bss.enemyPointer
+                0x0080381d        0x1 game.o
+                0x0080381d                enemyPointer
+ .bss.shotPointer
+                0x0080381e        0x1 game.o
+                0x0080381e                shotPointer
+ .bss.eventGoal
+                0x0080381f        0x2 game.o
+                0x0080381f                eventGoal
+ .bss.eventTimer
+                0x00803821        0x2 game.o
+                0x00803821                eventTimer
+ .bss.collide   0x00803823        0x2 game.o
+                0x00803823                collide
+ .bss.spawnFineCounter
+                0x00803825        0x1 game.o
+                0x00803825                spawnFineCounter
+ .bss.playerFrame
+                0x00803826        0x2 game.o
+                0x00803826                playerFrame
+ .bss.playerTimer
+                0x00803828        0x2 game.o
+                0x00803828                playerTimer
+ .bss.playerState
+                0x0080382a        0x1 game.o
+                0x0080382a                playerState
+ .bss.jump      0x0080382b        0x1 game.o
+                0x0080382b                jump
+ .bss.bgScroll  0x0080382c        0x1 game.o
+                0x0080382c                bgScroll
+ .bss.frameCounter
+                0x0080382d        0x2 game.o
+                0x0080382d                frameCounter
+ .bss.xWindowCoarse
+                0x0080382f        0x2 game.o
+                0x0080382f                xWindowCoarse
+ .bss.xWindow   0x00803831        0x1 game.o
+                0x00803831                xWindow
+ .bss.seconds   0x00803832        0x1 game.o
+ .bss.amPM      0x00803833        0x1 game.o
+ .bss.secFlag   0x00803834        0x1 game.o
+ .bss.frameFlag
+                0x00803835        0x1 game.o
+ .bss.sleepState
+                0x00803836        0x1 game.o
+ *(COMMON)
+ COMMON         0x00803837      0x414 drivers/gameBadge.o
+                0x00803837                tonePitch
+                0x00803839                winXfine
+                0x00803841                winX
+                0x00803849                buffer
+                0x00803c49                seed
+ COMMON         0x00803c4b      0x1f6 game.o
+                0x00803c4b                skyEnemies
+                0x00803c4c                gameState
+                0x00803c4d                heroShots
+                0x00803c5f                tileMap
+                0x00803d5f                distance
+                0x00803d60                gamePad
+                0x00803d61                numberSpawned
+                0x00803d62                stage
+                0x00803d63                score
+                0x00803d67                padSeed
+                0x00803d69                numberOfWaves
+                0x00803d6a                lives
+                0x00803d6b                enemy
+                0x00803e3b                byDistance
+                0x00803e3c                killedPerWave
+                0x00803e3d                checkPoint
+                0x00803e3e                isDrawn
+                0x00803e3f                distanceGoal
+                0x00803e40                spawnPerWave
+                0x00803e41                PROVIDE (__bss_end, .)
+                0x00002ea8                __data_load_start = LOADADDR (.data)
+                0x00002eba                __data_load_end = (__data_load_start + SIZEOF (.data))
+
+.noinit         0x00803e41        0x0
+                [!provide]                PROVIDE (__noinit_start, .)
+ *(.noinit*)
+                [!provide]                PROVIDE (__noinit_end, .)
+                0x00803e41                _end = .
+                [!provide]                PROVIDE (__heap_start, .)
+
+.eeprom         0x00810000        0x0
+ *(.eeprom*)
+                0x00810000                __eeprom_end = .
+
+.fuse
+ *(.fuse)
+ *(.lfuse)
+ *(.hfuse)
+ *(.efuse)
+
+.lock
+ *(.lock*)
+
+.signature
+ *(.signature*)
+
+.user_signatures
+ *(.user_signatures*)
+
+.stab
+ *(.stab)
+
+.stabstr
+ *(.stabstr)
+
+.stab.excl
+ *(.stab.excl)
+
+.stab.exclstr
+ *(.stab.exclstr)
+
+.stab.index
+ *(.stab.index)
+
+.stab.indexstr
+ *(.stab.indexstr)
+
+.comment        0x00000000       0x30
+ *(.comment)
+ .comment       0x00000000       0x30 drivers/gameBadge.o
+                                 0x31 (size before relaxing)
+ .comment       0x00000030       0x31 game.o
+ .comment       0x00000030       0x31 main.o
+
+.note.gnu.avr.deviceinfo
+                0x00000000       0x40
+ .note.gnu.avr.deviceinfo
+                0x00000000       0x40 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATtiny_DFP/1.8.332/gcc/dev/attiny1616/avrxmega3/crtattiny1616.o
+
+.note.gnu.build-id
+ *(.note.gnu.build-id)
+
+.debug
+ *(.debug)
+
+.line
+ *(.line)
+
+.debug_srcinfo
+ *(.debug_srcinfo)
+
+.debug_sfnames
+ *(.debug_sfnames)
+
+.debug_aranges  0x00000000      0x1e8
+ *(.debug_aranges)
+ .debug_aranges
+                0x00000000       0xc0 drivers/gameBadge.o
+ .debug_aranges
+                0x000000c0      0x108 game.o
+ .debug_aranges
+                0x000001c8       0x20 main.o
+
+.debug_pubnames
+ *(.debug_pubnames)
+
+.debug_info     0x00000000     0x62b1
+ *(.debug_info .gnu.linkonce.wi.*)
+ .debug_info    0x00000000     0x19ed C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATtiny_DFP/1.8.332/gcc/dev/attiny1616/avrxmega3/crtattiny1616.o
+ .debug_info    0x000019ed     0x1565 drivers/gameBadge.o
+ .debug_info    0x00002f52     0x237e game.o
+ .debug_info    0x000052d0      0xfe1 main.o
+
+.debug_abbrev   0x00000000     0x2066
+ *(.debug_abbrev)
+ .debug_abbrev  0x00000000     0x1888 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATtiny_DFP/1.8.332/gcc/dev/attiny1616/avrxmega3/crtattiny1616.o
+ .debug_abbrev  0x00001888      0x342 drivers/gameBadge.o
+ .debug_abbrev  0x00001bca      0x30e game.o
+ .debug_abbrev  0x00001ed8      0x18e main.o
+
+.debug_line     0x00000000     0x1e1f
+ *(.debug_line .debug_line.* .debug_line_end)
+ .debug_line    0x00000000      0x151 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATtiny_DFP/1.8.332/gcc/dev/attiny1616/avrxmega3/crtattiny1616.o
+ .debug_line    0x00000151      0x7ad drivers/gameBadge.o
+ .debug_line    0x000008fe     0x12f9 game.o
+ .debug_line    0x00001bf7      0x228 main.o
+
+.debug_frame    0x00000000      0x5bc
+ *(.debug_frame)
+ .debug_frame   0x00000000      0x214 drivers/gameBadge.o
+ .debug_frame   0x00000214      0x37c game.o
+ .debug_frame   0x00000590       0x2c main.o
+
+.debug_str      0x00000000     0x1ccb
+ *(.debug_str)
+ .debug_str     0x00000000      0xacf C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATtiny_DFP/1.8.332/gcc/dev/attiny1616/avrxmega3/crtattiny1616.o
+ .debug_str     0x00000acf      0x66d drivers/gameBadge.o
+                                0x6f1 (size before relaxing)
+ .debug_str     0x0000113c      0x5e2 game.o
+                                0x8e9 (size before relaxing)
+ .debug_str     0x0000171e      0x5ad main.o
+                                0xa2e (size before relaxing)
+
+.debug_loc      0x00000000     0x1999
+ *(.debug_loc)
+ .debug_loc     0x00000000      0xcf4 drivers/gameBadge.o
+ .debug_loc     0x00000cf4      0xc83 game.o
+ .debug_loc     0x00001977       0x22 main.o
+
+.debug_macinfo
+ *(.debug_macinfo)
+
+.debug_weaknames
+ *(.debug_weaknames)
+
+.debug_funcnames
+ *(.debug_funcnames)
+
+.debug_typenames
+ *(.debug_typenames)
+
+.debug_varnames
+ *(.debug_varnames)
+
+.debug_pubtypes
+ *(.debug_pubtypes)
+
+.debug_ranges   0x00000000      0x2f8
+ *(.debug_ranges)
+ .debug_ranges  0x00000000      0x190 drivers/gameBadge.o
+ .debug_ranges  0x00000190      0x158 game.o
+ .debug_ranges  0x000002e8       0x10 main.o
+
+.debug_macro
+ *(.debug_macro)
+OUTPUT(Moon Force.elf elf32-avr)
+LOAD linker stubs
