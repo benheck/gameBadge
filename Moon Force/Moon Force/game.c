@@ -209,7 +209,7 @@ int8_t wheelSpin = 1;
 uint8_t jump = 0;
 
 uint8_t playerState = 0;
-int playerTimer = 0;
+uint16_t playerTimer = 0;
 int playerFrame = 0;
 
 uint8_t spawnFineCounter = 0;
@@ -356,7 +356,8 @@ void gameFrame() {							//This function is called at 60-ish Hz
 	}
 	
 	if (buttonsPressed & dRight && (gameState & canSwitchScreens)) {
-		//cls();		
+		//cls();
+		playerTimer = 300; 		
 		isDrawn = 0;
 		if (++gameState == 0x0C) {		//Loop around?			
 			gameState = stateTitle;			
@@ -366,6 +367,7 @@ void gameFrame() {							//This function is called at 60-ish Hz
 	if (buttonsPressed & dLeft && (gameState & canSwitchScreens)) {
 		//cls();
 		isDrawn = 0;
+		playerTimer = 300; 
 		if (--gameState == 0x07) {		//Loop around?
 			gameState = stateOptions;
 		}
@@ -419,11 +421,13 @@ void gameFrame() {							//This function is called at 60-ish Hz
 			sendTiles();
 			drawTime();						
 			if (buttonsPressed & dB) {
+				playerTimer = 300;
 				if (++changeTime == 3) {	//Cycle through hours, minutes and done with each press
 					changeTime = 0;
 				}
 			}	
 			if (buttonsPressed & dA) {
+				playerTimer = 300;
 				SPI0_CTRLB = 0;							//Disable SPI buffer mode since we are sending single byte commands			
 				sideOfMoon = setRotate(0xFF);			//Toggle screen rotate and store local copy
 				SPI0_CTRLB = SPI_BUFEN_bm;				//Resume SPI buffer mode					
@@ -973,7 +977,7 @@ void nextRow() {
 
 void startNewGame() {
 
-	stage = 5;
+	stage = 1;
 
 	score = 0;
 	lives = 2;
@@ -985,7 +989,7 @@ void startNewGame() {
 
 void startNewStage() {
 	
-	checkPoint = 1;							//Which goal you've reached (0=A, 5=F)
+	checkPoint = 0;							//Which goal you've reached (0=A, 5=F)
 	attackSpeed = 140 - (stage * 20);
 	startNewLife();
 	
@@ -1711,11 +1715,7 @@ void drawOptions() {
 void drawTime() {
 
 	cls();
-	setWindow(0, 0);
-	
-	tileMap[0] = '<';
-	tileMap[15] = '>';
-	
+	setWindow(0, 0);	
 	uint8_t temp = hours;
 	
 	if (hours > 9) {
@@ -1741,46 +1741,60 @@ void drawTime() {
 	temp %= 10;	
 	drawTimeDigit(13, 3, temp);
 
-	switch (changeTime) {
-		case 0:
+	if (playerTimer) {
+		playerTimer--;
+		
+	
+		tileMap[0] = '<';
+		tileMap[15] = '>';		
+		
+		switch (changeTime) {
+			case 0:
 			drawText("A = ROTATE", tileMap + 34);
-			drawText("B = SET TIME", tileMap + 2);		
-		break;		
-		case 1:
+			drawText("B = SET TIME", tileMap + 2);
+			break;
+			case 1:
 			drawText("]^ HOURS", tileMap + 67);
-		break;
-		case 2:
+			break;
+			case 2:
 			drawText("MINUTES ]^", tileMap + 68);
-		break;		
+			break;
+		}	
+		
+		if (changeTime) {
+			drawText("B = NEXT", tileMap + 2);
+			if (buttonsPressed & dUp) {
+				playerTimer = 300;
+				if (changeTime == 1) {
+					if (++hours == 13) {
+						hours = 1;
+					}
+				}
+				else {
+					if (++minutes == 60) {
+						minutes = 0;
+					}
+				}
+			}
+			if (buttonsPressed & dDown) {
+				playerTimer = 300;
+				if (changeTime == 1) {
+					if (--hours == 0) {
+						hours = 12;
+					}
+				}
+				else {
+					if (--minutes == 255) {
+						minutes = 59;
+					}
+				}
+			}
+		}		
+		
+				
 	}
 
-	if (changeTime) {
-		drawText("B = NEXT", tileMap + 2);
-		if (buttonsPressed & dUp) {
-			if (changeTime == 1) {
-				if (++hours == 13) {
-					hours = 1;
-				}	
-			}
-			else {
-				if (++minutes == 60) {
-					minutes = 0;
-				}				
-			}
-		}	
-		if (buttonsPressed & dDown) {
-			if (changeTime == 1) {
-				if (--hours == 0) {
-					hours = 12;
-				}
-			}
-			else {
-				if (--minutes == 255) {
-					minutes = 59;
-				}
-			}
-		}			
-	}
+
 
 
 	

@@ -295,7 +295,7 @@ END GROUP
 .rela.plt
  *(.rela.plt)
 
-.text           0x00000000     0x3756
+.text           0x00000000     0x37b6
  *(.vectors)
  .vectors       0x00000000       0x7c C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATtiny_DFP/1.8.332/gcc/dev/attiny1616/avrxmega3/crtattiny1616.o
                 0x00000000                __vector_default
@@ -556,98 +556,98 @@ END GROUP
                 0x0000201e      0x46a game.o
                 0x0000201e                playerLogic
  .text.startNewStage
-                0x00002488       0x1c game.o
+                0x00002488       0x1a game.o
                 0x00002488                startNewStage
  .text.startNewGame
-                0x000024a4       0x20 game.o
-                0x000024a4                startNewGame
+                0x000024a2       0x20 game.o
+                0x000024a2                startNewGame
  .text.fillTiles
-                0x000024c4       0x20 game.o
-                0x000024c4                fillTiles
+                0x000024c2       0x20 game.o
+                0x000024c2                fillTiles
  .text.drawMountains2
-                0x000024e4       0x4e game.o
-                0x000024e4                drawMountains2
+                0x000024e2       0x4e game.o
+                0x000024e2                drawMountains2
  .text.drawDecimal
-                0x00002532       0xc8 game.o
-                0x00002532                drawDecimal
+                0x00002530       0xc8 game.o
+                0x00002530                drawDecimal
  .text.drawText
-                0x000025fa       0x10 game.o
-                0x000025fa                drawText
+                0x000025f8       0x10 game.o
+                0x000025f8                drawText
  .text.gameAction
-                0x0000260a      0x3d6 game.o
-                0x0000260a                gameAction
+                0x00002608      0x3d6 game.o
+                0x00002608                gameAction
  .text.gameStatus
-                0x000029e0      0x176 game.o
-                0x000029e0                gameStatus
+                0x000029de      0x176 game.o
+                0x000029de                gameStatus
  .text.drawTimeDigit
-                0x00002b56       0x60 game.o
-                0x00002b56                drawTimeDigit
- .text.cls      0x00002bb6       0x10 game.o
-                0x00002bb6                cls
+                0x00002b54       0x60 game.o
+                0x00002b54                drawTimeDigit
+ .text.cls      0x00002bb4       0x10 game.o
+                0x00002bb4                cls
  .text.drawOptions
-                0x00002bc6       0x40 game.o
-                0x00002bc6                drawOptions
+                0x00002bc4       0x40 game.o
+                0x00002bc4                drawOptions
  .text.drawTime
-                0x00002c06      0x162 game.o
-                0x00002c06                drawTime
+                0x00002c04      0x194 game.o
+                0x00002c04                drawTime
  .text.drawTitle
-                0x00002d68       0x56 game.o
-                0x00002d68                drawTitle
+                0x00002d98       0x56 game.o
+                0x00002d98                drawTitle
  .text.drawMoonscape
-                0x00002dbe      0x166 game.o
-                0x00002dbe                drawMoonscape
+                0x00002dee      0x166 game.o
+                0x00002dee                drawMoonscape
  .text.drawHighScores
-                0x00002f24       0x8c game.o
-                0x00002f24                drawHighScores
+                0x00002f54       0x8c game.o
+                0x00002f54                drawHighScores
  .text.drawNameEntryScreen
-                0x00002fb0       0x96 game.o
-                0x00002fb0                drawNameEntryScreen
+                0x00002fe0       0x96 game.o
+                0x00002fe0                drawNameEntryScreen
  .text.eepromWrite
-                0x00003046       0x58 game.o
-                0x00003046                eepromWrite
+                0x00003076       0x58 game.o
+                0x00003076                eepromWrite
  .text.updateHighScores
-                0x0000309e       0xa8 game.o
-                0x0000309e                updateHighScores
+                0x000030ce       0xa8 game.o
+                0x000030ce                updateHighScores
  .text.writeDefaultHighScores
-                0x00003146       0x46 game.o
-                0x00003146                writeDefaultHighScores
+                0x00003176       0x46 game.o
+                0x00003176                writeDefaultHighScores
  .text.gameSetup
-                0x0000318c       0x14 game.o
-                0x0000318c                gameSetup
+                0x000031bc       0x14 game.o
+                0x000031bc                gameSetup
  .text.gameFrame
-                0x000031a0      0x2fa game.o
-                0x000031a0                gameFrame
+                0x000031d0      0x32a game.o
+                0x000031d0                gameFrame
  .text.systemLoop
-                0x0000349a       0x2a game.o
-                0x0000349a                systemLoop
+                0x000034fa       0x2a game.o
+                0x000034fa                systemLoop
  .text.__vector_13
-                0x000034c4       0x58 game.o
-                0x000034c4                __vector_13
+                0x00003524       0x58 game.o
+                0x00003524                __vector_13
  .text.__vector_3
-                0x0000351c       0x6a game.o
-                0x0000351c                __vector_3
+                0x0000357c       0x6a game.o
+                0x0000357c                __vector_3
  .text.__vector_7
-                0x00003586       0x68 game.o
-                0x00003586                __vector_7
+                0x000035e6       0x68 game.o
+                0x000035e6                __vector_7
  .text.startup.main
-                0x000035ee       0xee main.o
-                0x000035ee                main
+                0x0000364e       0xee main.o
+                0x0000364e                main
  .text.libgcc.div
-                0x000036dc       0x18 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega3\libgcc.a(_udivmodqi4.o)
-                0x000036dc                __udivmodqi4
+                0x0000373c       0x18 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega3\libgcc.a(_udivmodqi4.o)
+                0x0000373c                __udivmodqi4
  .text.libgcc.div
-                0x000036f4       0x44 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega3\libgcc.a(_udivmodsi4.o)
-                0x000036f4                __udivmodsi4
- .text.libgcc   0x00003738        0xc c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega3\libgcc.a(_tablejump2.o)
-                0x00003738                __tablejump2__
+                0x00003754       0x44 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega3\libgcc.a(_udivmodsi4.o)
+                0x00003754                __udivmodsi4
+ .text.libgcc   0x00003798        0xc c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega3\libgcc.a(_tablejump2.o)
+                0x00003798                __tablejump2__
  .text.avr-libc
-                0x00003744        0xe c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega3\libc.a(memset.o)
-                0x00003744                memset
-                0x00003752                . = ALIGN (0x2)
+                0x000037a4        0xe c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega3\libc.a(memset.o)
+                0x000037a4                memset
+                0x000037b2                . = ALIGN (0x2)
  *(.fini9)
- .fini9         0x00003752        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega3\libgcc.a(_exit.o)
-                0x00003752                _exit
-                0x00003752                exit
+ .fini9         0x000037b2        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega3\libgcc.a(_exit.o)
+                0x000037b2                _exit
+                0x000037b2                exit
  *(.fini9)
  *(.fini8)
  *(.fini8)
@@ -666,30 +666,30 @@ END GROUP
  *(.fini1)
  *(.fini1)
  *(.fini0)
- .fini0         0x00003752        0x4 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega3\libgcc.a(_exit.o)
+ .fini0         0x000037b2        0x4 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega3\libgcc.a(_exit.o)
  *(.fini0)
-                0x00003756                _etext = .
+                0x000037b6                _etext = .
 
-.rodata         0x0000b756      0x20a load address 0x00003756
+.rodata         0x0000b7b6      0x20a load address 0x000037b6
  *(.rodata)
  *(.rodata*)
  .rodata.str1.1
-                0x0000b756      0x124 game.o
+                0x0000b7b6      0x124 game.o
  .rodata.enemySpawnSide
-                0x0000b87a        0x4 game.o
-                0x0000b87a                enemySpawnSide
+                0x0000b8da        0x4 game.o
+                0x0000b8da                enemySpawnSide
  .rodata.sineWave
-                0x0000b87e       0x80 game.o
-                0x0000b87e                sineWave
+                0x0000b8de       0x80 game.o
+                0x0000b8de                sineWave
  .rodata.makeDigits
-                0x0000b8fe       0x42 game.o
-                0x0000b8fe                makeDigits
+                0x0000b95e       0x42 game.o
+                0x0000b95e                makeDigits
  .rodata.jumpVelocity
-                0x0000b940       0x20 game.o
-                0x0000b940                jumpVelocity
+                0x0000b9a0       0x20 game.o
+                0x0000b9a0                jumpVelocity
  *(.gnu.linkonce.r*)
 
-.data           0x00803800       0x1e load address 0x00003960
+.data           0x00803800       0x1e load address 0x000039c0
                 0x00803800                PROVIDE (__data_start, .)
  *(.data)
  *(.data*)
@@ -872,8 +872,8 @@ END GROUP
                 0x00803e5e                xCollide
                 0x00803e5f                spawnPerWave
                 0x00803e60                PROVIDE (__bss_end, .)
-                0x00003960                __data_load_start = LOADADDR (.data)
-                0x0000397e                __data_load_end = (__data_load_start + SIZEOF (.data))
+                0x000039c0                __data_load_start = LOADADDR (.data)
+                0x000039de                __data_load_end = (__data_load_start + SIZEOF (.data))
 
 .noinit         0x00803e60        0x0
                 [!provide]                PROVIDE (__noinit_start, .)
