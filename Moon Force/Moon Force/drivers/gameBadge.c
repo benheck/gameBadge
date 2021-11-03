@@ -21,6 +21,8 @@ int toneDir = 0;
 uint8_t displaySleep = 0;
 uint16_t seed;
 
+uint8_t rotate180 = 0;
+
 void displayInit() {
 
 	csLow();	
@@ -48,10 +50,8 @@ void displayInit() {
     writecommand(SSD1306_MEMORYMODE);                    // 0x20
     //writecommand(0x01);									// 0x00 vertical addressing
     writecommand(0x00);									// 0x00 horizontal addressing
-    
-    writecommand(SSD1306_SEGREMAP | 0x01);				// rotate screen 180
-    
-    writecommand(SSD1306_COMSCANDEC);					// rotate screen 180
+
+	setRotate(rotate180);								//Set as normal rotate to start
     
     writecommand(SSD1306_SETCOMPINS);                    // 0xDA
     writecommand(0x12);
@@ -359,6 +359,28 @@ void displayOnOff(uint8_t whatState) {
 	}
 	
 	SPI0_CTRLB = SPI_BUFEN_bm;								//Resume SPI buffer mode
+	
+}
+
+int setRotate(uint8_t which) {
+
+	if (which == 0xFF) {							//Toggle flag? user mode
+		rotate180 = !rotate180 & 1;					//Invert rotation	
+	}
+	else {
+		rotate180 = which;							//0 or 1? Restore last rotation (such as from a wake)
+	}
+
+	if (rotate180) {
+		writecommand(SSD1306_SEGREMAP);				// rotate screen 180
+		writecommand(SSD1306_COMSCANINC);			// rotate screen 180		
+	}
+	else {
+		writecommand(SSD1306_SEGREMAP | 0x01);		//Normal
+		writecommand(SSD1306_COMSCANDEC);	
+	}
+	
+	return rotate180;
 	
 }
 

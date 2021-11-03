@@ -69,6 +69,7 @@ void drawSprite(const char *bitmap, int8_t xPos, int8_t yPos, uint8_t frameNumbe
 void setScrollDirection(uint8_t mirrorType);
 void bufferMask(int8_t xPos, int16_t bufferPos, uint8_t data, uint8_t maskType);
 void displayOnOff(uint8_t whatState);
+int setRotate(uint8_t which);
 void writecommand(uint8_t c);
 void writedata(uint8_t c);
 void sendSPI(uint8_t theData);
