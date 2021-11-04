@@ -295,7 +295,7 @@ END GROUP
 .rela.plt
  *(.rela.plt)
 
-.text           0x00000000     0x37b6
+.text           0x00000000     0x3872
  *(.vectors)
  .vectors       0x00000000       0x7c C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATtiny_DFP/1.8.332/gcc/dev/attiny1616/avrxmega3/crtattiny1616.o
                 0x00000000                __vector_default
@@ -303,93 +303,96 @@ END GROUP
  *(.vectors)
  *(.progmem.gcc*)
  .progmem.gcc_sw_table.enemies
-                0x0000007c        0xe game.o
-                0x0000008a                . = ALIGN (0x2)
-                0x0000008a                __trampolines_start = .
+                0x0000007c       0x10 game.o
+                0x0000008c                . = ALIGN (0x2)
+                0x0000008c                __trampolines_start = .
  *(.trampolines)
- .trampolines   0x0000008a        0x0 linker stubs
+ .trampolines   0x0000008c        0x0 linker stubs
  *(.trampolines*)
-                0x0000008a                __trampolines_end = .
+                0x0000008c                __trampolines_end = .
  *libprintf_flt.a:*(.progmem.data)
  *libc.a:*(.progmem.data)
  *(.progmem*)
  .progmem.data.superUFO
-                0x0000008a       0x82 game.o
-                0x0000008a                superUFO
+                0x0000008c       0x82 game.o
+                0x0000008c                superUFO
  .progmem.data.mediumExplode
-                0x0000010c       0xc2 game.o
-                0x0000010c                mediumExplode
+                0x0000010e       0xc2 game.o
+                0x0000010e                mediumExplode
  .progmem.data.vertExplode
-                0x000001ce      0x182 game.o
-                0x000001ce                vertExplode
+                0x000001d0      0x182 game.o
+                0x000001d0                vertExplode
+ .progmem.data.bulletMan
+                0x00000352       0x22 game.o
+                0x00000352                bulletMan
  .progmem.data.evilBomb
-                0x00000350       0x12 game.o
-                0x00000350                evilBomb
+                0x00000374       0x12 game.o
+                0x00000374                evilBomb
  .progmem.data.evilWave
-                0x00000362       0x12 game.o
-                0x00000362                evilWave
+                0x00000386       0x12 game.o
+                0x00000386                evilWave
  .progmem.data.balls
-                0x00000374       0x42 game.o
-                0x00000374                balls
+                0x00000398       0x42 game.o
+                0x00000398                balls
  .progmem.data.ufo
-                0x000003b6       0x22 game.o
-                0x000003b6                ufo
+                0x000003da       0x22 game.o
+                0x000003da                ufo
  .progmem.data.largePit
-                0x000003d8       0x32 game.o
-                0x000003d8                largePit
+                0x000003fc       0x32 game.o
+                0x000003fc                largePit
  .progmem.data.smallPit
-                0x0000040a       0x22 game.o
-                0x0000040a                smallPit
+                0x0000042e       0x22 game.o
+                0x0000042e                smallPit
  .progmem.data.largeRock
-                0x0000042c       0x42 game.o
-                0x0000042c                largeRock
+                0x00000450       0x42 game.o
+                0x00000450                largeRock
  .progmem.data.smallRock
-                0x0000046e       0x22 game.o
-                0x0000046e                smallRock
+                0x00000492       0x22 game.o
+                0x00000492                smallRock
  .progmem.data.dualShot
-                0x00000490       0x12 game.o
-                0x00000490                dualShot
+                0x000004b4       0x12 game.o
+                0x000004b4                dualShot
  .progmem.data.blaster
-                0x000004a2       0x42 game.o
-                0x000004a2                blaster
+                0x000004c6       0x42 game.o
+                0x000004c6                blaster
  .progmem.data.buggie
-                0x000004e4       0x32 game.o
-                0x000004e4                buggie
+                0x00000508       0x32 game.o
+                0x00000508                buggie
  .progmem.data.wheel
-                0x00000516       0x12 game.o
-                0x00000516                wheel
+                0x0000053a       0x12 game.o
+                0x0000053a                wheel
  .progmem.data.tileData
-                0x00000528      0x540 game.o
-                0x00000528                tileData
-                0x00000a68                . = ALIGN (0x2)
+                0x0000054c      0x540 game.o
+                0x0000054c                tileData
+                0x00000a8c                . = ALIGN (0x2)
  *(.jumptables)
  *(.jumptables*)
  *(.lowtext)
  *(.lowtext*)
-                0x00000a68                __ctors_start = .
+                0x00000a8c                __ctors_start = .
  *(.ctors)
-                0x00000a68                __ctors_end = .
-                0x00000a68                __dtors_start = .
+                0x00000a8c                __ctors_end = .
+                0x00000a8c                __dtors_start = .
  *(.dtors)
-                0x00000a68                __dtors_end = .
+                0x00000a8c                __dtors_end = .
  SORT(*)(.ctors)
  SORT(*)(.dtors)
  *(.init0)
- .init0         0x00000a68        0x0 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATtiny_DFP/1.8.332/gcc/dev/attiny1616/avrxmega3/crtattiny1616.o
-                0x00000a68                __init
+ .init0         0x00000a8c        0x0 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATtiny_DFP/1.8.332/gcc/dev/attiny1616/avrxmega3/crtattiny1616.o
+                0x00000a8c                __init
  *(.init0)
  *(.init1)
  *(.init1)
  *(.init2)
- .init2         0x00000a68        0xc C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATtiny_DFP/1.8.332/gcc/dev/attiny1616/avrxmega3/crtattiny1616.o
+ .init2         0x00000a8c        0xc C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATtiny_DFP/1.8.332/gcc/dev/attiny1616/avrxmega3/crtattiny1616.o
  *(.init2)
  *(.init3)
  *(.init3)
  *(.init4)
- .init4         0x00000a74       0x16 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega3\libgcc.a(_copy_data.o)
-                0x00000a74                __do_copy_data
- .init4         0x00000a8a       0x10 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega3\libgcc.a(_clear_bss.o)
-                0x00000a8a                __do_clear_bss
+ .init4         0x00000a98       0x16 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega3\libgcc.a(_copy_data.o)
+                0x00000a98                __do_copy_data
+ .init4         0x00000aae       0x10 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega3\libgcc.a(_clear_bss.o)
+                0x00000aae                __do_clear_bss
  *(.init4)
  *(.init5)
  *(.init5)
@@ -400,254 +403,254 @@ END GROUP
  *(.init8)
  *(.init8)
  *(.init9)
- .init9         0x00000a9a        0x8 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATtiny_DFP/1.8.332/gcc/dev/attiny1616/avrxmega3/crtattiny1616.o
+ .init9         0x00000abe        0x8 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATtiny_DFP/1.8.332/gcc/dev/attiny1616/avrxmega3/crtattiny1616.o
  *(.init9)
  *(.text)
- .text          0x00000aa2        0x4 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATtiny_DFP/1.8.332/gcc/dev/attiny1616/avrxmega3/crtattiny1616.o
-                0x00000aa2                __vector_22
-                0x00000aa2                __vector_28
-                0x00000aa2                __vector_1
-                0x00000aa2                __vector_24
-                0x00000aa2                __vector_12
-                0x00000aa2                __bad_interrupt
-                0x00000aa2                __vector_6
-                0x00000aa2                __vector_23
-                0x00000aa2                __vector_30
-                0x00000aa2                __vector_25
-                0x00000aa2                __vector_11
-                0x00000aa2                __vector_17
-                0x00000aa2                __vector_19
-                0x00000aa2                __vector_27
-                0x00000aa2                __vector_5
-                0x00000aa2                __vector_4
-                0x00000aa2                __vector_9
-                0x00000aa2                __vector_2
-                0x00000aa2                __vector_21
-                0x00000aa2                __vector_15
-                0x00000aa2                __vector_29
-                0x00000aa2                __vector_8
-                0x00000aa2                __vector_26
-                0x00000aa2                __vector_14
-                0x00000aa2                __vector_10
-                0x00000aa2                __vector_16
-                0x00000aa2                __vector_18
-                0x00000aa2                __vector_20
-                0x00000aa6                . = ALIGN (0x2)
+ .text          0x00000ac6        0x4 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATtiny_DFP/1.8.332/gcc/dev/attiny1616/avrxmega3/crtattiny1616.o
+                0x00000ac6                __vector_22
+                0x00000ac6                __vector_28
+                0x00000ac6                __vector_1
+                0x00000ac6                __vector_24
+                0x00000ac6                __vector_12
+                0x00000ac6                __bad_interrupt
+                0x00000ac6                __vector_6
+                0x00000ac6                __vector_23
+                0x00000ac6                __vector_30
+                0x00000ac6                __vector_25
+                0x00000ac6                __vector_11
+                0x00000ac6                __vector_17
+                0x00000ac6                __vector_19
+                0x00000ac6                __vector_27
+                0x00000ac6                __vector_5
+                0x00000ac6                __vector_4
+                0x00000ac6                __vector_9
+                0x00000ac6                __vector_2
+                0x00000ac6                __vector_21
+                0x00000ac6                __vector_15
+                0x00000ac6                __vector_29
+                0x00000ac6                __vector_8
+                0x00000ac6                __vector_26
+                0x00000ac6                __vector_14
+                0x00000ac6                __vector_10
+                0x00000ac6                __vector_16
+                0x00000ac6                __vector_18
+                0x00000ac6                __vector_20
+                0x00000aca                . = ALIGN (0x2)
  *(.text.*)
  .text.screenLoad
-                0x00000aa6       0x5e drivers/gameBadge.o
-                0x00000aa6                screenLoad
- .text.rowLoad  0x00000b04       0x48 drivers/gameBadge.o
-                0x00000b04                rowLoad
+                0x00000aca       0x5e drivers/gameBadge.o
+                0x00000aca                screenLoad
+ .text.rowLoad  0x00000b28       0x48 drivers/gameBadge.o
+                0x00000b28                rowLoad
  .text.getButtons
-                0x00000b4c       0x12 drivers/gameBadge.o
-                0x00000b4c                getButtons
+                0x00000b70       0x12 drivers/gameBadge.o
+                0x00000b70                getButtons
  .text.toneLogic
-                0x00000b5e       0x4c drivers/gameBadge.o
-                0x00000b5e                toneLogic
- .text.tone     0x00000baa       0x30 drivers/gameBadge.o
-                0x00000baa                tone
+                0x00000b82       0x4c drivers/gameBadge.o
+                0x00000b82                toneLogic
+ .text.tone     0x00000bce       0x30 drivers/gameBadge.o
+                0x00000bce                tone
  .text.ledState
-                0x00000bda       0x14 drivers/gameBadge.o
-                0x00000bda                ledState
+                0x00000bfe       0x14 drivers/gameBadge.o
+                0x00000bfe                ledState
  .text.getRandom
-                0x00000bee       0x20 drivers/gameBadge.o
-                0x00000bee                getRandom
+                0x00000c12       0x20 drivers/gameBadge.o
+                0x00000c12                getRandom
  .text.drawTiles
-                0x00000c0e      0x1ce drivers/gameBadge.o
-                0x00000c0e                drawTiles
+                0x00000c32      0x1ce drivers/gameBadge.o
+                0x00000c32                drawTiles
  .text.setWindow
-                0x00000ddc       0x32 drivers/gameBadge.o
-                0x00000ddc                setWindow
+                0x00000e00       0x32 drivers/gameBadge.o
+                0x00000e00                setWindow
  .text.setRowScroll
-                0x00000e0e       0x1e drivers/gameBadge.o
-                0x00000e0e                setRowScroll
+                0x00000e32       0x1e drivers/gameBadge.o
+                0x00000e32                setRowScroll
  .text.drawSprite
-                0x00000e2c      0x1f6 drivers/gameBadge.o
-                0x00000e2c                drawSprite
+                0x00000e50      0x1f6 drivers/gameBadge.o
+                0x00000e50                drawSprite
  .text.setScrollDirection
-                0x00001022        0x6 drivers/gameBadge.o
-                0x00001022                setScrollDirection
- .text.sendSPI  0x00001028        0xe drivers/gameBadge.o
-                0x00001028                sendSPI
+                0x00001046        0x6 drivers/gameBadge.o
+                0x00001046                setScrollDirection
+ .text.sendSPI  0x0000104c        0xe drivers/gameBadge.o
+                0x0000104c                sendSPI
  .text.writecommand
-                0x00001036       0x22 drivers/gameBadge.o
-                0x00001036                writecommand
+                0x0000105a       0x22 drivers/gameBadge.o
+                0x0000105a                writecommand
  .text.setRotate
-                0x00001058       0x38 drivers/gameBadge.o
-                0x00001058                setRotate
+                0x0000107c       0x38 drivers/gameBadge.o
+                0x0000107c                setRotate
  .text.displayInit
-                0x00001090       0xa6 drivers/gameBadge.o
-                0x00001090                displayInit
+                0x000010b4       0xa6 drivers/gameBadge.o
+                0x000010b4                displayInit
  .text.displayOnOff
-                0x00001136       0x26 drivers/gameBadge.o
-                0x00001136                displayOnOff
- .text.csHigh   0x0000115c        0x8 drivers/gameBadge.o
-                0x0000115c                csHigh
- .text.csLow    0x00001164        0x8 drivers/gameBadge.o
-                0x00001164                csLow
+                0x0000115a       0x26 drivers/gameBadge.o
+                0x0000115a                displayOnOff
+ .text.csHigh   0x00001180        0x8 drivers/gameBadge.o
+                0x00001180                csHigh
+ .text.csLow    0x00001188        0x8 drivers/gameBadge.o
+                0x00001188                csLow
  .text.sendTiles
-                0x0000116c       0x10 game.o
-                0x0000116c                sendTiles
- .text.nextRow  0x0000117c       0x1e game.o
-                0x0000117c                nextRow
- .text.setGoal  0x0000119a       0x10 game.o
-                0x0000119a                setGoal
+                0x00001190       0x10 game.o
+                0x00001190                sendTiles
+ .text.nextRow  0x000011a0       0x1e game.o
+                0x000011a0                nextRow
+ .text.setGoal  0x000011be       0x10 game.o
+                0x000011be                setGoal
  .text.spawnBoss
-                0x000011aa       0x4e game.o
-                0x000011aa                spawnBoss
+                0x000011ce       0x4e game.o
+                0x000011ce                spawnBoss
  .text.findNextSlot
-                0x000011f8       0x34 game.o
-                0x000011f8                findNextSlot
+                0x0000121c       0x34 game.o
+                0x0000121c                findNextSlot
  .text.spawnObstacle
-                0x0000122c       0xac game.o
-                0x0000122c                spawnObstacle
+                0x00001250       0xac game.o
+                0x00001250                spawnObstacle
  .text.spawnShot
-                0x000012d8       0x76 game.o
-                0x000012d8                spawnShot
+                0x000012fc       0x76 game.o
+                0x000012fc                spawnShot
  .text.spawnEnemy
-                0x0000134e       0x84 game.o
-                0x0000134e                spawnEnemy
+                0x00001372       0xb8 game.o
+                0x00001372                spawnEnemy
  .text.spawnExplosion
-                0x000013d2       0x60 game.o
-                0x000013d2                spawnExplosion
+                0x0000142a       0x60 game.o
+                0x0000142a                spawnExplosion
  .text.shotLogic
-                0x00001432       0x5e game.o
-                0x00001432                shotLogic
+                0x0000148a       0x5e game.o
+                0x0000148a                shotLogic
  .text.gotoSleep
-                0x00001490       0x12 game.o
-                0x00001490                gotoSleep
- .text.damageBoss
-                0x000014a2       0x90 game.o
-                0x000014a2                damageBoss
+                0x000014e8       0x12 game.o
+                0x000014e8                gotoSleep
  .text.getGround
-                0x00001532       0x26 game.o
-                0x00001532                getGround
+                0x000014fa       0x26 game.o
+                0x000014fa                getGround
  .text.drawCharacterRow
-                0x00001558       0x34 game.o
-                0x00001558                drawCharacterRow
+                0x00001520       0x34 game.o
+                0x00001520                drawCharacterRow
  .text.findScorePosition
-                0x0000158c       0x60 game.o
-                0x0000158c                findScorePosition
+                0x00001554       0x60 game.o
+                0x00001554                findScorePosition
  .text.killPlayer
-                0x000015ec       0x1c game.o
-                0x000015ec                killPlayer
+                0x000015b4       0x1c game.o
+                0x000015b4                killPlayer
  .text.checkHitPlayer
-                0x00001608       0x34 game.o
-                0x00001608                checkHitPlayer
+                0x000015d0       0x34 game.o
+                0x000015d0                checkHitPlayer
  .text.checkObstacle
-                0x0000163c       0x26 game.o
-                0x0000163c                checkObstacle
- .text.enemies  0x00001662      0x804 game.o
-                0x00001662                enemies
+                0x00001604       0x26 game.o
+                0x00001604                checkObstacle
  .text.clearShots
-                0x00001e66       0x12 game.o
-                0x00001e66                clearShots
+                0x0000162a       0x12 game.o
+                0x0000162a                clearShots
  .text.clearEnemies
-                0x00001e78       0x22 game.o
-                0x00001e78                clearEnemies
+                0x0000163c       0x22 game.o
+                0x0000163c                clearEnemies
  .text.phaseStart
-                0x00001e9a      0x132 game.o
-                0x00001e9a                phaseStart
+                0x0000165e      0x132 game.o
+                0x0000165e                phaseStart
  .text.startNewLife
-                0x00001fcc       0x52 game.o
-                0x00001fcc                startNewLife
+                0x00001790       0x56 game.o
+                0x00001790                startNewLife
  .text.playerLogic
-                0x0000201e      0x46a game.o
-                0x0000201e                playerLogic
+                0x000017e6      0x48a game.o
+                0x000017e6                playerLogic
  .text.startNewStage
-                0x00002488       0x1a game.o
-                0x00002488                startNewStage
+                0x00001c70       0x1a game.o
+                0x00001c70                startNewStage
  .text.startNewGame
-                0x000024a2       0x20 game.o
-                0x000024a2                startNewGame
+                0x00001c8a       0x20 game.o
+                0x00001c8a                startNewGame
  .text.fillTiles
-                0x000024c2       0x20 game.o
-                0x000024c2                fillTiles
+                0x00001caa       0x20 game.o
+                0x00001caa                fillTiles
  .text.drawMountains2
-                0x000024e2       0x4e game.o
-                0x000024e2                drawMountains2
+                0x00001cca       0x4e game.o
+                0x00001cca                drawMountains2
  .text.drawDecimal
-                0x00002530       0xc8 game.o
-                0x00002530                drawDecimal
+                0x00001d18       0xc8 game.o
+                0x00001d18                drawDecimal
  .text.drawText
-                0x000025f8       0x10 game.o
-                0x000025f8                drawText
- .text.gameAction
-                0x00002608      0x3d6 game.o
-                0x00002608                gameAction
+                0x00001de0       0x10 game.o
+                0x00001de0                drawText
  .text.gameStatus
-                0x000029de      0x176 game.o
-                0x000029de                gameStatus
+                0x00001df0      0x176 game.o
+                0x00001df0                gameStatus
+ .text.damageBoss
+                0x00001f66       0xa0 game.o
+                0x00001f66                damageBoss
+ .text.enemies  0x00002006      0x80a game.o
+                0x00002006                enemies
+ .text.gameAction
+                0x00002810      0x3c8 game.o
+                0x00002810                gameAction
  .text.drawTimeDigit
-                0x00002b54       0x60 game.o
-                0x00002b54                drawTimeDigit
- .text.cls      0x00002bb4       0x10 game.o
-                0x00002bb4                cls
- .text.drawOptions
-                0x00002bc4       0x40 game.o
-                0x00002bc4                drawOptions
+                0x00002bd8       0x60 game.o
+                0x00002bd8                drawTimeDigit
+ .text.cls      0x00002c38       0x10 game.o
+                0x00002c38                cls
  .text.drawTime
-                0x00002c04      0x194 game.o
-                0x00002c04                drawTime
+                0x00002c48      0x194 game.o
+                0x00002c48                drawTime
  .text.drawTitle
-                0x00002d98       0x56 game.o
-                0x00002d98                drawTitle
+                0x00002ddc       0x56 game.o
+                0x00002ddc                drawTitle
  .text.drawMoonscape
-                0x00002dee      0x166 game.o
-                0x00002dee                drawMoonscape
+                0x00002e32      0x166 game.o
+                0x00002e32                drawMoonscape
  .text.drawHighScores
-                0x00002f54       0x8c game.o
-                0x00002f54                drawHighScores
+                0x00002f98       0x8c game.o
+                0x00002f98                drawHighScores
  .text.drawNameEntryScreen
-                0x00002fe0       0x96 game.o
-                0x00002fe0                drawNameEntryScreen
+                0x00003024       0x96 game.o
+                0x00003024                drawNameEntryScreen
  .text.eepromWrite
-                0x00003076       0x58 game.o
-                0x00003076                eepromWrite
+                0x000030ba       0x58 game.o
+                0x000030ba                eepromWrite
  .text.updateHighScores
-                0x000030ce       0xa8 game.o
-                0x000030ce                updateHighScores
+                0x00003112       0xa8 game.o
+                0x00003112                updateHighScores
  .text.writeDefaultHighScores
-                0x00003176       0x46 game.o
-                0x00003176                writeDefaultHighScores
+                0x000031ba       0x58 game.o
+                0x000031ba                writeDefaultHighScores
  .text.gameSetup
-                0x000031bc       0x14 game.o
-                0x000031bc                gameSetup
+                0x00003212       0x14 game.o
+                0x00003212                gameSetup
+ .text.drawOptions
+                0x00003226       0x72 game.o
+                0x00003226                drawOptions
  .text.gameFrame
-                0x000031d0      0x32a game.o
-                0x000031d0                gameFrame
+                0x00003298      0x31e game.o
+                0x00003298                gameFrame
  .text.systemLoop
-                0x000034fa       0x2a game.o
-                0x000034fa                systemLoop
+                0x000035b6       0x2a game.o
+                0x000035b6                systemLoop
  .text.__vector_13
-                0x00003524       0x58 game.o
-                0x00003524                __vector_13
+                0x000035e0       0x58 game.o
+                0x000035e0                __vector_13
  .text.__vector_3
-                0x0000357c       0x6a game.o
-                0x0000357c                __vector_3
+                0x00003638       0x6a game.o
+                0x00003638                __vector_3
  .text.__vector_7
-                0x000035e6       0x68 game.o
-                0x000035e6                __vector_7
+                0x000036a2       0x68 game.o
+                0x000036a2                __vector_7
  .text.startup.main
-                0x0000364e       0xee main.o
-                0x0000364e                main
+                0x0000370a       0xee main.o
+                0x0000370a                main
  .text.libgcc.div
-                0x0000373c       0x18 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega3\libgcc.a(_udivmodqi4.o)
-                0x0000373c                __udivmodqi4
+                0x000037f8       0x18 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega3\libgcc.a(_udivmodqi4.o)
+                0x000037f8                __udivmodqi4
  .text.libgcc.div
-                0x00003754       0x44 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega3\libgcc.a(_udivmodsi4.o)
-                0x00003754                __udivmodsi4
- .text.libgcc   0x00003798        0xc c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega3\libgcc.a(_tablejump2.o)
-                0x00003798                __tablejump2__
+                0x00003810       0x44 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega3\libgcc.a(_udivmodsi4.o)
+                0x00003810                __udivmodsi4
+ .text.libgcc   0x00003854        0xc c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega3\libgcc.a(_tablejump2.o)
+                0x00003854                __tablejump2__
  .text.avr-libc
-                0x000037a4        0xe c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega3\libc.a(memset.o)
-                0x000037a4                memset
-                0x000037b2                . = ALIGN (0x2)
+                0x00003860        0xe c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega3\libc.a(memset.o)
+                0x00003860                memset
+                0x0000386e                . = ALIGN (0x2)
  *(.fini9)
- .fini9         0x000037b2        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega3\libgcc.a(_exit.o)
-                0x000037b2                _exit
-                0x000037b2                exit
+ .fini9         0x0000386e        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega3\libgcc.a(_exit.o)
+                0x0000386e                _exit
+                0x0000386e                exit
  *(.fini9)
  *(.fini8)
  *(.fini8)
@@ -666,30 +669,30 @@ END GROUP
  *(.fini1)
  *(.fini1)
  *(.fini0)
- .fini0         0x000037b2        0x4 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega3\libgcc.a(_exit.o)
+ .fini0         0x0000386e        0x4 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega3\libgcc.a(_exit.o)
  *(.fini0)
-                0x000037b6                _etext = .
+                0x00003872                _etext = .
 
-.rodata         0x0000b7b6      0x20a load address 0x000037b6
+.rodata         0x0000b872      0x236 load address 0x00003872
  *(.rodata)
  *(.rodata*)
  .rodata.str1.1
-                0x0000b7b6      0x124 game.o
+                0x0000b872      0x150 game.o
  .rodata.enemySpawnSide
-                0x0000b8da        0x4 game.o
-                0x0000b8da                enemySpawnSide
+                0x0000b9c2        0x4 game.o
+                0x0000b9c2                enemySpawnSide
  .rodata.sineWave
-                0x0000b8de       0x80 game.o
-                0x0000b8de                sineWave
+                0x0000b9c6       0x80 game.o
+                0x0000b9c6                sineWave
  .rodata.makeDigits
-                0x0000b95e       0x42 game.o
-                0x0000b95e                makeDigits
+                0x0000ba46       0x42 game.o
+                0x0000ba46                makeDigits
  .rodata.jumpVelocity
-                0x0000b9a0       0x20 game.o
-                0x0000b9a0                jumpVelocity
+                0x0000ba88       0x20 game.o
+                0x0000ba88                jumpVelocity
  *(.gnu.linkonce.r*)
 
-.data           0x00803800       0x1e load address 0x000039c0
+.data           0x00803800       0x1e load address 0x00003aa8
                 0x00803800                PROVIDE (__data_start, .)
  *(.data)
  *(.data*)
@@ -772,7 +775,7 @@ END GROUP
  .bss.scrollDirection
                 0x00803827        0x1 drivers/gameBadge.o
                 0x00803827                scrollDirection
- .bss.spinSpeed.3920
+ .bss.spinSpeed.3922
                 0x00803828        0x1 game.o
  .bss.blasterY  0x00803829        0x1 game.o
                 0x00803829                blasterY
@@ -872,8 +875,8 @@ END GROUP
                 0x00803e5e                xCollide
                 0x00803e5f                spawnPerWave
                 0x00803e60                PROVIDE (__bss_end, .)
-                0x000039c0                __data_load_start = LOADADDR (.data)
-                0x000039de                __data_load_end = (__data_load_start + SIZEOF (.data))
+                0x00003aa8                __data_load_start = LOADADDR (.data)
+                0x00003ac6                __data_load_end = (__data_load_start + SIZEOF (.data))
 
 .noinit         0x00803e60        0x0
                 [!provide]                PROVIDE (__noinit_start, .)

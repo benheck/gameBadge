@@ -89,6 +89,7 @@ void fillTiles(uint8_t location, uint8_t startingTile, uint8_t howMany);
 #define enemyUFO			0x10				//A small moving UFO
 #define enemyBalls			0x20				//A 16x16 ball monster that drops pit-making bombs
 #define enemyExplosion		0x30				//An explosion, which may be able to kill the player
+#define enemyBullet			0x40				//A bullet monster on a sine wave
 
 #define enemyBossUFO		0xA0				//32x16 boss UFO
 

@@ -93,6 +93,11 @@ const char PROGMEM evilBomb[] = {
 0x30, 0x78, 0xfe, 0xff, 0xff, 0xff, 0x7b, 0x31, 0x00, 0x30, 0x68, 0xf6, 0xfd, 0x79, 0x31, 0x00, 
 };
 
+const char PROGMEM bulletMan[] = {
+16, 8,
+0x18, 0x3c, 0x7e, 0x7f, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xa5, 0x81, 0x81, 0x00, 0x18, 0x34, 0x3c, 0x7e, 0x7e, 0x7e, 0x7e, 0x7e, 0x24, 0x24, 0x00, 0x24, 0x00, 0x00, 0x00, 		
+};
+
 const char PROGMEM vertExplode[] = {
 16, 24,
 
@@ -438,10 +443,7 @@ void gameFrame() {							//This function is called at 60-ish Hz
 			if (!isDrawn) {							//First time here? Draw the title screen
 				drawHighScores();
 			}		
-			sendTiles();
-			if (buttonsPressed & dA) {
-				writeDefaultHighScores();
-			}	
+			sendTiles();	
 		break;
 		
 		case stateOptions:
@@ -528,18 +530,18 @@ void gameAction() {
 						switch(stagePhase & phaseSkyMask) {
 							
 							case phaseUFOs:
-							spawnEnemy(enemySpawnSide[getRandom(0x01)], getRandom(0x01) * 8, 1, enemyUFO);
+								spawnEnemy(enemySpawnSide[getRandom(0x01)], getRandom(0x01) * 8, 1, enemyUFO);
 							break;
 							
 							case phaseBalls:
-							spawnEnemy(enemySpawnSide[getRandom(0x01)], getRandom(0x01) * 8, 1, enemyBalls);
+								spawnEnemy(enemySpawnSide[getRandom(0x01)], getRandom(0x01) * 8, 1, enemyBalls);
 							break;
 							
 							case phaseUFOs | phaseBalls:;				//Spawn both at once, different sides of screen
-							uint8_t whichSide = getRandom(0x01);
-							spawnEnemy(enemySpawnSide[whichSide], getRandom(0x01) * 8, 1, enemyUFO);
-							spawnEnemy(enemySpawnSide[!whichSide & 0x01], getRandom(0x01) * 8, 1, enemyBalls);
-							skyEnemies += 1;
+								uint8_t whichSide = getRandom(0x01);
+								spawnEnemy(enemySpawnSide[whichSide], getRandom(0x01) * 8, 1, enemyUFO);
+								spawnEnemy(enemySpawnSide[!whichSide & 0x01], getRandom(0x01) * 8, 1, enemyBalls);
+								skyEnemies += 1;
 							break;
 							
 						}
@@ -676,7 +678,7 @@ void gameAction() {
 			distance = 0;
 			speed = 1;							//Back to normal speed... for NOW
 			checkPoint++;
-			drawText("CHECKPOINT", tileMap + 192 + 18);
+			//drawText("CHECKPOINT", tileMap + 192 + 18);
 			tileMap[192 + 30] = checkPoint + 65;
 			messageFlash = 0;
 		}
@@ -851,8 +853,17 @@ void playerLogic() {
 	}
 	
 	if (stageWin) {
+		
+		if (frameCounter & 0x04) {				//Flash EXTRA LIFE
+			setRowScroll(128, 6);
+		}
+		else {
+			setRowScroll(0, 6);	
+		}
+		
 		if (--playerTimer == 0) {
-			stage += 1;
+			stage++;							//New state
+			lives++;							//New life!
 			gameState = stateGetReady;
 			frameCounter = 0;
 			bossBattle = 0;
@@ -1174,6 +1185,11 @@ void spawnEnemy(int16_t x, int8_t y, int8_t dir, uint8_t whichType) {
 		case enemyBalls:
 			enemy[enemyPointer].gfx = balls;					//This sprite graphic
 		break;
+		case enemyBullet:
+			enemy[enemyPointer].gfx = bulletMan;					//This sprite graphic
+			enemy[enemyPointer].state = getRandom(0xFF);			//Randomize sine wave starting point
+		break;		
+		
 	}
 
 	enemy[enemyPointer].timer = 20; //attackSpeed;	//Enemy will attack player after 20 frames. Then, the spacing between attacks will be shorter per level
@@ -1535,7 +1551,7 @@ void enemies() {
 							if (!--enemy[g].timer) {
 								if (--enemy[g].count) {	//Bombs left to drop?
 									spawnShot(enemy[g].x + 12, enemy[g].y + 8, enemyBombShot);
-									enemy[g].timer = 70 - (stage * 3);					//+ (getRandom(0x03) * 3) 				
+									enemy[g].timer = 90 - (stage * 3);					//+ (getRandom(0x03) * 3) 				
 								}
 								else {
 									enemy[g].state = 4;		//Wind up..
@@ -1562,21 +1578,21 @@ void enemies() {
 							if (++enemy[g].y > 54) {
 								enemy[g].y = 55;
 								enemy[g].state = 6;
-								enemy[g].grounded = 1;		//Ground the saucer
-								if (!bossPhase) {
-									enemy[g].dir = 1;		//Phase 1, move fast across ground
-								}
-								else {
-									enemy[g].dir = getRandom(0x0F) >> 2;	//Phase 2+, randomize
-								}
+								enemy[g].timer = 40;		//Wind up for lateral move
 							}
 						break;
-						case 6:								//On ground
-							if (enemy[g].dir & 1) {				//Move faster across ground?
-								enemy[g].x--;
+						case 6:								//Wind up on ground
+							if (frameCounter & 1) {
+								enemy[g].x++;
 							}
-							if (enemy[g].x < -29) {			//Scrolled past?
+							if (!--enemy[g].timer) {
 								enemy[g].state = 7;
+							}
+						break;						
+						case 7:								//On ground
+							enemy[g].x -= 2;				//Fast move
+							if (enemy[g].x < -32) {			//Scrolled past?
+								enemy[g].state = 8;
 								enemy[g].x = -128 + (getRandom(0x07) * 6);		//Scroll it further left (to cause a delay for return)
 								enemy[g].y = (getRandom(0x03) * 3) + 8;
 								enemy[g].grounded = 0;				//Not stuck to ground
@@ -1584,7 +1600,7 @@ void enemies() {
 								enemy[g].timer = 30;
 							}
 						break;
-						case 7:								//Scrolling back to the right
+						case 8:								//Scrolling back to the right
 							if (enemy[g].x > 0) {
 								if (--enemy[g].timer == 0) {
 									spawnShot(enemy[g].x + 12, enemy[g].y + 8, enemyWaveShot);
@@ -1633,14 +1649,15 @@ void checkObstacle(uint8_t which, uint8_t yHit, uint16_t value) {			//Check for 
 void damageBoss(uint8_t g) {
 
 	tone(400, 100, 10, 5);
-	score += 750;
+	score += 250;
 	
 	if (--bossHealth == 0) {
-		spawnExplosion(enemy[g].x, enemy[g].y, 16);			//Twin explosions!
-		spawnExplosion(enemy[g].x + 16, enemy[g].y, 14);
+		spawnExplosion(enemy[g].x, enemy[g].y, 20);			//Twin explosions!
+		spawnExplosion(enemy[g].x + 16, enemy[g].y, 24);
 		enemy[g].y = spriteOff;							//Despawn UFO
 		stageWin = 1;									//Flag for stage win
-		playerTimer = 120;								//Timer for transition
+		playerTimer = 180;								//Timer for transition
+		drawText(" EXTRA LIFE!  ", tileMap + 192 + 18);
 	}	
 	
 }
@@ -1704,8 +1721,16 @@ void drawOptions() {
 	
 	drawText("OPTIONS", tileMap + 5);
 
-	drawText("B+A=SLEEP", tileMap + (7 * 32));
+	drawText("B+A=SLEEP", tileMap + (2 * 32));
+	drawText("(MENU TO WAKE)", tileMap + (3 * 32));	
 	
+	drawText("B+DOWN=CLEAR", tileMap + (5 * 32));
+	drawText("HIGH SCORES", tileMap + (6 * 32) + 5);
+	
+	if (gamePad & dDown && gamePad & dB) {
+		writeDefaultHighScores();
+	}
+			
 	if (gamePad & dB && gamePad & dA) {
 		gotoSleep();
 	}
@@ -1907,6 +1932,7 @@ void startNewLife() {
 
 	bugX = 16;
 	bugY = 51;
+	jump = 0;
 	blasterX = spriteOff;						//Disabled state
 	
 	clearShots();
@@ -2135,6 +2161,10 @@ void eepromWrite(uint8_t addr, char *initials, uint32_t theScore) {
 void writeDefaultHighScores() {
 
 	uint32_t fillerScore = 90000;
+
+	name[0] = 'A';
+	name[1] = 'B';
+	name[2] = 'C';		
 
 	for (int place = 0 ; place < 7 ; place++) {
 		eepromWrite(place * 32, name, fillerScore);			//Write little endian name and score
