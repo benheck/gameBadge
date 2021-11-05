@@ -11,6 +11,7 @@ void spawnObstacle(int16_t xPos, uint8_t whichOne);
 void spawnEnemy(int16_t x, int8_t y, int8_t dir, uint8_t whichType);
 void spawnExplosion(int16_t x, int8_t y, uint8_t speed);
 void spawnBoss();
+void spawnShot(int8_t x, int8_t y, uint8_t whichType);
 uint8_t findNextSlot();
 void shotLogic();
 void gotoSleep();
@@ -26,6 +27,7 @@ void drawTime();
 void drawMountains2(uint8_t vertRow);
 void drawTitle();
 void drawNameEntryScreen();
+void drawSplashScreen();
 void findScorePosition();
 void startNewGame();
 void startNewStage();
@@ -60,6 +62,7 @@ void fillTiles(uint8_t location, uint8_t startingTile, uint8_t howMany);
 #define stateShowTime		0x09
 #define stateHighScores		0x0A
 #define stateOptions		0x0B
+#define stateSplash			0x0C
 
 #define stateEntry			0x05			//Enter your name!
 #define stateGetReady		0x07			//Between stages/lives

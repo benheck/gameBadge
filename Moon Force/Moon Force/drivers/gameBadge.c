@@ -22,6 +22,7 @@ uint8_t displaySleep = 0;
 uint16_t seed;
 
 uint8_t rotate180 = 0;
+uint8_t inverted = 0;
 
 void displayInit() {
 
@@ -66,9 +67,9 @@ void displayInit() {
     writecommand(0x40);
     
     writecommand(SSD1306_DISPLAYALLON_RESUME);           // 0xA4
-    
-    writecommand(SSD1306_NORMALDISPLAY);                 // 0xA6
-    
+ 
+	setInvert(inverted);
+     
     writecommand(SSD1306_DISPLAYON);                     //switch on OLED
 
 }
@@ -362,6 +363,16 @@ void displayOnOff(uint8_t whatState) {
 	
 }
 
+void direct2buffer(const char *source, uint16_t dest, uint16_t length) {
+
+	uint16_t pointer = 0;
+
+	while(length--) {
+		buffer[dest++] = pgm_read_byte(source + pointer++);
+	}
+	
+}
+
 int setRotate(uint8_t which) {
 
 	if (which == 0xFF) {							//Toggle flag? user mode
@@ -381,6 +392,24 @@ int setRotate(uint8_t which) {
 	}
 	
 	return rotate180;
+	
+}
+
+void setInvert(uint8_t state) {
+
+	if (state == 0xFF) {							//Toggle flag? user mode
+		inverted = !inverted & 1;					//Invert... inversion
+	}
+	else {
+		inverted = state;							//0 or 1? Restore last invert state (such as from a wake)
+	}
+
+	if (inverted) {
+		writecommand(SSD1306_INVERTDISPLAY);                 // 0xA7	
+	}	
+	else {
+		writecommand(SSD1306_NORMALDISPLAY);                 // 0xA6		    
+	}
 	
 }
 

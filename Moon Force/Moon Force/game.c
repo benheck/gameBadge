@@ -15,8 +15,6 @@ static volatile uint8_t sleepState = 0;			//0 = normal 1 = asleep
 static volatile uint8_t frameFlag;				//ms Frame counter to decide when a frame should be drawn
 
 static volatile uint8_t secFlag = 0;			//This flag is set when a seconds transition occurs
-//static volatile uint8_t day = 0;				//0 = Sunday... 7 - Saturday
-//static volatile uint8_t amPM = 0;				//am = 0 pm = 1
 static volatile uint8_t hours = 6;				//The hours
 static volatile uint8_t minutes = 30;			//The minutes
 static volatile uint8_t seconds = 0;			//The seconds
@@ -24,6 +22,12 @@ static volatile uint8_t seconds = 0;			//The seconds
 //Your flash game data here--------------------------------------------------------------------------------
 
 #define maxEnemies			16
+
+const char PROGMEM wastefulUncompressedMGClogo[] = {
+
+0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xe0, 0xf0, 0xf8, 0x80, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x80, 0xe0, 0xf0, 0xe0, 0x00, 0x00, 0x00, 0x00, 0x80, 0xc0, 0x80, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xc0, 0xf8, 0xfe, 0x3c, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x80, 0x00, 0x00, 0x00, 0x80, 0xc0, 0xc0, 0x80, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x80, 0x80, 0x80, 0x00, 0x18, 0x18, 0x18, 0x98, 0xfc, 0xfe, 0xff, 0x1d, 0x0c, 0x0c, 0x0c, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x1f, 0xff, 0xff, 0x1f, 0x3c, 0x70, 0xe0, 0xe0, 0x60, 0x30, 0x1c, 0x0e, 0x03, 0xff, 0xff, 0x07, 0x00, 0x00, 0x00, 0x03, 0xc3, 0xc3, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xc0, 0xe0, 0x70, 0x18, 0x8c, 0xff, 0xff, 0xc7, 0x00, 0x00, 0x00, 0x80, 0xe0, 0x78, 0xfc, 0xfc, 0x80, 0xc0, 0xf8, 0xfe, 0xfe, 0x00, 0xc0, 0x7c, 0x0f, 0x00, 0x60, 0x7f, 0xf9, 0xdd, 0xc7, 0xc1, 0xc0, 0x60, 0x30, 0x18, 0x06, 0xc3, 0xcf, 0xff, 0xff, 0x60, 0x30, 0x18, 0x0e, 0x07, 0x7f, 0xff, 0xf3, 0x60, 0x30, 0x10, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xe0, 0xe0, 0xf0, 0xf0, 0xf0, 0xf0, 0xf0, 0xf0, 0xf0, 0xf0, 0xf0, 0xf0, 0xf0, 0x78, 0x78, 0x78, 0x78, 0x78, 0x00, 0x00, 0x00, 0x00, 0x00, 0x3f, 0x7f, 0x40, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x3f, 0x1f, 0x00, 0x00, 0x0c, 0x06, 0x03, 0x03, 0x0f, 0x1f, 0x1c, 0x0c, 0x0c, 0x07, 0x9f, 0x9f, 0x9d, 0x8c, 0x87, 0x81, 0x80, 0x81, 0x83, 0x87, 0x87, 0x83, 0x81, 0x00, 0x00, 0x01, 0x07, 0x4f, 0xc7, 0xc0, 0xc1, 0x07, 0x07, 0x01, 0x00, 0x00, 0xe0, 0xe0, 0xe0, 0xe0, 0xe1, 0xe1, 0xe0, 0xe0, 0xe0, 0xf0, 0xf0, 0xf1, 0xf1, 0xf3, 0xf1, 0xf0, 0xf0, 0xc0, 0x00, 0x00, 0x00, 0x00, 0xf8, 0xf8, 0xf8, 0xf8, 0x38, 0x38, 0x38, 0x38, 0x38, 0x3c, 0x3c, 0x3c, 0x3c, 0x3c, 0xfc, 0xfc, 0xfc, 0xf8, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x11, 0xf1, 0xf0, 0xf0, 0xe0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xc0, 0xc0, 0xc0, 0xe0, 0xe0, 0xe0, 0xe0, 0xc0, 0x00, 0x00, 0x00, 0x04, 0x1c, 0x1c, 0x1c, 0x1c, 0x1e, 0x1e, 0x1e, 0x1e, 0x1e, 0x1e, 0x0e, 0x0e, 0x0e, 0x0e, 0xfe, 0xff, 0xfe, 0xf0, 0x00, 0x00, 0x00, 0x00, 0xff, 0xff, 0xff, 0x87, 0x07, 0x07, 0x07, 0xff, 0xff, 0xff, 0x07, 0x03, 0x03, 0x03, 0xff, 0xff, 0xff, 0xfc, 0x00, 0x00, 0x00, 0x00, 0xff, 0xff, 0xff, 0xff, 0x00, 0x00, 0x00, 0x00, 0xff, 0xff, 0xff, 0xff, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xff, 0xff, 0xff, 0xff, 0x00, 0x00, 0x00, 0x00, 0xff, 0xff, 0xff, 0xff, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x07, 0xff, 0xff, 0xff, 0xf0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xff, 0xff, 0xff, 0xff, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x01, 0x01, 0x01, 0x01, 0xff, 0xff, 0xff, 0xff, 0x00, 0x00, 0x00, 0x00, 0x3c, 0xfe, 0xfe, 0xfe, 0x0e, 0x0e, 0x0e, 0x0e, 0x0e, 0x0e, 0x0e, 0x0f, 0x0f, 0x07, 0x87, 0xff, 0xff, 0xff, 0x80, 0x00, 0x00, 0x00, 0x1f, 0xff, 0xff, 0xff, 0x00, 0x00, 0x00, 0x00, 0xff, 0xff, 0xff, 0x00, 0x00, 0x00, 0x01, 0xff, 0xff, 0xff, 0xe0, 0x00, 0x00, 0x00, 0x07, 0xff, 0xff, 0xff, 0xf8, 0x00, 0x00, 0x00, 0x01, 0xff, 0x7f, 0x7f, 0x7c, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x03, 0x3f, 0x3f, 0x3f, 0x3e, 0x00, 0x00, 0x00, 0x00, 0x1f, 0x1f, 0x1f, 0x1c, 0x1c, 0x1c, 0x1e, 0x1e, 0x1e, 0x1e, 0x1e, 0x1e, 0x9e, 0x8e, 0xbf, 0xff, 0xff, 0xff, 0x80, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x01, 0x1f, 0x3f, 0x3f, 0x3f, 0x3c, 0x3c, 0x1c, 0x1c, 0x1c, 0x1c, 0x1c, 0x1c, 0x1e, 0x1e, 0x1f, 0x1f, 0x1f, 0x8e, 0x80, 0x80, 0xc0, 0xc0, 0x0f, 0x0f, 0x0f, 0x0f, 0x0f, 0x0f, 0xcf, 0xc7, 0xc7, 0x07, 0x07, 0x07, 0x07, 0x07, 0x07, 0x07, 0x07, 0x03, 0x00, 0x00, 0x80, 0xf0, 0x73, 0x73, 0xc3, 0x00, 0x00, 0x00, 0x00, 0x03, 0x01, 0x01, 0x00, 0xe0, 0xf0, 0xf8, 0xf9, 0xb9, 0xb9, 0x01, 0x00, 0x00, 0x00, 0x00, 0x00, 0x30, 0xf8, 0xfc, 0xfc, 0xdc, 0xdc, 0x80, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x3e, 0xfe, 0xfe, 0x80, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x30, 0xfc, 0xfe, 0xce, 0x87, 0x87, 0x87, 0x84, 0x00, 0x00, 0x00, 0x00, 0x01, 0x07, 0x07, 0x07, 0x07, 0x07, 0x07, 0x07, 0x07, 0x07, 0x07, 0x03, 0x01, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x3e, 0x7f, 0x7f, 0xe3, 0xe1, 0xe1, 0xe1, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x07, 0x7f, 0x7f, 0x70, 0x70, 0x70, 0x70, 0x00, 0x00, 0x00, 0x00, 0x00, 0x30, 0x3c, 0x3f, 0x0f, 0x06, 0x06, 0x0f, 0x3f, 0x3c, 0x18, 0x00, 0x00, 0x00, 0x00, 0x04, 0x1c, 0x1d, 0x1d, 0x1f, 0x0f, 0x0f, 0x07, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0x0e, 0x0e, 0x0e, 0x0f, 0x07, 0x03, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x07, 0x07, 0x07, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xe1, 0x21, 0x23, 0x23, 0x23, 0x23, 0xe0, 0x00, 0x00, 0xe0, 0x20, 0x20, 0x20, 0xa0, 0x20, 0xe0, 0x00, 0x00, 0xe0, 0x20, 0x20, 0x20, 0x20, 0x20, 0xe0, 0x00, 0x00, 0x60, 0x20, 0x20, 0xe0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xf9, 0x88, 0x88, 0x88, 0x88, 0x88, 0xcf, 0x00, 0x00, 0xff, 0x80, 0x80, 0x80, 0xbf, 0x80, 0xff, 0x00, 0x00, 0xf9, 0x88, 0x88, 0x88, 0x88, 0x88, 0xcf, 0x00, 0x00, 0xc0, 0x80, 0x80, 0xff, 0x80, 0x80, 0xc0,
+
+};
 
 const char PROGMEM tileData[] = {
 0xfe, 0xfe, 0xfe, 0xfe, 0xfe, 0xfe, 0xfe, 0xfe, 0xfc, 0xfc, 0xfc, 0xfc, 0xfc, 0xfc, 0xfc, 0xfc, 0xf8, 0xf8, 0xf8, 0xf8, 0xf8, 0xf8, 0xf8, 0xf8, 0x13, 0x0b, 0x05, 0x02, 0x00, 0x00, 0x01, 0x03, 0x01, 0x00, 0x04, 0x00, 0x01, 0x01, 0x01, 0x12, 0x02, 0x02, 0x04, 0x04, 0x04, 0x48, 0x08, 0x08, 0x88, 0x90, 0x90, 0xb0, 0xb0, 0x98, 0x98, 0x98, 0x58, 0x4c, 0x2c, 0x26, 0x16, 0x13, 0x03, 0x07, 0x07, 0x03, 0x06, 0x0a, 0x02, 0x02, 0x14, 0x04, 0x44, 0x4c, 0x4c, 0x2c, 0x26, 0x16, 0x13, 0x0b, 0x09, 0x05, 0x04, 0x04, 0x02, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0x00, 0x00, 0x00, 0x09, 0x01, 0x02, 0x06, 0x16, 0x12, 0x12, 0x12, 0x13, 0x13, 0x13, 0x13, 0x13, 0x0b, 0x09, 0x09, 0x09, 0x09, 0x05, 0x04, 0x04, 0x04, 0x04, 0x02, 0x02, 0x02, 0x02, 0x01, 0x01, 0x01, 0x01, 0x00, 0x00, 0x00, 0x02, 0x00, 0x00, 0x00, 0x04, 0x00, 0x00, 0x00, 0x80, 0xc0, 0xe0, 0xc0, 0x80, 0x80, 0xc0, 0x80, 0x80, 0x80, 0x00, 0x00, 0x00, 0x00, 0x80, 0x80, 0xc0, 0xc0, 0x60, 0x30, 0x70, 0x78, 0x30, 0x30, 0xa0, 0x20, 0x40, 0x40, 0x80, 0x80, 0x80, 0x80, 0x80, 0xc0, 0xc0, 0xc0, 0xc0, 0xc0, 0x60, 0x60, 0x60, 0x60, 0x30, 0x30, 0x30, 0xb0, 0x98, 0x58, 0x4c, 0x4c, 0x0c, 0x0e, 0x0e, 0x0c, 0x08, 0x28, 0x08, 0x08, 0x08, 0x50, 0x10, 0x10, 0x20, 0x20, 0x40, 0x40, 0x40, 0x40, 0x80, 0x80, 0x00, 0x00, 0x40, 0x50, 0xb8, 0x2c, 0x7c, 0xfe, 0xfe, 0xf7, 0x7f, 0xff, 0xff, 0xff, 0xff, 0xff, 0xfe, 0xfe, 0xfc, 0xfc, 0xf8, 0xf0, 0xc0, 0x00, 0x00, 0x01, 0x00, 0x15, 0x02, 0x49, 0x12, 0x0a, 0x0a, 0x24, 0x15, 0x15, 0x09, 0x0a, 0x23, 0x0b, 0x8b, 0x0b, 0x23, 0x0a, 0x23, 0x0b, 0x23, 0x0b, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xde, 0xde, 0xde, 0x00, 0x00, 0x00, 0x1e, 0x1e, 0x00, 0x00, 0x1e, 0x1e, 0x00, 0x00, 0x6c, 0xfe, 0xfe, 0x6c, 0xfe, 0xfe, 0x6c, 0x00, 0x48, 0x5c, 0x54, 0xfe, 0x54, 0x74, 0x24, 0x30, 0x72, 0xbc, 0xb0, 0xfc, 0x30, 0xfc, 0x32, 0x00, 0x60, 0xf4, 0x9e, 0xba, 0x6e, 0xe4, 0xa0, 0x30, 0x70, 0xbc, 0xb2, 0xf8, 0x32, 0xfc, 0x30, 0x00, 0x00, 0x00, 0x7c, 0xfe, 0xc6, 0x82, 0x00, 0x00, 0x00, 0x82, 0xc6, 0xfe, 0x7c, 0x00, 0x00, 0x10, 0x54, 0x7c, 0x38, 0x38, 0x7c, 0x54, 0x10, 0x00, 0x18, 0x18, 0x7e, 0x7e, 0x18, 0x18, 0x00, 0x00, 0x00, 0x80, 0xe0, 0xe0, 0x60, 0x00, 0x00, 0x00, 0x18, 0x18, 0x18, 0x18, 0x18, 0x18, 0x00, 0x00, 0x00, 0x00, 0xe0, 0xe0, 0xe0, 0x00, 0x00, 0x00, 0xc0, 0x60, 0x30, 0x18, 0x0c, 0x04, 0x00, 0x00, 0x7c, 0xfe, 0xfe, 0xfe, 0x82, 0xfe, 0x7c, 0x00, 0x00, 0x0c, 0xfc, 0xfe, 0xfe, 0xfe, 0x00, 0x00, 0xc4, 0xe6, 0xf2, 0xde, 0xde, 0xde, 0xcc, 0x00, 0x44, 0xd6, 0x92, 0xfe, 0xfe, 0xfe, 0x7c, 0x00, 0x3e, 0x3e, 0x30, 0x3e, 0xfe, 0xfe, 0x30, 0x00, 0x5e, 0xde, 0xda, 0xda, 0xda, 0xfa, 0x72, 0x00, 0x7c, 0xfe, 0x8a, 0xfa, 0xfa, 0xfa, 0x72, 0x00, 0x02, 0x02, 0xf2, 0xfa, 0xfe, 0x0e, 0x06, 0x00, 0x6c, 0xfe, 0x92, 0xfe, 0xfe, 0xfe, 0x6c, 0x00, 0x1c, 0xbe, 0xa2, 0xfe, 0xfe, 0xfe, 0x7c, 0x00, 0x00, 0x00, 0x6c, 0x6c, 0x6c, 0x00, 0x00, 0x00, 0x00, 0x80, 0xec, 0xec, 0x6c, 0x00, 0x00, 0x00, 0x00, 0x10, 0x38, 0x7c, 0xfe, 0x00, 0x00, 0x00, 0x6c, 0x6c, 0x6c, 0x6c, 0x6c, 0x6c, 0x00, 0x00, 0x00, 0xfe, 0x7c, 0x38, 0x10, 0x00, 0x00, 0x00, 0x0c, 0x06, 0xd2, 0xda, 0xde, 0x0e, 0x04, 0x00, 0x7c, 0xfe, 0xc6, 0xba, 0xaa, 0xb6, 0xbc, 0x00, 0xfc, 0xfe, 0x12, 0xfe, 0xfe, 0xfe, 0xfc, 0x00, 0xfe, 0xfe, 0xfe, 0xfe, 0x92, 0xfe, 0x6c, 0x00, 0x7c, 0xfe, 0xfe, 0xfe, 0x82, 0xc6, 0x44, 0x00, 0xfe, 0xfe, 0xfe, 0xfe, 0x82, 0xfe, 0x7c, 0x00, 0xfe, 0xfe, 0xfe, 0xfe, 0x92, 0x92, 0x82, 0x00, 0xfe, 0xfe, 0xfe, 0xfe, 0x12, 0x12, 0x02, 0x00, 0x7c, 0xfe, 0xfe, 0xfe, 0x82, 0xa6, 0xe4, 0x00, 0xfe, 0xfe, 0x10, 0xfe, 0xfe, 0xfe, 0xfe, 0x00, 0x82, 0xfe, 0xfe, 0xfe, 0xfe, 0x82, 0x00, 0x00, 0x40, 0xc2, 0x82, 0xfe, 0xfe, 0x7e, 0x02, 0x00, 0xfe, 0xfe, 0xfe, 0xfe, 0x38, 0xee, 0xc6, 0x00, 0xfe, 0xfe, 0xfe, 0xfe, 0x80, 0x80, 0x80, 0x00, 0xfe, 0xfe, 0x1e, 0xfc, 0x1e, 0xfe, 0xfe, 0x00, 0xfe, 0xfe, 0xfe, 0x1c, 0x38, 0xfe, 0xfe, 0x00, 0x7c, 0xfe, 0x82, 0xfe, 0xfe, 0xfe, 0x7c, 0x00, 0xfe, 0xfe, 0xfe, 0xfe, 0x22, 0x3e, 0x1c, 0x00, 0x7c, 0xfe, 0xa2, 0xfe, 0xfe, 0xfe, 0x7c, 0x00, 0xfe, 0xfe, 0xfe, 0xfe, 0x22, 0xfe, 0xdc, 0x00, 0x4c, 0xde, 0x9e, 0xfe, 0xf2, 0xf6, 0x64, 0x00, 0x02, 0x02, 0xfe, 0xfe, 0xfe, 0x02, 0x02, 0x00, 0x7e, 0xfe, 0x80, 0xfe, 0xfe, 0xfe, 0x7e, 0x00, 0x3e, 0x7e, 0xe0, 0xfe, 0xfe, 0x7e, 0x3e, 0x00, 0x7e, 0xfe, 0xe0, 0x7c, 0xe0, 0xfe, 0x7e, 0x00, 0xc6, 0xee, 0x7c, 0x38, 0x7c, 0xee, 0xc6, 0x00, 0x0e, 0x1e, 0xfe, 0xf8, 0xfe, 0x1e, 0x0e, 0x00, 0xe2, 0xf2, 0xfa, 0xfe, 0xbe, 0x9e, 0x8e, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x20, 0x30, 0x38, 0x3c, 0x38, 0x30, 0x20, 0x00, 0x10, 0x30, 0x70, 0xf0, 0x70, 0x30, 0x10, 0x00, 0x30, 0x78, 0xfc, 0xfc, 0x78, 0x30, 0x00, 0x00, 0x00, 0x00, 0xfc, 0x00, 0xc0, 0xe0, 0xa0, 0xfc, 0xb8, 0xb8, 0xff, 0xb0, 0xa0, 0xf4, 0xba, 0xa1, 0xa1, 0xa1, 0xa5, 0xae, 0xb4, 0xe0, 0xc0, 0x18, 0x14, 0x34, 0xff, 0x1e, 0xd6, 0x16, 0x1e, 0x1f, 0x17, 0x17, 0x1e, 0x1e, 0xfe, 0xff, 0x3c, 0x00, 0x80, 0xe0, 0xd0, 0xd8, 0xfc, 0xde, 0xd0, 0xf0, 0xe0, 0x80, 0xe0, 0xc0, 0xff, 0xc0, 0x80, 0x00, 0x00, 0xfc, 0x00, 0x00, 0x00, 0x38, 0x74, 0x56, 0xde, 0x76, 0xd6, 0x5c, 0x7c, 0x38, 0x00, 0x00, 0x90, 0xf0, 0x90, 0x00, 0x00, 0x00, 0x00, 0xc0, 0x00, 0x00, 0xfe, 0x58, 0x58, 0x5f, 0x7a, 0x5e, 0x5a, 0x5e, 0x7e, 0x7f, 0x7f, 0xe0, 0xc0, 0x00, 0x00, 0x06, 0x0f, 0x0f, 0x06, 0x00, 0x00, 0x00, 0x00, 0x00, 0x7f, 0x7f, 0x40, 0x40, 0x40, 0x40, 0x40, 0x40, 0x7f, 0x7f, 0x40, 0x40, 0x40, 0x40, 0x40, 0x40, 0x7f, 0x7f, 0x00, 0x00, 0x00, 0x80, 0xc0, 0x20, 0x9f, 0x50, 0x51, 0x52, 0x52, 0x0e, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x08, 0x1c, 0x14, 0x16, 0x23, 0xc1, 0x80, 0x80, 0xfe, 0x01, 0xfc, 0x03, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x03, 0xff, 0xfc, 0xc1, 0x22, 0x17, 0x8a, 0x43, 0x22, 0x13, 0x02, 0x83, 0x42, 0x23, 0x33, 0x3a, 0x3f, 0x77, 0xe3, 0xc0, 0x20, 0x1f, 0x90, 0x48, 0x28, 0x28, 0x08, 0x0c, 0x07, 0x04, 0x07, 0x0c, 0x08, 0x08, 0x08, 0x18, 0x10, 0x3f, 0xe0, 0xc0, 0x80, 0x80, 0x80, 0xff, 0xf0, 0x10, 0x09, 0xc5, 0x23, 0x10, 0x08, 0x00, 0x00, 0x00, 0x00, 0x0c, 0x1e, 0xf3, 0xe1, 0x80, 0x80, 0x80, 0x80, 0x80, 0x80, 0x80, 0x80, 0x18, 0x7e, 0x18, 0x1e, 0xda, 0x1a, 0x7c, 0x18, 0x40, 0x40, 0x40, 0x60, 0x60, 0x40, 0x40, 0x40, 0x0c, 0xcf, 0x0c, 0x0f, 0x3d, 0x0d, 0xce, 0x0c, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x80, 0x40, 0x80, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x80, 0xe0, 0x50, 0xa0, 0xc0, 0x80, 0x00, 0x80, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xe0, 0x38, 0x16, 0x68, 0x28, 0x50, 0x60, 0x80, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x80, 0x70, 0x28, 0xd0, 0xe0, 0xc0, 0x80, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0x00, 0x20, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x80, 0x40, 0xa0, 0x30, 0x38, 0x16, 0x41, 0x22, 0x04, 0x08, 0x70, 0x80, 0x00, 0x80, 0x80, 0x40, 0xa0, 0x40, 0x80, 0x40, 0xb0, 0x08, 0x28, 0x17, 0x4a, 0x3c, 0x9a, 0x34, 0x38, 0x60, 0xc0, 0x00, 0x80, 0x40, 0x01, 0x05, 0x0a, 0x1c, 0x9a, 0x22, 0x11, 0x00, 0x00, 0x05, 0x0a, 0x0f, 0x14, 0x08, 0x10, 0x50, 0x28, 0x94, 0x0a, 0x25, 0x01, 0x0d, 0x02, 0x08, 0x05, 0x01, 0x03, 0x27, 0x06, 0x0d, 0x0e, 0x08, 0x1e, 0x45, 0x1a, 0x0d, 0x10, 0x0a, 0x00, 0x00, 0x00, 0x01, 0x12, 0x07, 0x85, 0x0a, 0x04, 0x08, 0x10, 0x50, 0x28, 0x94, 0x0a, 0x25, 0x11, 0x1e, 0x28, 0x70, 0x50, 0xd0, 0x2c, 0x82, 0x43, 0x01, 0x04, 0x02, 0x40, 0x01, 0x0b, 0x16, 0x3c, 0x70, 0x50, 0xd0, 0x28, 0x94, 0x44, 0x22, 0x01, 0x02, 0x0a, 0x14, 0x38, 0x70, 0x50, 0x88, 0x04, 0x08, 0x28, 0x14, 0x44, 0x34, 0x0a, 0x25, 0x02, 0x09, 0x84, 0x00, 0x01, 0x00, 0x00, 0x08, 0x00, 0x00, 0x00, 0x00, 0x01, 0x00, 0x02, 0x01, 0x84, 0x03, 0x23, 0x03, 0x04, 0x02, 0x01, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x01, 0x82, 0x07, 0x06, 0x09, 0x7f, 0x49, 0x36, 0x00, 0x3e, 0x41, 0x3e, 0x00, 0x46, 0x49, 0x31, 0x00, 0x46, 0x49, 0x31, 0x00, 0x08, 0x08, 0x08, 0x49, 0x2a, 0x1c, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x7f, 0x00, 0x00, 0x00, 0x00, 0x00, 0x7f, 0x00, 0x7f, 0x00, 0x00, 0x00, 0x7f, 0x00, 0x7f, 0x00, 0x7f, 0x00, 0x7f, 0x00, 0x7f, 0x00, 0x7f, 0x00, 0x7f, 0x00,
@@ -189,16 +193,10 @@ uint8_t wavePointer = 0;
 uint8_t gamePad;				//Gets the value from buttons
 uint8_t buttonRepeatFlag;		//Flag to make button single-press
 uint8_t buttonRepeatMask;		//Mask of what buttons are single press (default = none)
-
 uint8_t buttonsPressed = 0;		//		
-
 uint8_t buttonDebounceMask[] = {dUp, dDown, dLeft, dRight, dMenu, dB, dA};	//Saves FLASH when doing debounce tests
-
 uint8_t sideOfMoon = 0;						//Which side of the moon you are on (rotates LCD, reverses left/right control)
-
 uint8_t changeTime = 0;						//0 = time, 1 = change hour, 2 = change minute
-
-uint8_t attackSpeed = 150;					//Frames between each enemy attacking player. Lower = harder
 
 uint16_t xWindow = 0;
 int16_t xWindowCoarse = 0;
@@ -211,18 +209,13 @@ uint8_t bugY = 51;
 uint8_t wheelXcoarseTile[] = {227, 228, 229};
 int8_t wheelSpin = 1;
 
-uint8_t jump = 0;
-
 uint8_t playerState = 0;
 uint16_t playerTimer = 0;
 int playerFrame = 0;
 
-uint8_t spawnFineCounter = 0;
 uint8_t spawnPointer = 224 + 20;
-
 uint8_t groundSlope = 1;					//The next block of terrain to be drawn 0 = full, 1 = one pixel lower, 2 = 2 pixels lower
-
-uint8_t speed = 1;
+uint8_t speed;
 
 uint8_t stage;
 uint8_t stageWin = 0;
@@ -241,6 +234,12 @@ uint32_t score = 0;
 uint8_t lives;
 uint8_t stagePhase = phaseNone;				//Stage phase (none)
 uint16_t jumpScore;							//Set to points if a jump over an object is successful
+uint8_t jump;
+int8_t blasterX = spriteOff;						//Disabled state
+uint8_t blasterY = 0;
+uint8_t gameState = stateSplash; //stateTitle; //stateRunning;
+uint8_t isDrawn;
+uint8_t splashTimer = 100;
 
 uint16_t messageFlash = 0xFFFF;
 
@@ -269,30 +268,24 @@ struct enemyData {
 struct enemyData enemy[maxEnemies];
 uint8_t enemyPointer = 0;
 const int16_t enemySpawnSide[2] = {-16, 128};
+uint8_t attackSpeed;									//Frames between each enemy attacking player. Lower = harder
 
-uint8_t xCollide;													//X and Y collision flags for enemy-player
+uint8_t xCollide;										//X and Y collision flags for enemy-player
 uint8_t yCollide;
 
-#define bossStartingHealth		52
-uint8_t bossHealth = bossStartingHealth;							
-uint8_t bossBattle = 0;								//Flag if we've in a boss battle
-uint8_t bossPhase = 0;								//How many loops the boss has done
-
-int8_t blasterX = spriteOff;						//Disabled state
-uint8_t blasterY = 0;
-
-uint8_t gameState = stateTitle; //stateRunning;
-
-uint8_t isDrawn;
-
 uint8_t obstacleTimer = 10;								//Spacing (in frames) between the spawning of obstacles. Lower= harder
-uint8_t lastObstacleSpawned;							
+uint8_t lastObstacleSpawned;
+
+#define bossStartingHealth		52
+uint8_t bossHealth;							
+uint8_t bossBattle = 0;									//Flag if we've in a boss battle
+uint8_t bossPhase = 0;									//How many loops the boss has done
 
 char name[] = {'A', 'B', 'C'};							//Used for high score name entry
 char nameShift[3];										//Used for sorting high scores
-
 uint8_t scoreRanking = 1;
 
+//----------------------------Main loops and state machines-------------------------------------
 void gameSetup() {							//This function is called once per boot/program
 
 	uint8_t temp = eepromReadByte(0);		//See if any names entered
@@ -302,7 +295,7 @@ void gameSetup() {							//This function is called once per boot/program
 	}
 
 	setScrollDirection(horizontal);
-		
+	
 }
 
 void systemLoop() {
@@ -359,26 +352,40 @@ void gameFrame() {							//This function is called at 60-ish Hz
 			frameCounter = 0x20;			//Clean transition to blinking PAUSED (pedantic, I know)
 		}
 	}
-	
-	if (buttonsPressed & dRight && (gameState & canSwitchScreens)) {
-		//cls();
-		playerTimer = 300; 		
-		isDrawn = 0;
-		if (++gameState == 0x0C) {		//Loop around?			
-			gameState = stateTitle;			
+
+	if (!(gamePad & dB)) {
+		if (buttonsPressed & dRight && (gameState & canSwitchScreens)) {
+			playerTimer = 300;
+			isDrawn = 0;
+			if (++gameState == 0x0D) {		//Loop around?
+				gameState = stateTitle;
+			}
 		}
-	}	
 	
-	if (buttonsPressed & dLeft && (gameState & canSwitchScreens)) {
-		//cls();
-		isDrawn = 0;
-		playerTimer = 300; 
-		if (--gameState == 0x07) {		//Loop around?
-			gameState = stateOptions;
-		}
+		if (buttonsPressed & dLeft && (gameState & canSwitchScreens)) {
+			isDrawn = 0;
+			playerTimer = 300;
+			if (--gameState == 0x07) {		//Loop around?
+				gameState = stateSplash;
+			}
+		}		
 	}
 	
+
+	
 	switch(gameState) {
+
+		case stateSplash:
+			if (!isDrawn) {
+				drawSplashScreen();
+			}
+			if (splashTimer) {						//Timer set? Initial boot, countdown then goto main menu. If 0, then stay on splash screen until user presses left or right
+				if (--splashTimer == 0) {
+					gameState = stateTitle;
+					isDrawn = 0;
+				}
+			}
+		break;
 
 		case stateTitle:
 			if (!isDrawn) {							//First time here? Draw the title screen
@@ -392,7 +399,7 @@ void gameFrame() {							//This function is called at 60-ish Hz
 			setRowScroll(xWindow >> 1, 5);			//WE SCROLL THE MOON!
 			setRowScroll(xWindow >> 1, 6);			//BECAUSE IT IS CLOSE TO US!
 			setRowScroll(xWindow, 7);				//WE SCROLL THE MOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOON!
-			
+		
 			if (buttonsPressed & dA) {
 				startNewGame();			
 			}						
@@ -427,15 +434,9 @@ void gameFrame() {							//This function is called at 60-ish Hz
 			drawTime();						
 			if (buttonsPressed & dB) {
 				playerTimer = 300;
-				if (++changeTime == 3) {	//Cycle through hours, minutes and done with each press
+				if (++changeTime == 3) {		//Cycle through hours, minutes and done with each press
 					changeTime = 0;
 				}
-			}	
-			if (buttonsPressed & dA) {
-				playerTimer = 300;
-				SPI0_CTRLB = 0;							//Disable SPI buffer mode since we are sending single byte commands			
-				sideOfMoon = setRotate(0xFF);			//Toggle screen rotate and store local copy
-				SPI0_CTRLB = SPI_BUFEN_bm;				//Resume SPI buffer mode					
 			}				
 		break;
 		
@@ -508,6 +509,7 @@ void gameFrame() {							//This function is called at 60-ish Hz
 
 }
 
+//---------------------------Active game logic-------------------------------------
 void gameAction() {
 
 	sendTiles();
@@ -545,7 +547,6 @@ void gameAction() {
 							break;
 							
 						}
-						//spawnEnemy(enemySpawnSide[getRandom(0x01)], getRandom(0x03) * 8, 1, enemyUFO); 0x03 makes them low enough to hit you in a jump, should save that for later levels
 						eventTimer = eventGoal + (getRandom(0x07) * 3);
 						skyEnemies += 1;
 					}
@@ -563,11 +564,6 @@ void gameAction() {
 					}
 				}
 			}
-
-			//drawDecimal(eventTimer, tileMap + 8);
-			//drawDecimal(skyEnemies, tileMap);
-			//drawDecimal(numberOfWaves, tileMap + 32);
-			//drawDecimal(numberSpawned, tileMap + 4);
 		}
 
 		
@@ -594,7 +590,6 @@ void gameAction() {
 				}
 				spawnObstacle(127, 1 << whichItem);							//Spawn obstacle
 			}
-			//drawDecimal(obstacleTimer, tileMap);
 		}
 	}
 	
@@ -611,7 +606,6 @@ void gameAction() {
 	}
 	
 	if ((xWindow & 0x07) == 0x07) {
-		spawnFineCounter = 0;
 		if (++spawnPointer == 0) {
 			spawnPointer = 224;
 		}
@@ -646,7 +640,7 @@ void gameAction() {
 		
 	}
 	else {
-		setRowScroll(0, 0);
+		setRowScroll(0, 0);						//No Boss? Standard sky side
 	}
 
 	setRowScroll(0, 1);
@@ -660,12 +654,8 @@ void gameAction() {
 	if (xWindow > 255) {
 		xWindow -= 256;
 		
-		if (messageFlash == 0xFFFF) {
-		
+		if (messageFlash == 0xFFFF) {		
 			distanceCheck = 1;
-		
-			//drawDecimal(distance, tileMap);
-			//drawDecimal(distanceGoal, tileMap + 32);
 		}
 				
 	}
@@ -678,8 +668,7 @@ void gameAction() {
 			distance = 0;
 			speed = 1;							//Back to normal speed... for NOW
 			checkPoint++;
-			//drawText("CHECKPOINT", tileMap + 192 + 18);
-			tileMap[192 + 30] = checkPoint + 65;
+			tileMap[192 + 30] = checkPoint + 65;	//Update the Checkpoint # (the text is already in the screen buffer)
 			messageFlash = 0;
 		}
 		
@@ -689,8 +678,6 @@ void gameAction() {
 
 void playerLogic() {
 
-	//drawDecimal(score, tileMap + 32);			//BJH
-	
 	xWindowCoarse = (xWindow + bugX) >> 3;
 	
 	uint8_t suspension = 0;
@@ -745,7 +732,7 @@ void playerLogic() {
 		
 		case playerDead:
 			if (--playerTimer == 0) {
-				//if (lives == 255) {				//Rolls under from to 255?
+				//if (lives == 255) {				//I PROMISE. I WILL NEVER DIE!
 				if (--lives == 255) {				//Rolls under from to 255?
 					gameState = stateGameOver;
 					frameCounter = 0;
@@ -768,8 +755,7 @@ void playerLogic() {
 	}
 	
 	if (jump) {
-		bugY += jumpVelocity[(jump - 1) >> 1];
-		
+		bugY += jumpVelocity[(jump - 1) >> 1];		
 		tone(jump * 500, 20, 8, 0);
 		
 		if (++jump == 33) {
@@ -781,10 +767,8 @@ void playerLogic() {
 			}
 			else {
 				tone(10000, 200, 8, 0);
-			}
-			
-		}
-		
+			}		
+		}		
 	}
 	
 	uint8_t shootWeapons = 0;
@@ -845,8 +829,7 @@ void playerLogic() {
 				}
 				else {
 					blasterY = bugY - 3;
-				}
-				
+				}				
 			}
 		}
 		
@@ -874,135 +857,436 @@ void playerLogic() {
 
 }
 
-void updateHighScores() {
+void enemies() {
 
-	scoreRanking--;												//Set to zero index	
+	for (int g = 0 ; g < maxEnemies ; g++) {
 
-	uint32_t tempScore = 0;
-	int8_t tempRow;
+		if (enemy[g].y != spriteOff) {
 
-	if (scoreRanking < 5) {										//Player not in 6th place? Shift all places below them
-		
-		for (int row = 4 ; row >= scoreRanking ; row--) {		//6th places (5 index) is gone no matter what so start with 4, shifting it down to 5
-			tempRow = row + 1;
-			nameShift[0] = eepromReadByte((row * 32) + 0);		//Get name and put into temp array
-			nameShift[1] = eepromReadByte((row * 32) + 1);
-			nameShift[2] = eepromReadByte((row * 32) + 2);	
-			tempScore = eepromReadLong((row * 32) + 4);
-		
-			eepromWrite(tempRow * 32, nameShift, tempScore);	//Shift into lower place
+			drawSprite(enemy[g].gfx, enemy[g].x, enemy[g].y, enemy[g].frame, enemy[g].mirror);
+
+			int8_t xSize = pgm_read_byte(enemy[g].gfx);
+			int8_t ySize = pgm_read_byte(enemy[g].gfx + 1);
+			
+			xCollide = 0;													//X and Y collision flags for enemy-player
+			yCollide = 0;
+			uint8_t blasted = 0;													//Collision flag for enemy-blaster (horizontal shot)
+			
+			if (enemy[g].x < (bugX + 20) && bugX < (enemy[g].x + (xSize - 4))) {			//Check the X and Y collision flags for enemies (including shots) and Player Buggie
+				xCollide = 1;
+			}
+
+			if (enemy[g].y < (bugY + 8) && bugY < (enemy[g].y + ySize)) {
+				yCollide = 1;
+			}
+
+			for (int h = 0 ; h < 2 ; h++) {											//Scan through the 2 possible hero vertical shots and check for collision against enemies
+				if (heroShots[h].y != spriteOff) {
+					if (enemy[g].x < (heroShots[h].x + 8) && heroShots[h].x < (enemy[g].x + xSize)) {
+						if (enemy[g].y < (heroShots[h].y + 8) && heroShots[h].y < (enemy[g].y + ySize) && enemy[g].type != enemyExplosion) {
+							
+							if (enemy[g].type == enemyBossUFO) {					//Damage boss or
+								damageBoss(g);
+								spawnExplosion(enemy[g].x + 8, enemy[g].y + 8, 5);
+							}
+							else {
+								if (enemy[g].type & skyMask) {							//Was this a sky enemy? (not a projectile)
+									skyEnemies--;										//Decrement their counter
+									score += 1000;
+									spawnExplosion(enemy[g].x, enemy[g].y, 6);				//An explosion where they were
+								}
+								else {
+									score += 10;									//10 pts for projectiles
+								}
+								enemy[g].y = spriteOff;								//Kill enemy
+								tone(700, 300, 10, -1);
+							}
+							
+							heroShots[h].y = spriteOff;								//Despawn hero shot
+						}
+					}
+				}
+			}
+			
+			if (blasterX != spriteOff) {
+				if (enemy[g].x < (blasterX + 16) && blasterX < (enemy[g].x + xSize)) {			//Check the X and Y collision flags for enemies (including shots) and Horizontal Blaster Shot
+					if (enemy[g].y < (blasterY + 8) && blasterY < (enemy[g].y + ySize)) {
+						blasted = 1;															//Set "Blasted" flag (since effect varies by enemy)
+					}
+				}
+			}
+
+			if (enemy[g].grounded) {									//Enemy stuck to ground? Obstacle? Scroll with the BG
+				enemy[g].x -= speed;
+
+				if (enemy[g].x < (0 - xSize)) {							//Scrolled off-screen? despawn.
+					enemy[g].y = spriteOff;
+				}
+				
+			}
+			
+			if (enemy[g].y == spriteOff) {								//Did a check above "kill" this enemy? Skip logic checks, goto next enemy in array
+				continue;
+			}
+
+			switch(enemy[g].type) {
+
+				case enemyExplosion:
+				if (--enemy[g].timer == 0) {
+					if (++enemy[g].frame == 3) {
+						enemy[g].y = spriteOff;
+					}
+					else {
+						enemy[g].timer = 6;
+					}
+				}
+				break;
+				
+				case enemySmallRock:
+				
+				if (blasted) {
+					enemy[g].y = spriteOff;
+					blasterX = spriteOff;
+					tone(1500, 200, 10, 10);
+					score += 100;
+				}
+				
+				checkObstacle(g, 44, 500);			//Check for collision and set jump score value
+				
+				break;
+				
+				case enemyBigRock:
+
+				if (blasted) {
+					enemy[g].gfx = smallRock;							//Change the sprite graphics
+					enemy[g].type = enemySmallRock;							//It becomes SMALL ROCK
+					enemy[g].x += 8;										//Move 8 pix right to make gap
+					blasterX = spriteOff;
+					tone(400, 100, 10, 3);
+					score += 50;
+				}
+				checkObstacle(g, 44, 1000);			//Check for collision and set jump score value
+				
+				break;
+				
+				case enemySmallPit:
+				checkObstacle(g, 50, 300);			//Check for collision and set jump score value
+				break;
+				
+				case enemyBigPit:
+				checkObstacle(g, 50, 600);			//Check for collision and set jump score value
+				break;
+				
+				case enemyWaveShot:
+				checkHitPlayer(g);
+				if (++enemy[g].y > 52) {										//Despawn wave shot when it hits ground
+					enemy[g].y = spriteOff;
+				}
+				if (blasted) {
+					enemy[g].y = spriteOff;										//Hori blaster hit it?
+					blasterX = spriteOff;
+					tone(700, 300, 9, -1);
+				}
+				break;
+				
+				case enemyBombShot:
+				checkHitPlayer(g);
+				
+				if (++enemy[g].y > 52) {										//Bomb shot makes hole in the ground
+					tone(2000, 300, 8, 1);
+					enemy[g].y = spriteOff;
+					spawnObstacle(enemy[g].x - 8, enemySmallPit);
+				}
+				if (blasted) {
+					enemy[g].y = spriteOff;										//Hori blaster hit it?
+					blasterX = spriteOff;
+					tone(700, 300, 9, -1);
+				}
+				break;
+				
+				case enemyUFO:
+				
+				if (frameCounter & 0x08) {
+					enemy[g].mirror = 1;
+				}
+				else {
+					enemy[g].mirror = -1;
+				}
+				
+				enemy[g].x += enemy[g].dir;
+				
+				if (enemy[g].x < 1) {
+					enemy[g].dir = 1;
+				}
+				if (enemy[g].x > 111) {
+					enemy[g].dir = -1;
+				}
+				
+				if (enemy[g].x > bugX + 4 && enemy[g].x < bugX + 8 && !enemy[g].timer) {
+					enemy[g].timer = attackSpeed;
+					spawnShot(enemy[g].x + 4, enemy[g].y + 8, enemyWaveShot);
+					tone(400, 100, 10, -1);
+				}
+				if (enemy[g].timer) {
+					enemy[g].timer--;
+				}
+				
+				break;
+				
+				case enemyBalls:
+				if (frameCounter & 0x08) {
+					enemy[g].mirror = 1;
+				}
+				else {
+					enemy[g].mirror = -1;
+				}
+				
+				enemy[g].x += enemy[g].dir;
+				
+				if (enemy[g].x < 1) {
+					enemy[g].dir = 1;
+				}
+				if (enemy[g].x > 111) {
+					enemy[g].dir = -1;
+				}
+				
+				if (!enemy[g].timer) {			//Eligible to take a shot?
+					if (bugX > 86) {				//Player near right side of screen, and we can't drop a bomb in front of him? OR HER! #PC
+						if (enemy[g].x == bugX + 4) {			//Drop bomb right onto player instead. TIME 2 DIE!
+							enemy[g].timer = attackSpeed;
+							spawnShot(enemy[g].x + 4, enemy[g].y + 8, enemyBombShot);
+							tone(600, 100, 10, -1);
+						}
+					}
+					else {
+						if (enemy[g].x == bugX + 40) {
+							enemy[g].timer = attackSpeed;
+							spawnShot(enemy[g].x + 4, enemy[g].y + 8, enemyBombShot);
+							tone(600, 100, 10, -1);
+						}
+					}
+				}
+				
+				if (enemy[g].x == bugX + 40 && !enemy[g].timer) {
+					enemy[g].timer = attackSpeed;
+					spawnShot(enemy[g].x + 4, enemy[g].y + 8, enemyBombShot);
+					tone(600, 100, 10, -1);
+				}
+				if (enemy[g].timer) {
+					enemy[g].timer--;
+				}
+				break;
+				
+				case enemyBossUFO:;							//Boss patterns here
+
+				static uint8_t spinSpeed;
+				
+				if (frameCounter & spinSpeed) {
+					enemy[g].mirror = 1;
+				}
+				else {
+					enemy[g].mirror = -1;
+				}
+				
+				if (blasted) {
+					blasterX = spriteOff;
+					damageBoss(g);
+					spawnExplosion(enemy[g].x, enemy[g].y, 5);
+				}
+				
+				if (enemy[g].y == spriteOff) {								//Did a check above "kill" this enemy? Skip logic checks, goto next enemy in array
+					continue;
+				}
+				
+				if (xCollide && yCollide && (playerState & playerAlive)) {
+					killPlayer();
+				}
+				
+				switch(enemy[g].state) {
+					
+					case 1:								//Initial descent
+					spinSpeed = 0x08;
+					if (frameCounter & 1) {
+						if (++enemy[g].y == 36) {
+							enemy[g].state = 2;			//Next state
+							enemy[g].timer = 30 + (getRandom(0x07) * 7);		//2 seconds of next stage
+							wavePointer = 95;
+						}
+					}
+					break;
+					case 2:								//Pause
+					if (++wavePointer == 128) {
+						wavePointer = 0;
+					}
+					enemy[g].y = 36 - (sineWave[wavePointer] >> 2);
+					
+					if (!--enemy[g].timer) {
+						enemy[g].state = 3;
+						enemy[g].timer = 60;		//1 seconds between bombs
+						enemy[g].count = 5 + stage + getRandom(0x03);		//Drop this many bombs
+					}
+					break;
+					case 3:								//Bombing
+					if (++wavePointer == 128) {
+						wavePointer = 0;
+					}
+					enemy[g].y = 36 - (sineWave[wavePointer] >> 2);
+					
+					if (!--enemy[g].timer) {
+						if (--enemy[g].count) {	//Bombs left to drop?
+							spawnShot(enemy[g].x + 12, enemy[g].y + 8, enemyBombShot);
+							enemy[g].timer = 90 - (stage * 3);					//+ (getRandom(0x03) * 3)
+						}
+						else {
+							enemy[g].state = 4;		//Wind up..
+							spinSpeed = 0x02;
+							enemy[g].timer = 70;	//Timer
+							enemy[g].dir = 0;
+						}
+					}
+					break;
+					case 4:								//Winding up
+					if (enemy[g].y > 8) {
+						if (++enemy[g].dir == 4) {
+							enemy[g].y--;
+							enemy[g].dir = 0;
+						}
+					}
+					if (!--enemy[g].timer) {
+						//branchState here
+						enemy[g].state = 5;
+					}
+					break;
+					case 5:								//Slam to ground
+					enemy[g].y += 2;
+					if (++enemy[g].y > 54) {
+						enemy[g].y = 55;
+						enemy[g].state = 6;
+						enemy[g].timer = 40;		//Wind up for lateral move
+					}
+					break;
+					case 6:								//Wind up on ground
+					if (frameCounter & 1) {
+						enemy[g].x++;
+					}
+					if (!--enemy[g].timer) {
+						enemy[g].state = 7;
+					}
+					break;
+					case 7:								//On ground
+					enemy[g].x -= 2;				//Fast move
+					if (enemy[g].x < -32) {			//Scrolled past?
+						enemy[g].state = 8;
+						enemy[g].x = -128 + (getRandom(0x07) * 6);		//Scroll it further left (to cause a delay for return)
+						enemy[g].y = (getRandom(0x03) * 3) + 8;
+						enemy[g].grounded = 0;				//Not stuck to ground
+						spinSpeed = 0x04;
+						enemy[g].timer = 30;
+					}
+					break;
+					case 8:								//Scrolling back to the right
+					if (enemy[g].x > 0) {
+						if (--enemy[g].timer == 0) {
+							spawnShot(enemy[g].x + 12, enemy[g].y + 8, enemyWaveShot);
+							enemy[g].timer = 40 - (stage * 4);
+						}
+					}
+					if (++enemy[g].x > 94) {		//Back to right side? Repeat
+						enemy[g].state = 1;
+						bossPhase++;
+					}
+					break;
+				}
+
+				break;
+				
+			}
 		}
-		
 	}
-	
-	eepromWrite(scoreRanking * 32, name, score);		//Write new high score in slot
 
-	gameState = stateHighScores;
-	isDrawn = 0;
-		
 }
 
-void sendTiles() {
+void checkHitPlayer(uint8_t which) {
 
-	screenLoad();							//Dump the frame buffer to the OLED
-	drawTiles(tileData, tileMap);			//Draw background tiles	
+	if (xCollide && yCollide && (playerState & playerAlive)) {
+		killPlayer();
+		enemy[which].y = spriteOff;
+	}
 	
 }
 
-void gameStatus(uint8_t type) {				//Draw status screen. Type 0 = READY, 1 = PAUSE screen
+void checkObstacle(uint8_t which, uint8_t yHit, uint16_t value) {			//Check for obstable collision and jump score status
 
-	csLow();
-
-	if ((++frameCounter & 0x20) && type == 0) {
-		drawText("PAUSED", tileMap + 26);	
-	}
-
-	nextRow();
-	drawText("STAGE:", tileMap + 16);
-	drawDecimal(stage, tileMap + 22);	
-	nextRow();									//Blank row
-	drawText("SCORE:", tileMap + 16);
-	drawDecimal(score, tileMap + 22);
-	nextRow();
-	drawText("LIVES:", tileMap + 16);
-	if (lives < 255) {
-		drawDecimal(lives, tileMap + 22);
-	}
-	nextRow();
-	drawText("A  B  C  D  E  F", tileMap + 16);		//Map
-	nextRow();
-	drawText("m~~n~~n~~n~~n~~o", tileMap + 16);
-	int8_t buggyPosX = 16 + (checkPoint * 3);
-
-	if (messageFlash == 0xFFFF && checkPoint < 5 && type != 1) {	//Fake shit, where we make it look like progress is mapped. IT ISN'T
-		buggyPosX++;
-	}
-	
-	uint8_t buggyGFX = 37;
-	
-	if (type != 2) {
-		buggyGFX = 125;
-	}
-
-	if (frameCounter & 0x08) {						//Animated buggie on map (cuuuuuuuuuuuuuuuute!)
-		tileMap[buggyPosX] = buggyGFX;
-	}	
-	else {
-		tileMap[buggyPosX] = buggyGFX + 2;
-	}
-	nextRow();
+	if (xCollide && (playerState & playerAlive)) {							//Ground obstacle and player X collision?
 		
-	if (type) {								//Pause screen?
-		nextRow();
-		if (type == 2) {
-			drawText("GAME OVER", tileMap + 20);	
+		if (bugY > yHit) {				//Buggie low enough to hit it?
+			killPlayer();
 		}
 		else {
-			if (frameCounter & 0x08) {						//Animated buggie on map (cuuuuuuuuuuuuuuuute!)
-				drawText("GET  READY", tileMap + 19);
-			}			
-		}		
-	}
-	else {
-		drawText("B+A = SLEEP", tileMap + 21);
-		nextRow();
-		drawText("MENU = WAKE", tileMap + 21);				
+			jumpScore = value;			//Set jump score value. If player lands without dying, they make these points
+		}
+		
 	}
 
-	nextRow();					
-	csHigh();
-	
-	if (gamePad & dB && gamePad & dA && type == 0) {
-		buttonRepeatFlag = dMenu;						//Clear this bit so pressing Menu doesn't exit PAUSE when we awaken from our dark, deep slumber
-		gotoSleep();
-	}
-	
 }
 
-void nextRow() {
+void damageBoss(uint8_t g) {
 
-	rowLoad(tileData, tileMap + 16, draw);
-	memset(&tileMap[16], ' ', 16);
+	tone(400, 100, 10, 5);
+	score += 250;
+	
+	if (--bossHealth == 0) {
+		spawnExplosion(enemy[g].x, enemy[g].y, 20);			//Twin explosions!
+		spawnExplosion(enemy[g].x + 16, enemy[g].y, 24);
+		enemy[g].y = spriteOff;							//Despawn UFO
+		stageWin = 1;									//Flag for stage win
+		playerTimer = 180;								//Timer for transition
+		drawText(" EXTRA LIFE!  ", tileMap + 192 + 18);
+	}
 	
 }
 
 void startNewGame() {
 
 	stage = 1;
-
 	score = 0;
 	lives = 2;
 	
 	startNewStage();
-
 	
 }
 
 void startNewStage() {
 	
 	checkPoint = 0;							//Which goal you've reached (0=A, 5=F)
-	attackSpeed = 140 - (stage * 20);
+	attackSpeed = 140 - (stage * 20);		//Decrease time between enemy shot attacks
 	startNewLife();
+	
+}
+
+void startNewLife() {
+
+	distance = 0;			//How many screens to the next goal
+	frameCounter = 0;
+	gameState = stateGetReady;
+	playerState = playerDriving;
+
+	stageWin = 0;
+	frameCounter = 0;
+
+	spawnPointer = 224 + 20;					//Update the ground randomizer pointer in tile map memory
+
+	bugX = 16;
+	bugY = 51;
+	jump = 0;
+	blasterX = spriteOff;						//Disabled state
+	
+	clearShots();
+	clearEnemies();
+	bossBattle = 0;
+	
+	jumpScore = 0;
+	speed = 1;
 	
 }
 
@@ -1011,72 +1295,71 @@ void phaseStart() {				//After CHECKPOINT message scrolls off, decide what to do
 	skyEnemies = 0;
 	byDistance = 0;				//Goal based (not scroll based) advancement unless otherwise noted
 	distance = 0;
-	distanceGoal = 10;			
+	distanceGoal = 10;
 
 	obstacleTimer = 1;
 	clearEnemies();											//Wipe enemy memory
 	numberSpawned = 0;
-	numberOfWaves = 3 + (stage >> 1);	
+	numberOfWaves = 3 + (stage >> 1);
 	
 	uint8_t offset = (stage * 2);
 	
 	speed = 1;
-				
+	
 	switch(checkPoint) {
-					
+		
 		case 0:
 			stagePhase = phaseRocks | phasePits;
 			setGoal(4);
-			if (stage > 1) {
+			if (stage > 1) {							//Not stage 1? Time for FAST MODE!
 				speed = 2;
 				obstacleTimer = 90;						//Give player more time to react to first one
 				setGoal(4 + (stage * 3));
 			}
 		break;
-				
-		case 1:	
+		
+		case 1:
 			if (stage == 1) {							//Training phase. But it's too boring for anything past stage 1
 				stagePhase = phaseUFOs;
-				eventGoal = 80;				
+				eventGoal = 80;
 				spawnPerWave = 2;
-				numberOfWaves = 3;			
+				numberOfWaves = 3;
 			}
 			else {
 				stagePhase = phaseUFOs;
 				eventGoal = 40 - offset;
-				spawnPerWave = 4;				
-			}	
-
+				spawnPerWave = 4;
+			}
 		break;
 		
 		case 2:
 			stagePhase = phaseUFOs | phaseRocks | phasePits;
 			eventGoal = 70 - offset;
-			spawnPerWave = 3;	
-		break;	
+			spawnPerWave = 3;
+		break;
 		
 		case 3:
 			stagePhase = phaseBalls;
 			eventGoal = 50 - offset;
-			spawnPerWave = 3;	
-		break;	
+			spawnPerWave = 3;
+		break;
 		
 		case 4:
 			stagePhase = phaseBalls | phaseUFOs | phaseRocks;
 			eventGoal = 60 - offset;
-			spawnPerWave = 4;	
-		break;		
-						
+			spawnPerWave = 4;
+		break;
+		
 		case 5:														//BOSS UFO!
 			bossBattle = 1;											//Boss battle is GO!
 			bossHealth = bossStartingHealth;						//Refill health
 			stagePhase = 0;
 			spawnBoss();
-		break;		
+		break;
 	}
 
 	eventTimer = 1;				//Make something happen RIGHT AWAY (if that type of phase)
-				
+	
 }
 
 void setGoal(uint8_t theGoal) {
@@ -1087,6 +1370,7 @@ void setGoal(uint8_t theGoal) {
 	
 }
 
+//------------------------------Enemy spawn logic-------------------------------------
 void spawnObstacle(int16_t xPos, uint8_t whichOne) {
 
 	uint8_t yPos = 48;
@@ -1264,420 +1548,103 @@ void shotLogic() {
 	
 }
 
-void gotoSleep() {
+void killPlayer() {						//"Welcome... TO DIE!!!!!!!!!!!!!!!!!!!"
 
-	sleepState = 1;
-	displayOnOff(0);
-	ledState(0);
-	//Roll around to the main loop which will put us to sleep
+	playerFrame = 0;
+	playerState = playerExploding;		
+	playerTimer = 5;					//Time to die
+	
+}
+
+void clearShots() {
+	
+	for (int g = 0 ; g < 2 ; g++) {
+		heroShots[g].y = spriteOff;
+	}
 
 }
 
-void enemies() {
+void clearEnemies() {
 
 	for (int g = 0 ; g < maxEnemies ; g++) {
-
-		if (enemy[g].y != spriteOff) {
-
-			drawSprite(enemy[g].gfx, enemy[g].x, enemy[g].y, enemy[g].frame, enemy[g].mirror);
-
-			int8_t xSize = pgm_read_byte(enemy[g].gfx);
-			int8_t ySize = pgm_read_byte(enemy[g].gfx + 1);
-			
-			xCollide = 0;													//X and Y collision flags for enemy-player
-			yCollide = 0;
-			uint8_t blasted = 0;													//Collision flag for enemy-blaster (horizontal shot)
-			
-			if (enemy[g].x < (bugX + 20) && bugX < (enemy[g].x + (xSize - 4))) {			//Check the X and Y collision flags for enemies (including shots) and Player Buggie
-				xCollide = 1;
-			}			
-
-			if (enemy[g].y < (bugY + 8) && bugY < (enemy[g].y + ySize)) {
-				yCollide = 1;
-			}	
-
-			for (int h = 0 ; h < 2 ; h++) {											//Scan through the 2 possible hero vertical shots and check for collision against enemies
-				if (heroShots[h].y != spriteOff) {
-					if (enemy[g].x < (heroShots[h].x + 8) && heroShots[h].x < (enemy[g].x + xSize)) {
-						if (enemy[g].y < (heroShots[h].y + 8) && heroShots[h].y < (enemy[g].y + ySize) && enemy[g].type != enemyExplosion) {
-							
-							if (enemy[g].type == enemyBossUFO) {					//Damage boss or
-								damageBoss(g);
-								spawnExplosion(enemy[g].x + 8, enemy[g].y + 8, 5);
-							}
-							else {		
-								if (enemy[g].type & skyMask) {							//Was this a sky enemy? (not a projectile)
-									skyEnemies--;										//Decrement their counter
-									score += 1000;
-									spawnExplosion(enemy[g].x, enemy[g].y, 6);				//An explosion where they were
-								}
-								else {
-									score += 10;									//10 pts for projectiles
-								}												
-								enemy[g].y = spriteOff;								//Kill enemy	
-								tone(700, 300, 10, -1);	
-							}
-	
-							heroShots[h].y = spriteOff;								//Despawn hero shot						
-						}
-					}
-				}
-			}
-			
-			if (blasterX != spriteOff) {
-				if (enemy[g].x < (blasterX + 16) && blasterX < (enemy[g].x + xSize)) {			//Check the X and Y collision flags for enemies (including shots) and Horizontal Blaster Shot
-					if (enemy[g].y < (blasterY + 8) && blasterY < (enemy[g].y + ySize)) {
-						blasted = 1;															//Set "Blasted" flag (since effect varies by enemy)
-					}
-				}				
-			}
-
-			if (enemy[g].grounded) {									//Enemy stuck to ground? Obstacle? Scroll with the BG
-				enemy[g].x -= speed;
-
-				if (enemy[g].x < (0 - xSize)) {							//Scrolled off-screen? despawn.
-					enemy[g].y = spriteOff;
-				}	
-						
-			}
-			
-			if (enemy[g].y == spriteOff) {								//Did a check above "kill" this enemy? Skip logic checks, goto next enemy in array
-				continue;
-			}	
-
-			switch(enemy[g].type) {
-
-				case enemyExplosion:
-					if (--enemy[g].timer == 0) {
-						if (++enemy[g].frame == 3) {
-							enemy[g].y = spriteOff;	
-						}
-						else {
-							enemy[g].timer = 6;
-						}
-					}
-				break;
-			
-				case enemySmallRock:			
-				
-					if (blasted) {	
-						enemy[g].y = spriteOff;
-						blasterX = spriteOff;
-						tone(1500, 200, 10, 10);
-						score += 100;
-					}
-					
-					checkObstacle(g, 44, 500);			//Check for collision and set jump score value	
-											
-				break;
-				
-				case enemyBigRock:
-
-					if (blasted) {
-						enemy[g].gfx = smallRock;							//Change the sprite graphics
-						enemy[g].type = enemySmallRock;							//It becomes SMALL ROCK
-						enemy[g].x += 8;										//Move 8 pix right to make gap
-						blasterX = spriteOff;
-						tone(400, 100, 10, 3);
-						score += 50;
-					}	
-					checkObstacle(g, 44, 1000);			//Check for collision and set jump score value									
-									
-				break;
-				
-				case enemySmallPit:
-					checkObstacle(g, 50, 300);			//Check for collision and set jump score value						
-				break;	
-				
-				case enemyBigPit:
-					checkObstacle(g, 50, 600);			//Check for collision and set jump score value		
-				break;
-				
-				case enemyWaveShot:
-					checkHitPlayer(g);					
-					if (++enemy[g].y > 52) {										//Despawn wave shot when it hits ground
-						enemy[g].y = spriteOff;
-					}
-					if (blasted) {
-						enemy[g].y = spriteOff;										//Hori blaster hit it?
-						blasterX = spriteOff;
-						tone(700, 300, 9, -1);
-					}					
-				break;
-				
-				case enemyBombShot:
-					checkHitPlayer(g);
-					
-					if (++enemy[g].y > 52) {										//Bomb shot makes hole in the ground
-						tone(2000, 300, 8, 1);
-						enemy[g].y = spriteOff;
-						spawnObstacle(enemy[g].x - 8, enemySmallPit);
-					}
-					if (blasted) {
-						enemy[g].y = spriteOff;										//Hori blaster hit it?
-						blasterX = spriteOff;
-						tone(700, 300, 9, -1);
-					}					
-				break;	
-								
-				case enemyUFO:
-				
-					if (frameCounter & 0x08) {
-						enemy[g].mirror = 1; 
-					}
-					else {
-						enemy[g].mirror = -1;
-					}
-				
-					enemy[g].x += enemy[g].dir;
-					
-					if (enemy[g].x < 1) {
-						enemy[g].dir = 1;	
-					}
-					if (enemy[g].x > 111) {
-						enemy[g].dir = -1;
-					}
-					
-					if (enemy[g].x > bugX + 4 && enemy[g].x < bugX + 8 && !enemy[g].timer) {
-						enemy[g].timer = attackSpeed;
-						spawnShot(enemy[g].x + 4, enemy[g].y + 8, enemyWaveShot);
-						tone(400, 100, 10, -1);					
-					}
-					if (enemy[g].timer) {
-						enemy[g].timer--;
-					}				
-				
-				break;	
-				
-				case enemyBalls:
-					if (frameCounter & 0x08) {
-						enemy[g].mirror = 1;
-					}
-					else {
-						enemy[g].mirror = -1;
-					}
-					
-					enemy[g].x += enemy[g].dir;
-					
-					if (enemy[g].x < 1) {
-						enemy[g].dir = 1;
-					}
-					if (enemy[g].x > 111) {
-						enemy[g].dir = -1;
-					}
-					
-					if (!enemy[g].timer) {			//Eligible to take a shot?
-						if (bugX > 86) {				//Player near right side of screen, and we can't drop a bomb in front of him? OR HER! #PC
-							if (enemy[g].x == bugX + 4) {			//Drop bomb right onto player instead. TIME 2 DIE!
-								enemy[g].timer = attackSpeed;
-								spawnShot(enemy[g].x + 4, enemy[g].y + 8, enemyBombShot);
-								tone(600, 100, 10, -1);
-							}							
-						}
-						else {
-							if (enemy[g].x == bugX + 40) {
-								enemy[g].timer = attackSpeed;
-								spawnShot(enemy[g].x + 4, enemy[g].y + 8, enemyBombShot);
-								tone(600, 100, 10, -1);
-							}							
-						}						
-					}
-									
-					if (enemy[g].x == bugX + 40 && !enemy[g].timer) {
-						enemy[g].timer = attackSpeed;
-						spawnShot(enemy[g].x + 4, enemy[g].y + 8, enemyBombShot);
-						tone(600, 100, 10, -1);
-					}
-					if (enemy[g].timer) {
-						enemy[g].timer--;
-					}				
-				break;		
-	
-				case enemyBossUFO:;							//Boss patterns here
-
-					static uint8_t spinSpeed;
-									
-					if (frameCounter & spinSpeed) {
-						enemy[g].mirror = 1;
-					}
-					else {
-						enemy[g].mirror = -1;
-					}	
-								
-					if (blasted) {
-						blasterX = spriteOff;				
-						damageBoss(g);
-						spawnExplosion(enemy[g].x, enemy[g].y, 5);
-					}
-					
-					if (enemy[g].y == spriteOff) {								//Did a check above "kill" this enemy? Skip logic checks, goto next enemy in array
-						continue;
-					}	
-									
-					if (xCollide && yCollide && (playerState & playerAlive)) {
-						killPlayer();
-					}	
-													
-					switch(enemy[g].state) {
-					
-						case 1:								//Initial descent
-							spinSpeed = 0x08;
-							if (frameCounter & 1) {
-								if (++enemy[g].y == 36) {
-									enemy[g].state = 2;			//Next state
-									enemy[g].timer = 30 + (getRandom(0x07) * 7);		//2 seconds of next stage
-									wavePointer = 95;
-								}
-							}
-						break;
-						case 2:								//Pause
-							if (++wavePointer == 128) {
-								wavePointer = 0;
-							}
-							enemy[g].y = 36 - (sineWave[wavePointer] >> 2);	
-												
-							if (!--enemy[g].timer) {
-								enemy[g].state = 3;
-								enemy[g].timer = 60;		//1 seconds between bombs
-								enemy[g].count = 5 + stage + getRandom(0x03);		//Drop this many bombs	
-							}
-						break;					
-						case 3:								//Bombing
-							if (++wavePointer == 128) {
-								wavePointer = 0;
-							}
-							enemy[g].y = 36 - (sineWave[wavePointer] >> 2);
-							
-							if (!--enemy[g].timer) {
-								if (--enemy[g].count) {	//Bombs left to drop?
-									spawnShot(enemy[g].x + 12, enemy[g].y + 8, enemyBombShot);
-									enemy[g].timer = 90 - (stage * 3);					//+ (getRandom(0x03) * 3) 				
-								}
-								else {
-									enemy[g].state = 4;		//Wind up..
-									spinSpeed = 0x02;
-									enemy[g].timer = 70;	//Timer
-									enemy[g].dir = 0;
-								}
-							}
-						break;					
-						case 4:								//Winding up						
-							if (enemy[g].y > 8) {
-								if (++enemy[g].dir == 4) {
-									enemy[g].y--;
-									enemy[g].dir = 0;
-								}
-							}
-							if (!--enemy[g].timer) {
-								//branchState here
-								enemy[g].state = 5;
-							}
-						break;	
-						case 5:								//Slam to ground
-							enemy[g].y += 2;
-							if (++enemy[g].y > 54) {
-								enemy[g].y = 55;
-								enemy[g].state = 6;
-								enemy[g].timer = 40;		//Wind up for lateral move
-							}
-						break;
-						case 6:								//Wind up on ground
-							if (frameCounter & 1) {
-								enemy[g].x++;
-							}
-							if (!--enemy[g].timer) {
-								enemy[g].state = 7;
-							}
-						break;						
-						case 7:								//On ground
-							enemy[g].x -= 2;				//Fast move
-							if (enemy[g].x < -32) {			//Scrolled past?
-								enemy[g].state = 8;
-								enemy[g].x = -128 + (getRandom(0x07) * 6);		//Scroll it further left (to cause a delay for return)
-								enemy[g].y = (getRandom(0x03) * 3) + 8;
-								enemy[g].grounded = 0;				//Not stuck to ground
-								spinSpeed = 0x04;
-								enemy[g].timer = 30;
-							}
-						break;
-						case 8:								//Scrolling back to the right
-							if (enemy[g].x > 0) {
-								if (--enemy[g].timer == 0) {
-									spawnShot(enemy[g].x + 12, enemy[g].y + 8, enemyWaveShot);
-									enemy[g].timer = 40 - (stage * 4);	
-								}
-							}
-							if (++enemy[g].x > 94) {		//Back to right side? Repeat
-								enemy[g].state = 1;
-								bossPhase++;
-							}
-						break;																														
-					}				
-
-				break;
-						
-			}		
-		}	
-	}
-
-}
-
-void checkHitPlayer(uint8_t which) {
-
-	if (xCollide && yCollide && (playerState & playerAlive)) {
-		killPlayer();
-		enemy[which].y = spriteOff;
+		enemy[g].y = spriteOff;
+		enemy[g].mirror = 1;
+		enemy[g].grounded = 0;
 	}
 	
+	enemyPointer = 0;
+	lastObstacleSpawned = 0;
+	
 }
 
-void checkObstacle(uint8_t which, uint8_t yHit, uint16_t value) {			//Check for obstable collision and jump score status
+//----------------------------------Game display states and setup (title, scores, background etc)-------------------------------------
+void gameStatus(uint8_t type) {					//Draw status screen row-by-row to the OLED. Preserves the screen buffer (for pause etc) Type 0 = READY, 1 = PAUSE screen
 
-	if (xCollide && (playerState & playerAlive)) {							//Ground obstacle and player X collision?
-	
-		if (bugY > yHit) {				//Buggie low enough to hit it?			
-			killPlayer();
-		}
-		else {
-			jumpScore = value;			//Set jump score value. If player lands without dying, they make these points
-		}
-		
+	csLow();
+
+	if ((++frameCounter & 0x20) && type == 0) {
+		drawText("PAUSED", tileMap + 26);
 	}
 
-}
+	nextRow();
+	drawText("STAGE:", tileMap + 16);
+	drawDecimal(stage, tileMap + 22);
+	nextRow();									//Blank row
+	drawText("SCORE:", tileMap + 16);
+	drawDecimal(score, tileMap + 22);
+	nextRow();
+	drawText("LIVES:", tileMap + 16);
+	if (lives < 255) {
+		drawDecimal(lives, tileMap + 22);
+	}
+	nextRow();
+	drawText("A  B  C  D  E  F", tileMap + 16);		//Map
+	nextRow();
+	drawText("m~~n~~n~~n~~n~~o", tileMap + 16);
+	int8_t buggyPosX = 16 + (checkPoint * 3);
 
-void damageBoss(uint8_t g) {
-
-	tone(400, 100, 10, 5);
-	score += 250;
+	if (messageFlash == 0xFFFF && checkPoint < 5 && type != 1) {	//Fake shit, where we make it look like progress is mapped. IT ISN'T
+		buggyPosX++;
+	}
 	
-	if (--bossHealth == 0) {
-		spawnExplosion(enemy[g].x, enemy[g].y, 20);			//Twin explosions!
-		spawnExplosion(enemy[g].x + 16, enemy[g].y, 24);
-		enemy[g].y = spriteOff;							//Despawn UFO
-		stageWin = 1;									//Flag for stage win
-		playerTimer = 180;								//Timer for transition
-		drawText(" EXTRA LIFE!  ", tileMap + 192 + 18);
-	}	
+	uint8_t buggyGFX = 37;
 	
-}
+	if (type != 2) {
+		buggyGFX = 125;
+	}
 
-uint8_t getGround() {
-
-	uint8_t randomSlope = getRandom(0x01);			//Ground either slopes up or down
-	
-	if (randomSlope) {							//Positive? Slope up
-		if (groundSlope > 0) {
-			groundSlope--;
-		}	
+	if (frameCounter & 0x08) {						//Animated buggie on map (cuuuuuuuuuuuuuuuute!)
+		tileMap[buggyPosX] = buggyGFX;
 	}
 	else {
-		if (groundSlope < 2) {
-			groundSlope++;
-		}		
+		tileMap[buggyPosX] = buggyGFX + 2;
 	}
+	nextRow();
 	
-	return groundSlope;
+	if (type) {								//Pause screen?
+		nextRow();
+		if (type == 2) {
+			drawText("GAME OVER", tileMap + 20);
+		}
+		else {
+			if (frameCounter & 0x08) {						//Animated buggie on map (cuuuuuuuuuuuuuuuute!)
+				drawText("GET  READY", tileMap + 19);
+			}
+		}
+	}
+	else {
+		drawText("B+A = SLEEP", tileMap + 21);
+		nextRow();
+		drawText("MENU = WAKE", tileMap + 21);
+	}
+
+	nextRow();
+	csHigh();
+	
+	if (gamePad & dB && gamePad & dA && type == 0) {
+		buttonRepeatFlag = dMenu;						//Clear this bit so pressing Menu doesn't exit PAUSE when we awaken from our dark, deep slumber
+		gotoSleep();
+	}
 	
 }
 
@@ -1720,21 +1687,34 @@ void drawOptions() {
 	tileMap[15] = '>';
 	
 	drawText("OPTIONS", tileMap + 5);
-
-	drawText("B+A=SLEEP", tileMap + (2 * 32));
-	drawText("(MENU TO WAKE)", tileMap + (3 * 32));	
 	
-	drawText("B+DOWN=CLEAR", tileMap + (5 * 32));
-	drawText("HIGH SCORES", tileMap + (6 * 32) + 5);
-	
-	if (gamePad & dDown && gamePad & dB) {
-		writeDefaultHighScores();
-	}
+	drawText("B+", tileMap + (1 * 32));
+	drawText("DOWN=CLR SCORES", tileMap + (2 * 32) + 1);	
+	drawText("UP=INVERT", tileMap + (3 * 32) + 1);	
+	drawText("LEFT=ROTATE", tileMap + (4 * 32) + 1);		
+	drawText("A=SLEEP", tileMap + (5 * 32) + 1);
 			
-	if (gamePad & dB && gamePad & dA) {
-		gotoSleep();
+	drawText("MENU=WAKE SLEEP", tileMap + (7 * 32));	
+
+	if (gamePad & dB) {
+		if (buttonsPressed & dDown) {
+			writeDefaultHighScores();
+		}
+		if (buttonsPressed & dUp) {
+			SPI0_CTRLB = 0;							//Disable SPI buffer mode since we are sending single byte commands
+			setInvert(0xFF);						//Toggle OLED invert
+			SPI0_CTRLB = SPI_BUFEN_bm;				//Resume SPI buffer mode					
+		}	
+		if (gamePad & dA) {
+			gotoSleep();
+		}
+		if (buttonsPressed & dLeft) {
+			SPI0_CTRLB = 0;							//Disable SPI buffer mode since we are sending single byte commands
+			sideOfMoon = setRotate(0xFF);			//Toggle screen rotate and store local copy
+			SPI0_CTRLB = SPI_BUFEN_bm;				//Resume SPI buffer mode
+		}					
 	}
-		
+	
 }
 
 void drawTime() {
@@ -1775,14 +1755,13 @@ void drawTime() {
 		
 		switch (changeTime) {
 			case 0:
-			drawText("A = ROTATE", tileMap + 34);
-			drawText("B = SET TIME", tileMap + 2);
+				drawText("B = SET TIME", tileMap + 2);
 			break;
 			case 1:
-			drawText("]^ HOURS", tileMap + 67);
+				drawText("]^ HOURS", tileMap + 67);
 			break;
 			case 2:
-			drawText("MINUTES ]^", tileMap + 68);
+				drawText("MINUTES ]^", tileMap + 68);
 			break;
 		}	
 		
@@ -1837,9 +1816,9 @@ void drawTitle() {
 				
 	drawText("MOON FORCE", tileMap + 3);	
 	drawText("A = START GAME", tileMap + (3 * 32) + 1);
-	drawText("MGC 2021", tileMap + (7 * 32) + 5);
-	drawText("BY BEN HECK", tileMap + (7 * 32) + 21);
-		
+			  //0123456789ABCDEF0123456789ABCDEF	
+	drawText("MGC 2021    GAME BY BEN HECK", tileMap + (7 * 32) + 2);
+
 	isDrawn = 1;
 		
 }
@@ -1880,6 +1859,14 @@ void drawNameEntryScreen() {
 
 }
 
+void drawSplashScreen() {
+
+	direct2buffer(wastefulUncompressedMGClogo, 0, 1024);
+	screenLoad();
+	isDrawn = 1;	
+	
+}
+
 void drawCharacterRow() {
 
 	uint8_t temp = bugX;
@@ -1918,59 +1905,23 @@ void findScorePosition() {
 
 }
 
-void startNewLife() {
+uint8_t getGround() {
 
-	distance = 0;			//How many screens to the next goal
-	frameCounter = 0;
-	gameState = stateGetReady;
-	playerState = playerDriving;	
-
-	stageWin = 0;
-	frameCounter = 0;
-
-	spawnPointer = 224 + 20;
-
-	bugX = 16;
-	bugY = 51;
-	jump = 0;
-	blasterX = spriteOff;						//Disabled state
+	uint8_t randomSlope = getRandom(0x01);			//Ground either slopes up or down
 	
-	clearShots();
-	clearEnemies();
-	bossBattle = 0;
-	
-	jumpScore = 0;
-	speed = 1;
-		
-}
-
-void killPlayer() {
-
-	playerFrame = 0;
-	playerState = playerExploding;
-	playerTimer = 5;
-	
-}
-
-void clearShots() {
-	
-	for (int g = 0 ; g < 2 ; g++) {
-		heroShots[g].y = spriteOff;
+	if (randomSlope) {							//Positive? Slope up
+		if (groundSlope > 0) {
+			groundSlope--;
+		}
 	}
-
-}
-
-void clearEnemies() {
-
-	for (int g = 0 ; g < maxEnemies ; g++) {
-		enemy[g].y = spriteOff;
-		enemy[g].mirror = 1;
-		enemy[g].grounded = 0;			
+	else {
+		if (groundSlope < 2) {
+			groundSlope++;
+		}
 	}
 	
-	enemyPointer = 0;
-	lastObstacleSpawned = 0;
-			
+	return groundSlope;
+	
 }
 
 void drawMoonscape() {
@@ -2068,6 +2019,7 @@ void drawMountains2(uint8_t vertRow) {
 	
 }
 
+//-------------------------------------Display functions, other utilities-------------------------------------
 void fillTiles(uint8_t location, uint8_t startingTile, uint8_t howMany) {
 	
 	for (int x = location ; x < location + howMany ; x++) {
@@ -2132,6 +2084,58 @@ void cls() {
 
 }
 
+void updateHighScores() {
+
+	scoreRanking--;												//Set to zero index	
+
+	uint32_t tempScore = 0;
+	int8_t tempRow;
+
+	if (scoreRanking < 5) {										//Player not in 6th place? Shift all places below them
+		
+		for (int row = 4 ; row >= scoreRanking ; row--) {		//6th places (5 index) is gone no matter what so start with 4, shifting it down to 5
+			tempRow = row + 1;
+			nameShift[0] = eepromReadByte((row * 32) + 0);		//Get name and put into temp array
+			nameShift[1] = eepromReadByte((row * 32) + 1);
+			nameShift[2] = eepromReadByte((row * 32) + 2);	
+			tempScore = eepromReadLong((row * 32) + 4);
+		
+			eepromWrite(tempRow * 32, nameShift, tempScore);	//Shift into lower place
+		}
+		
+	}
+	
+	eepromWrite(scoreRanking * 32, name, score);		//Write new high score in slot
+
+	gameState = stateHighScores;
+	isDrawn = 0;
+		
+}
+
+void sendTiles() {
+
+	screenLoad();							//Dump the frame buffer to the OLED
+	drawTiles(tileData, tileMap);			//Draw background tiles	
+	
+}
+
+void nextRow() {
+
+	rowLoad(tileData, tileMap + 16, draw);
+	memset(&tileMap[16], ' ', 16);
+	
+}
+
+void gotoSleep() {
+
+	sleepState = 1;
+	displayOnOff(0);
+	ledState(0);
+	//Roll around to the main loop which will put us to sleep, and put us back to sleep if something wakes us up (like the RTC seconds counter)
+
+}
+
+//-----------------------------------------EEPROM storage of high scores-------------------------------------
 uint8_t eepromReadByte(uint8_t addr) {										//can read without anything special, just need to adjust address
 	return *(volatile uint8_t*)(EEPROM_START + addr);	
 }
