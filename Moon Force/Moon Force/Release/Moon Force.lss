@@ -2397,7 +2397,7 @@ Disassembly of section .text:
     2046:	ef 92       	push	r14
     2048:	ff 92       	push	r15
     204a:	8f ef       	ldi	r24, 0xFF	; 255
-    204c:	80 93 00 38 	sts	0x3800, r24	; 0x803800 <__data_start>
+    204c:	80 93 00 38 	sts	0x3800, r24	; 0x803800 <__DATA_REGION_ORIGIN__>
     2050:	40 91 2d 38 	lds	r20, 0x382D	; 0x80382d <score>
     2054:	50 91 2e 38 	lds	r21, 0x382E	; 0x80382e <score+0x1>
     2058:	60 91 2f 38 	lds	r22, 0x382F	; 0x80382f <score+0x2>
@@ -2417,7 +2417,7 @@ Disassembly of section .text:
     2078:	6e 05       	cpc	r22, r14
     207a:	7f 05       	cpc	r23, r15
     207c:	18 f4       	brcc	.+6      	; 0x2084 <findScorePosition+0x42>
-    207e:	20 93 00 38 	sts	0x3800, r18	; 0x803800 <__data_start>
+    207e:	20 93 00 38 	sts	0x3800, r18	; 0x803800 <__DATA_REGION_ORIGIN__>
     2082:	0a c0       	rjmp	.+20     	; 0x2098 <findScorePosition+0x56>
     2084:	3f ef       	ldi	r19, 0xFF	; 255
     2086:	38 0f       	add	r19, r24
@@ -2427,7 +2427,7 @@ Disassembly of section .text:
     208e:	11 f0       	breq	.+4      	; 0x2094 <findScorePosition+0x52>
     2090:	83 2f       	mov	r24, r19
     2092:	e9 cf       	rjmp	.-46     	; 0x2066 <findScorePosition+0x24>
-    2094:	80 93 00 38 	sts	0x3800, r24	; 0x803800 <__data_start>
+    2094:	80 93 00 38 	sts	0x3800, r24	; 0x803800 <__DATA_REGION_ORIGIN__>
     2098:	ff 90       	pop	r15
     209a:	ef 90       	pop	r14
     209c:	df 90       	pop	r13
@@ -4075,7 +4075,7 @@ Disassembly of section .text:
     2f0a:	98 e3       	ldi	r25, 0x38	; 56
     2f0c:	0e 94 7e 1e 	call	0x3cfc	; 0x3cfc <memset>
     2f10:	0e 94 21 10 	call	0x2042	; 0x2042 <findScorePosition>
-    2f14:	80 91 00 38 	lds	r24, 0x3800	; 0x803800 <__data_start>
+    2f14:	80 91 00 38 	lds	r24, 0x3800	; 0x803800 <__DATA_REGION_ORIGIN__>
     2f18:	8f 3f       	cpi	r24, 0xFF	; 255
     2f1a:	31 f4       	brne	.+12     	; 0x2f28 <drawNameEntryScreen+0x3c>
     2f1c:	88 e0       	ldi	r24, 0x08	; 8
@@ -4087,7 +4087,7 @@ Disassembly of section .text:
     2f2c:	88 e9       	ldi	r24, 0x98	; 152
     2f2e:	9d eb       	ldi	r25, 0xBD	; 189
     2f30:	0e 94 ff 10 	call	0x21fe	; 0x21fe <drawText>
-    2f34:	80 91 00 38 	lds	r24, 0x3800	; 0x803800 <__data_start>
+    2f34:	80 91 00 38 	lds	r24, 0x3800	; 0x803800 <__DATA_REGION_ORIGIN__>
     2f38:	80 5d       	subi	r24, 0xD0	; 208
     2f3a:	80 93 76 3c 	sts	0x3C76, r24	; 0x803c76 <tileMap+0xe>
     2f3e:	60 91 2d 38 	lds	r22, 0x382D	; 0x80382d <score>
@@ -4713,9 +4713,9 @@ Disassembly of section .text:
     3554:	0f 93       	push	r16
     3556:	1f 93       	push	r17
     3558:	cf 93       	push	r28
-    355a:	80 91 00 38 	lds	r24, 0x3800	; 0x803800 <__data_start>
+    355a:	80 91 00 38 	lds	r24, 0x3800	; 0x803800 <__DATA_REGION_ORIGIN__>
     355e:	81 50       	subi	r24, 0x01	; 1
-    3560:	80 93 00 38 	sts	0x3800, r24	; 0x803800 <__data_start>
+    3560:	80 93 00 38 	sts	0x3800, r24	; 0x803800 <__DATA_REGION_ORIGIN__>
     3564:	85 30       	cpi	r24, 0x05	; 5
     3566:	20 f4       	brcc	.+8      	; 0x3570 <updateHighScores+0x1c>
     3568:	c0 e8       	ldi	r28, 0x80	; 128
@@ -4726,7 +4726,7 @@ Disassembly of section .text:
     3574:	30 91 2e 38 	lds	r19, 0x382E	; 0x80382e <score+0x1>
     3578:	40 91 2f 38 	lds	r20, 0x382F	; 0x80382f <score+0x2>
     357c:	50 91 30 38 	lds	r21, 0x3830	; 0x803830 <score+0x3>
-    3580:	80 91 00 38 	lds	r24, 0x3800	; 0x803800 <__data_start>
+    3580:	80 91 00 38 	lds	r24, 0x3800	; 0x803800 <__DATA_REGION_ORIGIN__>
     3584:	61 e0       	ldi	r22, 0x01	; 1
     3586:	78 e3       	ldi	r23, 0x38	; 56
     3588:	82 95       	swap	r24
@@ -4740,7 +4740,7 @@ Disassembly of section .text:
     359e:	1f 91       	pop	r17
     35a0:	0f 91       	pop	r16
     35a2:	08 95       	ret
-    35a4:	80 91 00 38 	lds	r24, 0x3800	; 0x803800 <__data_start>
+    35a4:	80 91 00 38 	lds	r24, 0x3800	; 0x803800 <__DATA_REGION_ORIGIN__>
     35a8:	90 e0       	ldi	r25, 0x00	; 0
     35aa:	08 17       	cp	r16, r24
     35ac:	19 07       	cpc	r17, r25
