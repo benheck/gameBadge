@@ -1250,7 +1250,7 @@ void startNewGame() {
 
 	stage = 1;
 	score = 0;
-	lives = 2;
+	lives = 4;
 	
 	startNewStage();
 	

@@ -2231,7 +2231,7 @@ Disassembly of section .text:
     1eaa:	10 92 2e 38 	sts	0x382E, r1	; 0x80382e <score+0x1>
     1eae:	10 92 2f 38 	sts	0x382F, r1	; 0x80382f <score+0x2>
     1eb2:	10 92 30 38 	sts	0x3830, r1	; 0x803830 <score+0x3>
-    1eb6:	82 e0       	ldi	r24, 0x02	; 2
+    1eb6:	84 e0       	ldi	r24, 0x04	; 4
     1eb8:	80 93 77 3d 	sts	0x3D77, r24	; 0x803d77 <lives>
     1ebc:	0c 94 43 0f 	jmp	0x1e86	; 0x1e86 <startNewStage>
 
