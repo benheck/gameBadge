@@ -1,0 +1,21 @@
+watch_game_2022_revB.sch
+
+Qty Value                 Device                Parts            Description                                                                                  
+1                         LED3MM                CHRG             LED                                                                                          
+1                         LED5MM                ON               LED                                                                                          
+1                         LF50CDT               U3               5V LDO Voltage Regulator                                                                     
+2                         PINHD-1X1             BAT+, BAT-       Pin header 1x1 for 0.1" spacing                                                                                                                                                 
+2   100                   R-US_M0805            R1, R3           RESISTOR, American symbol                                                                    
+1   1734510-1             1734510-1             J1               Conn Mini USB Type B 
+1   1825232-1             1825232-1             U$5              Slide switch                                                                                 
+3   1uf                   C-USC0805             C3, C4, C5       CAPACITOR, American symbol                                                                   
+2   22pf                  C-USC0805             C1, C2           CAPACITOR, American symbol                                                                   
+1   2k                    R-US_M0805            R2               RESISTOR, American symbol                                                                    
+1   32.768                CRYSTALTC26H          Q1               CRYSTAL                                                                                      
+1   470                   R-US_M0805            R4               RESISTOR, American symbol                                                                    
+1   ATTINY1616-SNR        ATTINY1616-SNR        U1               ATTiny1616                                                                                   
+2   DISPLAY-OLED-128X64_A DISPLAY-OLED-128X64   HORI, VERT       128x64 Dot Matrix OLED SSD1306                                                                                                                                                                          
+1   MCP73832T-5ACI/OT     MCP73832T-5ACI/OT     U2               IC, BATT CHARGER, Li-Ion Li-Polymer                             
+1   PIEZO                 PINHD-1X2             1X02 JP1         PIN HEADER                                                                                   
+7   SPST_TACT_A           SPST_TACT_A           EVQ-Q2_A         SMT 6mm switch, EVQQ2 series                                                                 
+1   UPDI                  PINHD-1X3             1X03 JP2         PIN HEADER                                                                                   
