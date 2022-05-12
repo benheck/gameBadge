@@ -8,7 +8,7 @@ void playerLogic();
 void phaseStart();
 void setGoal(uint8_t theGoal);
 void spawnObstacle(int16_t xPos, uint8_t whichOne);
-void spawnEnemy(int16_t x, int8_t y, int8_t dir, uint8_t whichType);
+uint8_t spawnEnemy(int16_t x, int8_t y, int8_t dir, uint8_t whichType);
 void spawnExplosion(int16_t x, int8_t y, uint8_t speed);
 void spawnBoss();
 void spawnShot(int8_t x, int8_t y, uint8_t whichType);

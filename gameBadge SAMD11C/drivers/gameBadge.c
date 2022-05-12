@@ -25,6 +25,8 @@ uint8_t inverted = 0;
 
 uint8_t buttons;
 
+uint8_t dmaActive = 0;
+
 void displayInit() {
 
 	csLow();
@@ -79,13 +81,32 @@ void displayInit() {
 
 void screenLoad() {						//This should be called beginning of each frame. Takes just under 1ms
 
-	PORT->Group[0].OUTCLR.reg = PORT_PA08;		//Load shift register
-	PORT->Group[0].OUTSET.reg = PORT_PA08;
+	dcLow();									//Pulse this low to load the shift register (we won't send any commands to OLED)
+	dcHigh();
+	
+	buttons = spiSendIO(buffer[0]);				//Send out the first byte of the OLED and get back the controller shift register value
 
-	buttons = spiSendIO(buffer[0]);				//Send out the first byte of the OLED and get back the controller shift register value		
+	spiSendIO(buffer[1]);						//Send out the second byte of the OLED. We need this transfer to ensure the data we read is correct
 
-	dmaStartTransfer();							//Now DMA out the remaining 1023 bytes to OLED (Hackalicious)
+	dmaStartTransfer();							//Now DMA out the rest of the screen buffer (1022 bytes)
+	dmaActive = 1;
 
+}
+
+void DMAC_Handler(void) {			//NOT BEING USED FOR NOW
+	
+	DMAC->CHINTFLAG.bit.TCMPL = 0x1;			//Clear INT flag
+
+	while(SERCOM0->SPI.INTFLAG.bit.TXC == 0);		//Wait for TX complete
+			
+	dmaActive = 0;
+		
+}
+
+uint8_t dmaCheck() {
+	
+	return dmaActive;
+	
 }
 
 void rowLoad(const char *tileData, uint8_t *rowRAM, uint8_t clear) {		//Loads a row of 16 tiles directly into the OLED. Useful for status screens/pause displays without destroying the main buffer
@@ -95,6 +116,7 @@ void rowLoad(const char *tileData, uint8_t *rowRAM, uint8_t clear) {		//Loads a 
 		
 		for (uint8_t colB = 0 ; colB < 8 ; colB++) {						//Draw the 8 pixel wide tile
 			
+			spiSendIO(*(tileData + tilePointer++) & clear);
 			//SPI0.DATA = pgm_read_byte(tileData + tilePointer++) & clear;	//Send the column of pixels directly to OLED. Clear 0 = blank Clear 0xFF = show pixels
 			//while(!(SPI0.INTFLAGS & SPI_DREIF_bm)) {}
 			
@@ -116,12 +138,15 @@ uint8_t getButtons() {
 void toneLogic() {			//Called at 1KHz
 
 	if (toneDir) {
-		//TCA0.SINGLE.CMP0 += toneDir;
+
+		TCC0->CC[1].reg += toneDir;
+		TCC0->PER.reg += toneDir;	
 	}
 
 	if (toneTimer) {
 		if (--toneTimer == 0) {
-			//TCA0.SINGLE.CTRLA &= 0xFE;				//Mask out enable bit (sound off)
+			
+			TCC0->CTRLA.reg &= ~TCC_CTRLA_ENABLE;	//Timer OFF
 			tonePriority = 0;						//Priority set to 0 (anything can now play)
 		}
 	}
@@ -137,9 +162,10 @@ void tone(uint16_t thePitch, uint16_t theTime, uint8_t thisPriority, int directi
 	toneDir = direction;
 	tonePriority = thisPriority;						//Playing? Set as new priority
 	
-	//TCA0.SINGLE.CMP0 = thePitch;
-	//TCA0.SINGLE.CTRLA |= TCA_SINGLE_ENABLE_bm; // Start
-	
+	TCC0->CC[1].reg = thePitch;						//Set compare time OFF
+	TCC0->PER.reg = thePitch <<= 1;					//Set time PERIOD
+	TCC0->CTRLA.reg |= TCC_CTRLA_ENABLE;			//Enable timer
+		
 	toneTimer = theTime;
 	
 }
@@ -156,11 +182,17 @@ void ledState(uint8_t theState) {
 }
 
 uint8_t getRandom(uint8_t mask) {
-	
-	//ADC0.COMMAND = 0x01;					//Start ADC0 (the bare pads)
-	//while(!ADC0.INTFLAGS) {}				//Wait for it
-	//return (ADC0.RES + seed) & mask;		//Add the SEED value from start of frame and return the masked value
-	
+
+	PORT->Group[0].OUTSET.reg = PORT_PA08;										//Normally HIGH (not reset)
+
+	REG_ADC_INPUTCTRL = ADC_INPUTCTRL_GAIN_1X | ADC_INPUTCTRL_INPUTSCAN(0x00) | ADC_INPUTCTRL_MUXNEG_IOGND | 0x18; //Configure ADC to selected MUX (temperature sensor, no pins needed!)
+	REG_ADC_SWTRIG |= ADC_SWTRIG_START;											//Start ADC
+	while ((ADC->INTFLAG.bit.RESRDY == 0)) {}									//Wait for conversion
+
+	PORT->Group[0].OUTCLR.reg = PORT_PA08;										//Normally HIGH (not reset)
+		
+	return (REG_ADC_RESULT + seed++) & mask;		//Add the SEED value from start of frame and return the masked value
+
 }
 
 void drawTiles(const char *tileData, uint8_t *tileMapPointer) {
@@ -262,8 +294,8 @@ void setRowScroll(uint8_t x, uint8_t row) {
 
 void drawSprite(const char *bitmap, int8_t xPos, int8_t yPos, uint8_t frameNumber, int8_t mirror) {
 
-	uint8_t xSize = 0; //pgm_read_byte(bitmap++);				//Get bitmap width from flash
-	uint8_t ySize = 0; //pgm_read_byte(bitmap++) >> 3;			//Get bitmap height from flash, convert to bytes (8 pixels per byte)
+	uint8_t xSize = *bitmap++;		//pgm_read_byte(bitmap++);				//Get bitmap width from flash		//FIX? BJH
+	uint8_t ySize = *bitmap++ >> 3; //pgm_read_byte(bitmap++) >> 3;			//Get bitmap height from flash, convert to bytes (8 pixels per byte)
 
 	uint16_t sizeInBytes = xSize * ySize;					//Get total sprite size
 
@@ -284,10 +316,12 @@ void drawSprite(const char *bitmap, int8_t xPos, int8_t yPos, uint8_t frameNumbe
 		yOffset = 1;
 	}
 
+	//Right now only works right on bottom and tile 0,0
+
 	for (int y = 0 ; y < (ySize + yOffset) ; y++) {			//Do all rows of a sprite+1 if offset (since lowest row will go past a byte boundry) or if no offset, just do ySize rows
 
 		int8_t xTemp = xPos;
-
+		
 		for (int16_t x = bPointer ; x < xSize + bPointer ; x++) {					//Select column
 
 			if (!(x & 0xFC00) && !(xTemp & 0x80)) {									//Don't fill bytes outside of the screen buffer or past the left and right edges of the screen (xTemp)
@@ -297,21 +331,21 @@ void drawSprite(const char *bitmap, int8_t xPos, int8_t yPos, uint8_t frameNumbe
 				
 				if (offset) {														//Get offset pixels from adjacent rows
 					if (y) {
-						buildMask = pgm_read_byte(bitmap - xSize) >> offsetInv;
-						buildPixels = pgm_read_byte((bitmap + sizeInBytes) - xSize) >> offsetInv;
+						buildMask = *(bitmap - xSize) >> offsetInv;						//pgm_read_byte(bitmap - xSize) >> offsetInv;
+						buildPixels = *((bitmap + sizeInBytes) - xSize) >> offsetInv;	//pgm_read_byte((bitmap + sizeInBytes) - xSize) >> offsetInv;
 					}
 					if (y < ySize) {
-						buildMask |= pgm_read_byte(bitmap) << offset;
-						buildPixels |= pgm_read_byte(bitmap + sizeInBytes) << offset;
+						buildMask |= *bitmap << offset;								//pgm_read_byte(bitmap) << offset;
+						buildPixels |= *(bitmap + sizeInBytes) << offset;			 //pgm_read_byte(bitmap + sizeInBytes) << offset;
 					}
 				}
 				else {																//Falls on byte boundry - simple and fast!
-					buildMask = pgm_read_byte(bitmap);
-					buildPixels = pgm_read_byte(bitmap + sizeInBytes);
+					buildMask = *bitmap;						//pgm_read_byte(bitmap);
+					buildPixels = *(bitmap + sizeInBytes);			//pgm_read_byte(bitmap + sizeInBytes);
 				}
 				
-				buffer[x] &= ~buildMask;											//AND in mask
-				buffer[x] |= buildPixels;											//OR in pixels
+				buffer[x] &= ~buildMask;											//AND in mask (to black out existing pixels for new sprite)
+				buffer[x] |= buildPixels;											//OR in pixels (white "positive" pixels of new sprite)
 			}
 
 			bitmap += mirror;															//Advance bitmap pointer and xTemp counter
@@ -351,7 +385,6 @@ void displayOnOff(uint8_t whatState) {
 	//SPI0_CTRLB = SPI_BUFEN_bm;								//Resume SPI buffer mode
 	
 }
-
 
 void direct2buffer(const char *source, uint16_t dest, uint16_t length) {
 

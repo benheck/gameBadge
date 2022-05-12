@@ -5,7 +5,7 @@
 
 	#define SPI_CLK_FREQ				48000000			//Base frequency of the CPU bus attached to SPI devices	
 
-	#define SPI_BAUD					8000000				//8MHz for serial to OLED
+	#define SPI_BAUD					10000000			//10MHz for serial to OLED. Max speed to race ahead of the parallel tile driver
 
 	void SPI_init(void);
 	uint8_t spiSendIO(uint8_t data);

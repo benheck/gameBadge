@@ -193,8 +193,8 @@ uint8_t wavePointer = 0;
 uint8_t gamePad;				//Gets the value from buttons
 uint8_t buttonRepeatFlag;		//Flag to make button single-press
 uint8_t buttonRepeatMask;		//Mask of what buttons are single press (default = none)
-uint8_t buttonDebounce[8];
-uint8_t buttonsPressed;		//		
+uint8_t buttonsPressed;		//
+uint8_t buttonDebounceMask[] = {dUp, dDown, dLeft, dRight, dMenu, dB, dA};	//Saves FLASH when doing debounce tests		
 uint8_t sideOfMoon = 0;						//Which side of the moon you are on (rotates LCD, reverses left/right control)
 uint8_t changeTime = 0;						//0 = time, 1 = change hour, 2 = change minute
 
@@ -287,20 +287,13 @@ char name[] = {'A', 'B', 'C'};							//Used for high score name entry
 char nameShift[3];										//Used for sorting high scores
 uint8_t scoreRanking = 1;
 
+char highNames[7][3];									//Stores high scores in RAM
+uint32_t highScores[7];									//Stores high scores in RAM
+
 //----------------------------Main loops and state machines-------------------------------------
 void gameSetup() {							//This function is called once per boot/program
 
-	direct2buffer(wastefulUncompressedMGClogo, 0, 1024);
-
-	bugX = 64;
-
-	return;
-
-	uint8_t temp = eepromReadByte(0);		//See if any names entered
-
-	if (temp < 64 || temp > 90) {			//ASCII alphabet not found? Must be blank EEPROM. Write defaults
-		writeDefaultHighScores();
-	}
+	writeDefaultHighScores();
 
 	setScrollDirection(horizontal);
 	
@@ -315,14 +308,7 @@ void systemLoop() {
 		else {
 			if (frameFlag == 16) {		//Time to draw a frame? (60-ish Hz)
 				frameFlag = 0;			//Reset ms counter
-				
-				//PORT->Group[0].OUTCLR.reg = PORT_PA08;		//Load shift register				
-				//PORT->Group[0].OUTSET.reg = PORT_PA08;
-				
-				//dcLow();
-				//spiSendIO(SSD1306_DISPLAYON);
-				//dcHigh();
-					
+									
 				//screenLoad();
 
 				//ledState(1);			//LED is "on" for the frame
@@ -339,34 +325,27 @@ void gameFrame() {							//This function is called at 60-ish Hz
 	gamePad = getButtons();					//Get controls into local var
 
 	buttonsPressed = 0;						//Universal button check for all functions
-	
-	uint8_t temp = 0x01;
-		
+
 	for (int x = 0 ; x < 7 ; x++) {			//Scan through debounce buttons (Up, down, menu, B and A)
 
-		if (gamePad & temp) {				//Switch closed?
-			PORT->Group[0].OUTSET.reg = PORT_PA24;		
+		uint8_t temp = buttonDebounceMask[x];		//Scan RAM scans
+
+		if (gamePad & temp) {						//Button pressed?
+			if (temp & buttonRepeatMask) {			//Repeats allowed?
+				buttonsPressed |= temp;				//Set bit
+			}
+			else {									//Repeat restricted?
+				if (buttonRepeatFlag & temp) {		//Check if released first
+					buttonRepeatFlag &= !temp;
+					buttonsPressed |=temp;
+				}
+			}
 		}
 		else {
-			PORT->Group[0].OUTCLR.reg = PORT_PA24;		
+			buttonRepeatFlag |= temp;
 		}
-		
-		temp <<= 1;
 
 	}
-
-	if (buttonsPressed & dLeft) {
-		direct2buffer(block, bugX, 8);
-		bugX--;
-	}
-	if (buttonsPressed & dRight) {
-		direct2buffer(block, bugX, 8);
-		bugX++;
-	}	
-
-
-	screenLoad();
-	return;
 
 	
 	if ((buttonsPressed & dMenu) && gameState & canPauseMask) {		//MENU to pause/unpause?
@@ -532,6 +511,9 @@ void gameFrame() {							//This function is called at 60-ish Hz
 		break;
 	}
 
+
+	PORT->Group[0].OUTSET.reg = PORT_PA08;										//Normally HIGH (not reset)
+
 }
 
 //---------------------------Active game logic-------------------------------------
@@ -549,7 +531,7 @@ void gameAction() {
 		
 		if (stagePhase & phaseSkyMask) {	//Sky enemies active?
 
-			if (numberSpawned != spawnPerWave) {		//Haven't spawned them all yet?
+			if (numberSpawned < spawnPerWave) {		//Haven't spawned them all yet?
 				if (eventTimer) {						//Remove?
 					if (--eventTimer == 0) {			//Time to spawn
 						numberSpawned++;
@@ -557,31 +539,29 @@ void gameAction() {
 						switch(stagePhase & phaseSkyMask) {
 							
 							case phaseUFOs:
-								spawnEnemy(enemySpawnSide[getRandom(0x01)], getRandom(0x01) * 8, 1, enemyUFO);
+								skyEnemies += spawnEnemy(enemySpawnSide[getRandom(0x01)], getRandom(0x01) * 8, 1, enemyUFO);
 							break;
 							
 							case phaseBalls:
-								spawnEnemy(enemySpawnSide[getRandom(0x01)], getRandom(0x01) * 8, 1, enemyBalls);
+								skyEnemies += spawnEnemy(enemySpawnSide[getRandom(0x01)], getRandom(0x01) * 8, 1, enemyBalls);
 							break;
 							
 							case phaseUFOs | phaseBalls:;				//Spawn both at once, different sides of screen
 								uint8_t whichSide = getRandom(0x01);
-								spawnEnemy(enemySpawnSide[whichSide], getRandom(0x01) * 8, 1, enemyUFO);
-								spawnEnemy(enemySpawnSide[!whichSide & 0x01], getRandom(0x01) * 8, 1, enemyBalls);
-								skyEnemies += 1;
+								skyEnemies += spawnEnemy(enemySpawnSide[whichSide], getRandom(0x01) * 8, 1, enemyUFO);
+								skyEnemies += spawnEnemy(enemySpawnSide[!whichSide & 0x01], getRandom(0x01) * 8, 1, enemyBalls);								
 							break;
 							
 						}
 						eventTimer = eventGoal + (getRandom(0x07) * 3);
-						skyEnemies += 1;
 					}
 				}
 			}
 			else {										//OK so they have all spawned
-				if (!skyEnemies) {					//Did we spawn them all and player killed them all? Next wave
-					numberSpawned = 0;				//Clear the spawned count
+				if (skyEnemies == 0) {					//Did we spawn them all and player killed them all? Next wave
+					numberSpawned = 0;					//Clear the spawned count
 					if (--numberOfWaves) {
-						eventTimer = 80;			//Frames before next wave
+						eventTimer = 80;				//Frames before next wave
 					}
 					else {
 						distance = distanceGoal;		//Set goal as REACHED
@@ -590,8 +570,13 @@ void gameAction() {
 				}
 			}
 		}
-
 		
+		drawDecimal(numberSpawned, tileMap);
+		drawDecimal(spawnPerWave, tileMap + 5);
+		drawDecimal(numberOfWaves, tileMap + 10);		
+		drawDecimal(skyEnemies, tileMap + 32);
+		
+	
 		if (stagePhase & phaseGroundMask) {			//An obstacle phase, and we can spawn them?
 			
 			uint8_t whichItem = getRandom(0x03);							//Get random 0-3
@@ -688,6 +673,9 @@ void gameAction() {
 	if (distanceCheck) {
 		
 		distance += byDistance;					//Does simply scrolling the screen advance you?
+		
+		//drawDecimal(distance, tileMap + 5);
+		//drawDecimal(distanceGoal, tileMap + 34);		
 		
 		if (distance >= distanceGoal) {
 			distance = 0;
@@ -890,8 +878,8 @@ void enemies() {
 
 			drawSprite(enemy[g].gfx, enemy[g].x, enemy[g].y, enemy[g].frame, enemy[g].mirror);
 
-			int8_t xSize = 0; //pgm_read_byte(enemy[g].gfx);
-			int8_t ySize = 0; //pgm_read_byte(enemy[g].gfx + 1);
+			int8_t xSize = *enemy[g].gfx;				//pgm_read_byte(enemy[g].gfx);				//FIX? BJH
+			int8_t ySize = *enemy[g].gfx + 1;			 //pgm_read_byte(enemy[g].gfx + 1);
 			
 			xCollide = 0;													//X and Y collision flags for enemy-player
 			yCollide = 0;
@@ -1302,7 +1290,7 @@ void startNewLife() {
 	spawnPointer = 224 + 20;					//Update the ground randomizer pointer in tile map memory
 
 	bugX = 16;
-	bugY = 51;
+	bugY = 51;							//BJH
 	jump = 0;
 	blasterX = spriteOff;						//Disabled state
 	
@@ -1347,8 +1335,8 @@ void phaseStart() {				//After CHECKPOINT message scrolls off, decide what to do
 			if (stage == 1) {							//Training phase. But it's too boring for anything past stage 1
 				stagePhase = phaseUFOs;
 				eventGoal = 80;
-				spawnPerWave = 2;
-				numberOfWaves = 3;
+				spawnPerWave = 2;	//2;
+				numberOfWaves = 4;	//3;
 			}
 			else {
 				stagePhase = phaseUFOs;
@@ -1483,9 +1471,11 @@ void spawnBoss() {
 		
 }
 
-void spawnEnemy(int16_t x, int8_t y, int8_t dir, uint8_t whichType) {
+uint8_t spawnEnemy(int16_t x, int8_t y, int8_t dir, uint8_t whichType) {
 
-	findNextSlot();
+	if (!findNextSlot()) {		
+		return 0;		
+	}
 	
 	switch(whichType) {
 		case enemyUFO:
@@ -1513,6 +1503,8 @@ void spawnEnemy(int16_t x, int8_t y, int8_t dir, uint8_t whichType) {
 	if (++enemyPointer == maxEnemies) {				//Cycle baddies
 		enemyPointer = 0;
 	}
+	
+	return 1;
 		
 }
 
@@ -1574,6 +1566,8 @@ void shotLogic() {
 }
 
 void killPlayer() {						//"Welcome... TO DIE!!!!!!!!!!!!!!!!!!!"
+
+	return;
 
 	playerFrame = 0;
 	playerState = playerExploding;		
@@ -1682,7 +1676,7 @@ void drawHighScores() {
 	
 	drawText("TOP SCORES", tileMap + 3);
 
-	uint8_t eepromPointer = 0;
+	//uint8_t eepromPointer = 0;
 	uint8_t mapPointer = 64;
 
 	for (int place = 0 ; place < 6 ; place++) {
@@ -1690,13 +1684,13 @@ void drawHighScores() {
 		tileMap[mapPointer] = place + 49;			//Draw place #
 
 		for (int x = 0 ; x < 3 ; x++) {
-			tileMap[mapPointer + x + 2] = eepromReadByte(eepromPointer + x);
+			tileMap[mapPointer + x + 2] = highNames[place][x];
 		}
 		
-		drawDecimal(eepromReadLong(eepromPointer + 4), tileMap + mapPointer + 6);
+		drawDecimal(highScores[place], tileMap + mapPointer + 6);
 		
 		mapPointer += 32;
-		eepromPointer += 32;
+		//eepromPointer += 32;
 		
 	}
 	
@@ -1919,8 +1913,7 @@ void findScorePosition() {
 	scoreRanking = 0xFF;							//You're a LOSER flag
 
 	for (int x = 5 ; x > -1 ; x--) {
-
-		if (score >= eepromReadLong((x * 32) + 4)) {		//See what position this player is against EEPROM scores
+		if (score >= highScores[x]) {		//See what position this player is against EEPROM scores
 			scoreRanking = x + 1;						//Player is at LEAST this good (new equal scores overwrite old ones)
 		}
 		else {
@@ -2069,6 +2062,8 @@ void drawDecimal(int32_t theValue, uint8_t *rowRAM) {			//Send up to a 9 digit d
 		}
 		divider /= 10;
 	}
+	
+	*rowRAM = ' ';
 }
 
 void drawText(const char *text, uint8_t *rowRAM) {
@@ -2120,17 +2115,24 @@ void updateHighScores() {
 		
 		for (int row = 4 ; row >= scoreRanking ; row--) {		//6th places (5 index) is gone no matter what so start with 4, shifting it down to 5
 			tempRow = row + 1;
-			nameShift[0] = eepromReadByte((row * 32) + 0);		//Get name and put into temp array
-			nameShift[1] = eepromReadByte((row * 32) + 1);
-			nameShift[2] = eepromReadByte((row * 32) + 2);	
-			tempScore = eepromReadLong((row * 32) + 4);
-		
-			eepromWrite(tempRow * 32, nameShift, tempScore);	//Shift into lower place
+			nameShift[0] = highNames[row][0];		//Get name and put into temp array
+			nameShift[1] = highNames[row][1];
+			nameShift[2] = highNames[row][2];	
+			tempScore = highScores[row];
+
+			for (int letter = 0 ; letter < 3 ; letter++) {
+				highNames[tempRow][letter] = nameShift[letter];
+				highScores[tempRow] = tempScore;	
+			}
+
 		}
 		
 	}
 	
-	eepromWrite(scoreRanking * 32, name, score);		//Write new high score in slot
+	for (int letter = 0 ; letter < 3 ; letter++) {
+		highNames[scoreRanking][letter] = name[letter];
+		highScores[scoreRanking] = score;
+	}	
 
 	gameState = stateHighScores;
 	isDrawn = 0;
@@ -2139,9 +2141,16 @@ void updateHighScores() {
 
 void sendTiles() {
 
-	screenLoad();							//Dump the frame buffer to the OLED
-	drawTiles(tileData, tileMap);			//Draw background tiles	
+	PORT->Group[0].OUTSET.reg = PORT_PA08;										//Normally HIGH (not reset)
 	
+	screenLoad();																//Dump the frame buffer to the OLED	
+	
+	drawTiles(tileData, tileMap);												//Draw background tiles. "Race" behind
+	
+	PORT->Group[0].OUTCLR.reg = PORT_PA08;										//Normally HIGH (not reset)
+
+	//while(dmaCheck()) {}
+		
 }
 
 void nextRow() {
@@ -2160,53 +2169,28 @@ void gotoSleep() {
 
 }
 
-//-----------------------------------------EEPROM storage of high scores-------------------------------------
-uint8_t eepromReadByte(uint8_t addr) {										//can read without anything special, just need to adjust address
-	//return *(volatile uint8_t*)(EEPROM_START + addr);	
-}
-
-uint32_t eepromReadLong(uint8_t addr) {										//can read without anything special, just need to adjust address
-	
-	//return *(volatile uint32_t*)(EEPROM_START + addr);
-	
-}
-
-void eepromWrite(uint8_t addr, char *initials, uint32_t theScore) {
-
-	//while( NVMCTRL.STATUS & NVMCTRL_EEBUSY_bm );					//wait while ee busy
-//
-	//*(volatile uint8_t*)(EEPROM_START + addr++) = *initials++;					//write word to page buffer
-	//*(volatile uint8_t*)(EEPROM_START + addr++) = *initials++;					//write word to page buffer	
-	//*(volatile uint8_t*)(EEPROM_START + addr++) = *initials;					//write word to page buffer
-//
-	//*(volatile uint16_t*)(EEPROM_START+addr + 1) = theScore;			//write word to page buffer
-	//*(volatile uint16_t*)(EEPROM_START+addr + 3) = theScore >> 16;		//write word to page buffer
-//
-	//CCP = CCP_SPM_gc; //unlock spm
-	//NVMCTRL.CTRLA = NVMCTRL_CMD_PAGEERASEWRITE_gc;					//ERWP command, erase and write 32 byte page
-	//
-}
+//-----------------------------------------FAKE EEPROM (NVM) storage of high scores-------------------------------------
 
 void writeDefaultHighScores() {
 
-	uint32_t fillerScore = 90000;
-
-	name[0] = 'A';
-	name[1] = 'B';
-	name[2] = 'C';		
+	uint32_t fillerScore = 5000;
 
 	for (int place = 0 ; place < 7 ; place++) {
-		eepromWrite(place * 32, name, fillerScore);			//Write little endian name and score
-		fillerScore -= 10000;	
+
+		for (int letter = 0 ; letter < 3 ; letter++) {
+			highNames[place][letter] = letter + 65;	
+		}
+		highScores[place] = fillerScore;
+		fillerScore -= 500;	
+		
 	}
 		
 }
 
-
 void SysTick_Handler(void) { //This interrupt handler is called on SysTick timer underflow
 
 	frameFlag++;					//Once 16 ms has passed, run frame (60 FPS... ish)
-	//toneLogic();					//Sound checks
+	toneLogic();					//Sound checks
 	//TCB0_INTFLAGS = 1;				//Clear flag
 
 }

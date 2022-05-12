@@ -47,9 +47,10 @@ void SPI_init(void) {
 
 uint8_t spiSendIO(uint8_t data) {
 	
-	while(SERCOM0->SPI.INTFLAG.bit.DRE == 0);	
-	SERCOM0->SPI.DATA.reg = data;	
-	while(SERCOM0->SPI.INTFLAG.bit.RXC == 0);	
-	return SERCOM0->SPI.DATA.reg;
+	while(SERCOM0->SPI.INTFLAG.bit.DRE == 0);		//Wait for data register to be empty	
+	SERCOM0->SPI.DATA.reg = data;					//Send data
+	while(SERCOM0->SPI.INTFLAG.bit.TXC == 0);		//Wait for TX complete	
+	//while(SERCOM0->SPI.INTFLAG.bit.RXC == 0);		//Wait for RX complete
+	return SERCOM0->SPI.DATA.reg;					//Return RX from buffer
 	
 }

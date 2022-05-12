@@ -38,12 +38,14 @@ winX                0x8               drivers/gameBadge.o
 gamePad             0x1               game.o
 numberSpawned       0x1               game.o
 stage               0x1               game.o
+highScores          0x1c              game.o
 attackSpeed         0x1               game.o
 dmadone             0x4               drivers/dma.o
 numberOfWaves       0x1               game.o
 buffer              0x400             drivers/gameBadge.o
 jump                0x1               game.o
 yCollide            0x1               game.o
+highNames           0x15              game.o
 seed                0x2               drivers/gameBadge.o
 wrb                 0x60              drivers/dma.o
 buttons             0x1               drivers/gameBadge.o
@@ -53,7 +55,6 @@ lives               0x1               game.o
 enemy               0x100             game.o
 lastObstacleSpawned
                     0x1               game.o
-buttonDebounce      0x8               game.o
 speed               0x1               game.o
 byDistance          0x1               game.o
 killedPerWave       0x1               game.o
@@ -91,150 +92,29 @@ Discarded input sections
  .bss           0x00000000        0x0 drivers/dma.o
  .text          0x00000000        0x0 drivers/gameBadge.o
  .data          0x00000000        0x0 drivers/gameBadge.o
- .text.rowLoad  0x00000000        0x2 drivers/gameBadge.o
- .text.toneLogic
-                0x00000000       0x1c drivers/gameBadge.o
- .text.tone     0x00000000       0x18 drivers/gameBadge.o
- .text.ledState
-                0x00000000        0x2 drivers/gameBadge.o
- .text.getRandom
-                0x00000000        0x2 drivers/gameBadge.o
- .text.drawTiles
-                0x00000000      0x138 drivers/gameBadge.o
- .text.setWindow
-                0x00000000       0x34 drivers/gameBadge.o
- .text.setRowScroll
-                0x00000000       0x18 drivers/gameBadge.o
- .text.drawSprite
-                0x00000000        0x2 drivers/gameBadge.o
- .text.setScrollDirection
+ .text.dmaCheck
                 0x00000000        0xc drivers/gameBadge.o
- .text.displayOnOff
-                0x00000000       0x28 drivers/gameBadge.o
  .text.writedata
                 0x00000000       0x18 drivers/gameBadge.o
  .text.dcHigh   0x00000000        0xc drivers/gameBadge.o
  .text.dcLow    0x00000000        0xc drivers/gameBadge.o
- .text.csHigh   0x00000000        0x2 drivers/gameBadge.o
- .text.csLow    0x00000000        0x2 drivers/gameBadge.o
  .text          0x00000000        0x0 drivers/spi.o
  .data          0x00000000        0x0 drivers/spi.o
  .bss           0x00000000        0x0 drivers/spi.o
  .text          0x00000000        0x0 game.o
- .text.setGoal  0x00000000       0x20 game.o
- .text.spawnBoss
-                0x00000000       0x50 game.o
- .text.findNextSlot
-                0x00000000       0x4c game.o
- .text.spawnObstacle
-                0x00000000       0x8c game.o
- .text.spawnShot
-                0x00000000       0x60 game.o
- .text.spawnEnemy
-                0x00000000       0x90 game.o
- .text.spawnExplosion
-                0x00000000       0x54 game.o
- .text.shotLogic
-                0x00000000       0x50 game.o
  .text.killPlayer
-                0x00000000       0x14 game.o
- .text.checkHitPlayer
-                0x00000000       0x40 game.o
- .text.checkObstacle
-                0x00000000       0x3c game.o
- .text.clearShots
-                0x00000000       0x10 game.o
- .text.clearEnemies
-                0x00000000       0x34 game.o
- .text.startNewLife
-                0x00000000       0x60 game.o
- .text.playerLogic
-                0x00000000      0x3e4 game.o
- .text.startNewStage
-                0x00000000       0x30 game.o
- .text.startNewGame
-                0x00000000       0x2c game.o
- .text.phaseStart
-                0x00000000      0x120 game.o
- .text.drawSplashScreen
-                0x00000000       0x24 game.o
- .text.drawCharacterRow
-                0x00000000       0x48 game.o
- .text.findScorePosition
-                0x00000000       0x18 game.o
- .text.getGround
-                0x00000000       0x2c game.o
- .text.fillTiles
-                0x00000000       0x1c game.o
- .text.drawMountains2
-                0x00000000       0x50 game.o
- .text.drawDecimal
-                0x00000000       0x60 game.o
- .text.drawText
-                0x00000000       0x10 game.o
- .text.damageBoss
-                0x00000000       0x80 game.o
- .text.enemies  0x00000000      0x674 game.o
- .text.drawTimeDigit
-                0x00000000       0x5c game.o
- .text.cls      0x00000000       0x18 game.o
- .text.drawOptions
-                0x00000000       0xc8 game.o
- .text.drawTime
-                0x00000000      0x16c game.o
- .text.drawTitle
-                0x00000000       0x6c game.o
- .text.drawMoonscape
-                0x00000000      0x160 game.o
- .text.drawHighScores
-                0x00000000       0x70 game.o
- .text.drawNameEntryScreen
-                0x00000000       0xa8 game.o
- .text.updateHighScores
-                0x00000000       0x58 game.o
- .text.sendTiles
-                0x00000000       0x24 game.o
- .text.gameAction
-                0x00000000      0x348 game.o
- .text.nextRow  0x00000000       0x2c game.o
- .text.gotoSleep
-                0x00000000       0x24 game.o
- .text.gameStatus
-                0x00000000      0x184 game.o
- .text.eepromReadByte
                 0x00000000        0x2 game.o
- .text.eepromReadLong
-                0x00000000        0x2 game.o
- .text.eepromWrite
-                0x00000000        0x2 game.o
- .text.writeDefaultHighScores
-                0x00000000       0x18 game.o
- .rodata.str1.1
-                0x00000000      0x15c game.o
  .text          0x00000000        0x0 main.o
  .data          0x00000000        0x0 main.o
  .bss           0x00000000        0x0 main.o
- .text          0x00000000       0x14 c:/program files (x86)/atmel/studio/7.0/toolchain/arm/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v6-m\libgcc.a(_thumb1_case_uqi.o)
  .data          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/arm/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v6-m\libgcc.a(_thumb1_case_uqi.o)
  .bss           0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/arm/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v6-m\libgcc.a(_thumb1_case_uqi.o)
- .ARM.attributes
-                0x00000000       0x1e c:/program files (x86)/atmel/studio/7.0/toolchain/arm/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v6-m\libgcc.a(_thumb1_case_uqi.o)
- .text          0x00000000       0x14 c:/program files (x86)/atmel/studio/7.0/toolchain/arm/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v6-m\libgcc.a(_thumb1_case_uhi.o)
  .data          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/arm/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v6-m\libgcc.a(_thumb1_case_uhi.o)
  .bss           0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/arm/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v6-m\libgcc.a(_thumb1_case_uhi.o)
- .ARM.attributes
-                0x00000000       0x1e c:/program files (x86)/atmel/studio/7.0/toolchain/arm/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v6-m\libgcc.a(_thumb1_case_uhi.o)
- .text          0x00000000      0x114 c:/program files (x86)/atmel/studio/7.0/toolchain/arm/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v6-m\libgcc.a(_udivsi3.o)
  .data          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/arm/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v6-m\libgcc.a(_udivsi3.o)
  .bss           0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/arm/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v6-m\libgcc.a(_udivsi3.o)
- .debug_frame   0x00000000       0x20 c:/program files (x86)/atmel/studio/7.0/toolchain/arm/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v6-m\libgcc.a(_udivsi3.o)
- .ARM.attributes
-                0x00000000       0x1e c:/program files (x86)/atmel/studio/7.0/toolchain/arm/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v6-m\libgcc.a(_udivsi3.o)
- .text          0x00000000        0x4 c:/program files (x86)/atmel/studio/7.0/toolchain/arm/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v6-m\libgcc.a(_dvmd_tls.o)
  .data          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/arm/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v6-m\libgcc.a(_dvmd_tls.o)
  .bss           0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/arm/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v6-m\libgcc.a(_dvmd_tls.o)
- .ARM.attributes
-                0x00000000       0x1e c:/program files (x86)/atmel/studio/7.0/toolchain/arm/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v6-m\libgcc.a(_dvmd_tls.o)
  .text          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/arm/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v6-m\libc_nano.a(lib_a-exit.o)
  .data          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/arm/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v6-m\libc_nano.a(lib_a-exit.o)
  .bss           0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/arm/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v6-m\libc_nano.a(lib_a-exit.o)
@@ -262,10 +142,6 @@ Discarded input sections
  .text          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/arm/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v6-m\libc_nano.a(lib_a-memset.o)
  .data          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/arm/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v6-m\libc_nano.a(lib_a-memset.o)
  .bss           0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/arm/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v6-m\libc_nano.a(lib_a-memset.o)
- .text.memset   0x00000000       0x10 c:/program files (x86)/atmel/studio/7.0/toolchain/arm/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v6-m\libc_nano.a(lib_a-memset.o)
- .debug_frame   0x00000000       0x20 c:/program files (x86)/atmel/studio/7.0/toolchain/arm/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v6-m\libc_nano.a(lib_a-memset.o)
- .ARM.attributes
-                0x00000000       0x2c c:/program files (x86)/atmel/studio/7.0/toolchain/arm/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v6-m\libc_nano.a(lib_a-memset.o)
  .text          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/arm/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v6-m/crtend.o
  .data          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/arm/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v6-m/crtend.o
  .bss           0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/arm/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v6-m/crtend.o
@@ -312,7 +188,7 @@ LOAD c:/program files (x86)/atmel/studio/7.0/toolchain/arm/arm-gnu-toolchain/bin
 LOAD c:/program files (x86)/atmel/studio/7.0/toolchain/arm/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v6-m/crtn.o
                 0x00000100                STACK_SIZE = DEFINED (STACK_SIZE)?STACK_SIZE:DEFINED (__stack_size__)?__stack_size__:0x100
 
-.text           0x00000000     0x1634
+.text           0x00000000     0x3e44
                 0x00000000                . = ALIGN (0x4)
                 0x00000000                _sfixed = .
  *(.vectors .vectors.*)
@@ -323,7 +199,6 @@ LOAD c:/program files (x86)/atmel/studio/7.0/toolchain/arm/arm-gnu-toolchain/bin
  .text.Dummy_Handler
                 0x000000ec        0x2 Device_Startup/startup_samd11.o
                 0x000000ec                SVCall_Handler
-                0x000000ec                DMAC_Handler
                 0x000000ec                HardFault_Handler
                 0x000000ec                TC2_Handler
                 0x000000ec                AC_Handler
@@ -356,155 +231,331 @@ LOAD c:/program files (x86)/atmel/studio/7.0/toolchain/arm/arm-gnu-toolchain/bin
                 0x000001bc       0xc0 drivers/clocks.o
                 0x000001bc                clocksInit48Mhz
  .text.dma_init
-                0x0000027c       0x94 drivers/dma.o
+                0x0000027c       0x90 drivers/dma.o
                 0x0000027c                dma_init
  .text.dmaStartTransfer
-                0x00000310       0x1c drivers/dma.o
-                0x00000310                dmaStartTransfer
+                0x0000030c       0x1c drivers/dma.o
+                0x0000030c                dmaStartTransfer
  .text.screenLoad
-                0x0000032c       0x34 drivers/gameBadge.o
-                0x0000032c                screenLoad
+                0x00000328       0x40 drivers/gameBadge.o
+                0x00000328                screenLoad
+ .text.DMAC_Handler
+                0x00000368       0x28 drivers/gameBadge.o
+                0x00000368                DMAC_Handler
+ .text.rowLoad  0x00000390       0x38 drivers/gameBadge.o
+                0x00000390                rowLoad
  .text.getButtons
-                0x00000360        0xc drivers/gameBadge.o
-                0x00000360                getButtons
+                0x000003c8        0xc drivers/gameBadge.o
+                0x000003c8                getButtons
+ .text.toneLogic
+                0x000003d4       0x40 drivers/gameBadge.o
+                0x000003d4                toneLogic
+ .text.tone     0x00000414       0x2c drivers/gameBadge.o
+                0x00000414                tone
+ .text.ledState
+                0x00000440        0x2 drivers/gameBadge.o
+                0x00000440                ledState
+ *fill*         0x00000442        0x2 
+ .text.getRandom
+                0x00000444       0x54 drivers/gameBadge.o
+                0x00000444                getRandom
+ .text.drawTiles
+                0x00000498      0x138 drivers/gameBadge.o
+                0x00000498                drawTiles
+ .text.setWindow
+                0x000005d0       0x34 drivers/gameBadge.o
+                0x000005d0                setWindow
+ .text.setRowScroll
+                0x00000604       0x18 drivers/gameBadge.o
+                0x00000604                setRowScroll
+ .text.drawSprite
+                0x0000061c      0x104 drivers/gameBadge.o
+                0x0000061c                drawSprite
+ .text.setScrollDirection
+                0x00000720        0xc drivers/gameBadge.o
+                0x00000720                setScrollDirection
  .text.direct2buffer
-                0x0000036c       0x20 drivers/gameBadge.o
-                0x0000036c                direct2buffer
+                0x0000072c       0x20 drivers/gameBadge.o
+                0x0000072c                direct2buffer
  .text.writecommand
-                0x0000038c       0x18 drivers/gameBadge.o
-                0x0000038c                writecommand
+                0x0000074c       0x18 drivers/gameBadge.o
+                0x0000074c                writecommand
  .text.setRotate
-                0x000003a4       0x38 drivers/gameBadge.o
-                0x000003a4                setRotate
+                0x00000764       0x38 drivers/gameBadge.o
+                0x00000764                setRotate
  .text.setInvert
-                0x000003dc       0x2c drivers/gameBadge.o
-                0x000003dc                setInvert
+                0x0000079c       0x2c drivers/gameBadge.o
+                0x0000079c                setInvert
  .text.displayInit
-                0x00000408       0x98 drivers/gameBadge.o
-                0x00000408                displayInit
+                0x000007c8       0x98 drivers/gameBadge.o
+                0x000007c8                displayInit
+ .text.displayOnOff
+                0x00000860       0x28 drivers/gameBadge.o
+                0x00000860                displayOnOff
+ .text.csHigh   0x00000888        0x2 drivers/gameBadge.o
+                0x00000888                csHigh
+ .text.csLow    0x0000088a        0x2 drivers/gameBadge.o
+                0x0000088a                csLow
  .text.SPI_init
-                0x000004a0       0x58 drivers/spi.o
-                0x000004a0                SPI_init
+                0x0000088c       0x58 drivers/spi.o
+                0x0000088c                SPI_init
  .text.spiSendIO
-                0x000004f8       0x1c drivers/spi.o
-                0x000004f8                spiSendIO
- .text.gameSetup
-                0x00000514       0x24 game.o
-                0x00000514                gameSetup
+                0x000008e4       0x1c drivers/spi.o
+                0x000008e4                spiSendIO
+ .text.checkHitPlayer
+                0x00000900       0x34 game.o
+                0x00000900                checkHitPlayer
+ .text.checkObstacle
+                0x00000934       0x30 game.o
+                0x00000934                checkObstacle
+ .text.setGoal  0x00000964       0x20 game.o
+                0x00000964                setGoal
+ .text.spawnBoss
+                0x00000984       0x50 game.o
+                0x00000984                spawnBoss
+ .text.findNextSlot
+                0x000009d4       0x4c game.o
+                0x000009d4                findNextSlot
+ .text.spawnObstacle
+                0x00000a20       0x8c game.o
+                0x00000a20                spawnObstacle
+ .text.spawnShot
+                0x00000aac       0x60 game.o
+                0x00000aac                spawnShot
+ .text.spawnEnemy
+                0x00000b0c       0x94 game.o
+                0x00000b0c                spawnEnemy
+ .text.spawnExplosion
+                0x00000ba0       0x54 game.o
+                0x00000ba0                spawnExplosion
+ .text.shotLogic
+                0x00000bf4       0x50 game.o
+                0x00000bf4                shotLogic
+ .text.clearShots
+                0x00000c44       0x10 game.o
+                0x00000c44                clearShots
+ .text.clearEnemies
+                0x00000c54       0x34 game.o
+                0x00000c54                clearEnemies
+ .text.startNewLife
+                0x00000c88       0x60 game.o
+                0x00000c88                startNewLife
+ .text.playerLogic
+                0x00000ce8      0x3e4 game.o
+                0x00000ce8                playerLogic
+ .text.startNewStage
+                0x000010cc       0x30 game.o
+                0x000010cc                startNewStage
+ .text.startNewGame
+                0x000010fc       0x2c game.o
+                0x000010fc                startNewGame
+ .text.phaseStart
+                0x00001128      0x120 game.o
+                0x00001128                phaseStart
+ .text.drawSplashScreen
+                0x00001248       0x24 game.o
+                0x00001248                drawSplashScreen
+ .text.drawCharacterRow
+                0x0000126c       0x48 game.o
+                0x0000126c                drawCharacterRow
+ .text.findScorePosition
+                0x000012b4       0x40 game.o
+                0x000012b4                findScorePosition
+ .text.getGround
+                0x000012f4       0x2c game.o
+                0x000012f4                getGround
+ .text.fillTiles
+                0x00001320       0x1c game.o
+                0x00001320                fillTiles
+ .text.drawMountains2
+                0x0000133c       0x50 game.o
+                0x0000133c                drawMountains2
+ .text.drawDecimal
+                0x0000138c       0x64 game.o
+                0x0000138c                drawDecimal
+ .text.drawText
+                0x000013f0       0x10 game.o
+                0x000013f0                drawText
+ .text.damageBoss
+                0x00001400       0x80 game.o
+                0x00001400                damageBoss
+ .text.enemies  0x00001480      0x630 game.o
+                0x00001480                enemies
+ .text.drawTimeDigit
+                0x00001ab0       0x5c game.o
+                0x00001ab0                drawTimeDigit
+ .text.cls      0x00001b0c       0x18 game.o
+                0x00001b0c                cls
+ .text.drawHighScores
+                0x00001b24       0x8c game.o
+                0x00001b24                drawHighScores
+ .text.drawOptions
+                0x00001bb0       0xc8 game.o
+                0x00001bb0                drawOptions
+ .text.drawTime
+                0x00001c78      0x16c game.o
+                0x00001c78                drawTime
+ .text.drawTitle
+                0x00001de4       0x6c game.o
+                0x00001de4                drawTitle
+ .text.drawNameEntryScreen
+                0x00001e50       0xa8 game.o
+                0x00001e50                drawNameEntryScreen
+ .text.drawMoonscape
+                0x00001ef8      0x160 game.o
+                0x00001ef8                drawMoonscape
+ .text.updateHighScores
+                0x00002058       0xc4 game.o
+                0x00002058                updateHighScores
+ .text.sendTiles
+                0x0000211c       0x30 game.o
+                0x0000211c                sendTiles
+ .text.gameAction
+                0x0000214c      0x394 game.o
+                0x0000214c                gameAction
+ .text.nextRow  0x000024e0       0x2c game.o
+                0x000024e0                nextRow
+ .text.gotoSleep
+                0x0000250c       0x24 game.o
+                0x0000250c                gotoSleep
+ .text.gameStatus
+                0x00002530      0x184 game.o
+                0x00002530                gameStatus
  .text.gameFrame
-                0x00000538       0x48 game.o
-                0x00000538                gameFrame
+                0x000026b4      0x34c game.o
+                0x000026b4                gameFrame
  .text.systemLoop
-                0x00000580       0x24 game.o
-                0x00000580                systemLoop
+                0x00002a00       0x28 game.o
+                0x00002a00                systemLoop
+ .text.writeDefaultHighScores
+                0x00002a28       0x48 game.o
+                0x00002a28                writeDefaultHighScores
+ .text.gameSetup
+                0x00002a70       0x18 game.o
+                0x00002a70                gameSetup
  .text.SysTick_Handler
-                0x000005a4       0x10 game.o
-                0x000005a4                SysTick_Handler
+                0x00002a88       0x1c game.o
+                0x00002a88                SysTick_Handler
  .text.startup.main
-                0x000005b4       0xbc main.o
-                0x000005b4                main
+                0x00002aa4      0x130 main.o
+                0x00002aa4                main
+ .text          0x00002bd4       0x14 c:/program files (x86)/atmel/studio/7.0/toolchain/arm/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v6-m\libgcc.a(_thumb1_case_uqi.o)
+                0x00002bd4                __gnu_thumb1_case_uqi
+ .text          0x00002be8       0x14 c:/program files (x86)/atmel/studio/7.0/toolchain/arm/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v6-m\libgcc.a(_thumb1_case_uhi.o)
+                0x00002be8                __gnu_thumb1_case_uhi
+ .text          0x00002bfc      0x114 c:/program files (x86)/atmel/studio/7.0/toolchain/arm/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v6-m\libgcc.a(_udivsi3.o)
+                0x00002bfc                __aeabi_uidiv
+                0x00002bfc                __udivsi3
+                0x00002d08                __aeabi_uidivmod
+ .text          0x00002d10        0x4 c:/program files (x86)/atmel/studio/7.0/toolchain/arm/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v6-m\libgcc.a(_dvmd_tls.o)
+                0x00002d10                __aeabi_idiv0
+                0x00002d10                __aeabi_ldiv0
  .text.__libc_init_array
-                0x00000670       0x48 c:/program files (x86)/atmel/studio/7.0/toolchain/arm/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v6-m\libc_nano.a(lib_a-init.o)
-                0x00000670                __libc_init_array
- .text.memcpy   0x000006b8       0x12 c:/program files (x86)/atmel/studio/7.0/toolchain/arm/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v6-m\libc_nano.a(lib_a-memcpy-stub.o)
-                0x000006b8                memcpy
+                0x00002d14       0x48 c:/program files (x86)/atmel/studio/7.0/toolchain/arm/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v6-m\libc_nano.a(lib_a-init.o)
+                0x00002d14                __libc_init_array
+ .text.memcpy   0x00002d5c       0x12 c:/program files (x86)/atmel/studio/7.0/toolchain/arm/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v6-m\libc_nano.a(lib_a-memcpy-stub.o)
+                0x00002d5c                memcpy
+ .text.memset   0x00002d6e       0x10 c:/program files (x86)/atmel/studio/7.0/toolchain/arm/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v6-m\libc_nano.a(lib_a-memset.o)
+                0x00002d6e                memset
  *(.glue_7t)
- .glue_7t       0x000006ca        0x0 linker stubs
+ .glue_7t       0x00002d7e        0x0 linker stubs
  *(.glue_7)
- .glue_7        0x000006ca        0x0 linker stubs
+ .glue_7        0x00002d7e        0x0 linker stubs
  *(.rodata .rodata* .gnu.linkonce.r.*)
- *fill*         0x000006ca        0x2 
- .rodata        0x000006cc      0xf48 game.o
-                0x000006cc                wastefulUncompressedMGClogo
-                0x00000acc                superUFO
-                0x00000b4e                smallRock
-                0x00000b70                largeRock
-                0x00000bb2                smallPit
-                0x00000bd4                largePit
-                0x00000c06                evilWave
-                0x00000c18                evilBomb
-                0x00000c2a                ufo
-                0x00000c4c                balls
-                0x00000c8e                bulletMan
-                0x00000cb0                mediumExplode
-                0x00000d72                dualShot
-                0x00000d84                buggie
-                0x00000db6                wheel
-                0x00000dc8                vertExplode
-                0x00000f4a                blaster
-                0x00000f8c                jumpVelocity
-                0x00000fcc                sineWave
-                0x0000104c                makeDigits
-                0x000010d0                tileData
-                0x00001610                enemySpawnSide
+ *fill*         0x00002d7e        0x2 
+ .rodata        0x00002d80      0xf48 game.o
+                0x00002d80                superUFO
+                0x00002e02                smallRock
+                0x00002e24                largeRock
+                0x00002e66                smallPit
+                0x00002e88                largePit
+                0x00002eba                evilWave
+                0x00002ecc                evilBomb
+                0x00002ede                ufo
+                0x00002f00                balls
+                0x00002f42                bulletMan
+                0x00002f64                mediumExplode
+                0x00003026                dualShot
+                0x00003038                buggie
+                0x0000306a                wheel
+                0x0000307c                vertExplode
+                0x000031fe                blaster
+                0x00003240                jumpVelocity
+                0x00003280                wastefulUncompressedMGClogo
+                0x00003680                sineWave
+                0x00003700                makeDigits
+                0x00003784                tileData
+                0x00003cc4                enemySpawnSide
+ .rodata.str1.1
+                0x00003cc8      0x15c game.o
  *(.ARM.extab* .gnu.linkonce.armextab.*)
-                0x00001614                . = ALIGN (0x4)
+                0x00003e24                . = ALIGN (0x4)
  *(.init)
- .init          0x00001614        0x4 c:/program files (x86)/atmel/studio/7.0/toolchain/arm/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v6-m/crti.o
-                0x00001614                _init
- .init          0x00001618        0x8 c:/program files (x86)/atmel/studio/7.0/toolchain/arm/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v6-m/crtn.o
-                0x00001620                . = ALIGN (0x4)
-                0x00001620                __preinit_array_start = .
+ .init          0x00003e24        0x4 c:/program files (x86)/atmel/studio/7.0/toolchain/arm/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v6-m/crti.o
+                0x00003e24                _init
+ .init          0x00003e28        0x8 c:/program files (x86)/atmel/studio/7.0/toolchain/arm/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v6-m/crtn.o
+                0x00003e30                . = ALIGN (0x4)
+                0x00003e30                __preinit_array_start = .
  *(.preinit_array)
-                0x00001620                __preinit_array_end = .
-                0x00001620                . = ALIGN (0x4)
-                0x00001620                __init_array_start = .
+                0x00003e30                __preinit_array_end = .
+                0x00003e30                . = ALIGN (0x4)
+                0x00003e30                __init_array_start = .
  *(SORT(.init_array.*))
  *(.init_array)
- .init_array    0x00001620        0x4 c:/program files (x86)/atmel/studio/7.0/toolchain/arm/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v6-m/crtbegin.o
-                0x00001624                __init_array_end = .
-                0x00001624                . = ALIGN (0x4)
+ .init_array    0x00003e30        0x4 c:/program files (x86)/atmel/studio/7.0/toolchain/arm/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v6-m/crtbegin.o
+                0x00003e34                __init_array_end = .
+                0x00003e34                . = ALIGN (0x4)
  *crtbegin.o(.ctors)
  *(EXCLUDE_FILE(*crtend.o) .ctors)
  *(SORT(.ctors.*))
  *crtend.o(.ctors)
-                0x00001624                . = ALIGN (0x4)
+                0x00003e34                . = ALIGN (0x4)
  *(.fini)
- .fini          0x00001624        0x4 c:/program files (x86)/atmel/studio/7.0/toolchain/arm/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v6-m/crti.o
-                0x00001624                _fini
- .fini          0x00001628        0x8 c:/program files (x86)/atmel/studio/7.0/toolchain/arm/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v6-m/crtn.o
-                0x00001630                . = ALIGN (0x4)
-                0x00001630                __fini_array_start = .
+ .fini          0x00003e34        0x4 c:/program files (x86)/atmel/studio/7.0/toolchain/arm/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v6-m/crti.o
+                0x00003e34                _fini
+ .fini          0x00003e38        0x8 c:/program files (x86)/atmel/studio/7.0/toolchain/arm/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v6-m/crtn.o
+                0x00003e40                . = ALIGN (0x4)
+                0x00003e40                __fini_array_start = .
  *(.fini_array)
- .fini_array    0x00001630        0x4 c:/program files (x86)/atmel/studio/7.0/toolchain/arm/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v6-m/crtbegin.o
+ .fini_array    0x00003e40        0x4 c:/program files (x86)/atmel/studio/7.0/toolchain/arm/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v6-m/crtbegin.o
  *(SORT(.fini_array.*))
-                0x00001634                __fini_array_end = .
+                0x00003e44                __fini_array_end = .
  *crtbegin.o(.dtors)
  *(EXCLUDE_FILE(*crtend.o) .dtors)
  *(SORT(.dtors.*))
  *crtend.o(.dtors)
-                0x00001634                . = ALIGN (0x4)
-                0x00001634                _efixed = .
+                0x00003e44                . = ALIGN (0x4)
+                0x00003e44                _efixed = .
                 [!provide]                PROVIDE (__exidx_start, .)
 
-.vfp11_veneer   0x00001634        0x0
- .vfp11_veneer  0x00001634        0x0 linker stubs
+.vfp11_veneer   0x00003e44        0x0
+ .vfp11_veneer  0x00003e44        0x0 linker stubs
 
-.v4_bx          0x00001634        0x0
- .v4_bx         0x00001634        0x0 linker stubs
+.v4_bx          0x00003e44        0x0
+ .v4_bx         0x00003e44        0x0 linker stubs
 
-.iplt           0x00001634        0x0
- .iplt          0x00001634        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/arm/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v6-m/crtbegin.o
+.iplt           0x00003e44        0x0
+ .iplt          0x00003e44        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/arm/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v6-m/crtbegin.o
 
-.eh_frame       0x00001634        0x0
- .eh_frame      0x00001634        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/arm/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v6-m/crtbegin.o
+.eh_frame       0x00003e44        0x0
+ .eh_frame      0x00003e44        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/arm/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v6-m/crtbegin.o
 
-.rel.dyn        0x00001634        0x0
- .rel.iplt      0x00001634        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/arm/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v6-m/crtbegin.o
+.rel.dyn        0x00003e44        0x0
+ .rel.iplt      0x00003e44        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/arm/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v6-m/crtbegin.o
 
-.jcr            0x00001634        0x0
- .jcr           0x00001634        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/arm/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v6-m/crtbegin.o
+.jcr            0x00003e44        0x0
+ .jcr           0x00003e44        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/arm/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v6-m/crtbegin.o
 
-.igot.plt       0x00001634        0x0
- .igot.plt      0x00001634        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/arm/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v6-m/crtbegin.o
+.igot.plt       0x00003e44        0x0
+ .igot.plt      0x00003e44        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/arm/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v6-m/crtbegin.o
 
 .ARM.exidx
  *(.ARM.exidx* .gnu.linkonce.armexidx.*)
                 [!provide]                PROVIDE (__exidx_end, .)
-                0x00001634                . = ALIGN (0x4)
-                0x00001634                _etext = .
+                0x00003e44                . = ALIGN (0x4)
+                0x00003e44                _etext = .
 
-.relocate       0x20000000       0x28 load address 0x00001634
+.relocate       0x20000000       0x2c load address 0x00003e44
                 0x20000000                . = ALIGN (0x4)
                 0x20000000                _srelocate = .
  *(.ramfunc .ramfunc.*)
@@ -513,11 +564,11 @@ LOAD c:/program files (x86)/atmel/studio/7.0/toolchain/arm/arm-gnu-toolchain/bin
                 0x20000000                SystemCoreClock
  .data          0x20000004        0x4 drivers/dma.o
                 0x20000004                sercomDMA0
- .data          0x20000008       0x1e game.o
-                0x20000008                bugX
-                0x20000009                bugY
-                0x2000000a                gameState
-                0x2000000b                spawnPointer
+ .data          0x20000008       0x24 game.o
+                0x20000008                bugY
+                0x20000009                gameState
+                0x2000000a                spawnPointer
+                0x2000000b                bugX
                 0x2000000c                blasterX
                 0x2000000d                wheelXcoarseTile
                 0x20000010                wheelSpin
@@ -525,42 +576,43 @@ LOAD c:/program files (x86)/atmel/studio/7.0/toolchain/arm/arm-gnu-toolchain/bin
                 0x20000012                stagePhase
                 0x20000013                scoreRanking
                 0x20000014                groundSlope
-                0x20000018                messageFlash
-                0x2000001a                name
-                0x2000001d                splashTimer
-                0x2000001e                block
-                0x20000028                . = ALIGN (0x4)
- *fill*         0x20000026        0x2 
-                0x20000028                _erelocate = .
+                0x20000017                name
+                0x2000001a                messageFlash
+                0x2000001c                buttonDebounceMask
+                0x20000023                splashTimer
+                0x20000024                block
+                0x2000002c                . = ALIGN (0x4)
+                0x2000002c                _erelocate = .
 
-.bss            0x20000030      0x7f4 load address 0x00001670
+.bss            0x20000030      0x81c load address 0x00003e80
                 0x20000030                . = ALIGN (0x4)
                 0x20000030                _sbss = .
                 0x20000030                _szero = .
  *(.bss .bss.*)
  .bss           0x20000030       0x1c c:/program files (x86)/atmel/studio/7.0/toolchain/arm/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v6-m/crtbegin.o
- .bss           0x2000004c        0xe drivers/gameBadge.o
-                0x2000004c                toneTimer
-                0x2000004e                tonePriority
+ .bss           0x2000004c       0x11 drivers/gameBadge.o
+                0x2000004c                dmaActive
                 0x20000050                toneDir
-                0x20000054                scrollDirection
-                0x20000055                winYfine
-                0x20000056                winY
-                0x20000057                rotate180
-                0x20000058                inverted
-                0x20000059                displaySleep
- *fill*         0x2000005a        0x2 
- .bss           0x2000005c       0x2a game.o
-                0x2000005e                enemyPointer
-                0x20000060                playerFrame
-                0x20000064                playerState
-                0x20000066                playerTimer
-                0x20000068                frameCounter
-                0x2000006a                stageWin
-                0x2000006b                bossBattle
-                0x2000006c                xWindow
-                0x2000006e                xWindowCoarse
-                0x20000070                blasterY
+                0x20000054                toneTimer
+                0x20000056                tonePriority
+                0x20000057                scrollDirection
+                0x20000058                winYfine
+                0x20000059                winY
+                0x2000005a                rotate180
+                0x2000005b                inverted
+                0x2000005c                displaySleep
+ *fill*         0x2000005d        0x3 
+ .bss           0x20000060       0x28 game.o
+                0x20000060                playerState
+                0x20000061                enemyPointer
+                0x20000062                frameCounter
+                0x20000064                stageWin
+                0x20000065                bossBattle
+                0x20000066                xWindow
+                0x20000068                xWindowCoarse
+                0x2000006c                playerFrame
+                0x20000070                playerTimer
+                0x20000072                blasterY
                 0x20000074                score
                 0x20000078                sideOfMoon
                 0x20000079                shotPointer
@@ -570,9 +622,9 @@ LOAD c:/program files (x86)/atmel/studio/7.0/toolchain/arm/arm-gnu-toolchain/bin
                 0x20000080                bossPhase
                 0x20000082                changeTime
                 0x20000083                bgScroll
-                0x20000084                bugXfine
+                0x20000086                bugXfine
  *(COMMON)
- *fill*         0x20000086        0xa 
+ *fill*         0x20000088        0x8 
  COMMON         0x20000090      0x140 drivers/dma.o
                 0x20000090                descriptor
                 0x200000a0                descriptor_section
@@ -587,7 +639,7 @@ LOAD c:/program files (x86)/atmel/studio/7.0/toolchain/arm/arm-gnu-toolchain/bin
                 0x200005e2                seed
                 0x200005e4                buttons
  *fill*         0x200005e5        0x3 
- COMMON         0x200005e8      0x239 game.o
+ COMMON         0x200005e8      0x261 game.o
                 0x200005e8                skyEnemies
                 0x200005e9                buttonRepeatMask
                 0x200005ec                heroShots
@@ -599,39 +651,40 @@ LOAD c:/program files (x86)/atmel/studio/7.0/toolchain/arm/arm-gnu-toolchain/bin
                 0x20000703                gamePad
                 0x20000704                numberSpawned
                 0x20000705                stage
-                0x20000706                attackSpeed
-                0x20000707                numberOfWaves
-                0x20000708                jump
-                0x20000709                yCollide
-                0x2000070a                bossHealth
-                0x2000070b                buttonsPressed
-                0x2000070c                lives
-                0x20000710                enemy
-                0x20000810                lastObstacleSpawned
-                0x20000811                buttonDebounce
-                0x20000819                speed
-                0x2000081a                byDistance
-                0x2000081b                killedPerWave
-                0x2000081c                checkPoint
-                0x2000081d                isDrawn
-                0x2000081e                distanceGoal
-                0x2000081f                xCollide
-                0x20000820                spawnPerWave
-                0x20000824                . = ALIGN (0x4)
- *fill*         0x20000821        0x3 
-                0x20000824                _ebss = .
-                0x20000824                _ezero = .
+                0x20000708                highScores
+                0x20000724                attackSpeed
+                0x20000725                numberOfWaves
+                0x20000726                jump
+                0x20000727                yCollide
+                0x20000728                highNames
+                0x2000073d                bossHealth
+                0x2000073e                buttonsPressed
+                0x2000073f                lives
+                0x20000740                enemy
+                0x20000840                lastObstacleSpawned
+                0x20000841                speed
+                0x20000842                byDistance
+                0x20000843                killedPerWave
+                0x20000844                checkPoint
+                0x20000845                isDrawn
+                0x20000846                distanceGoal
+                0x20000847                xCollide
+                0x20000848                spawnPerWave
+                0x2000084c                . = ALIGN (0x4)
+ *fill*         0x20000849        0x3 
+                0x2000084c                _ebss = .
+                0x2000084c                _ezero = .
 
-.stack          0x20000824      0x104 load address 0x00001e64
-                0x20000828                . = ALIGN (0x8)
- *fill*         0x20000824        0x4 
-                0x20000828                _sstack = .
-                0x20000928                . = (. + STACK_SIZE)
- *fill*         0x20000828      0x100 
-                0x20000928                . = ALIGN (0x8)
-                0x20000928                _estack = .
-                0x20000928                . = ALIGN (0x4)
-                0x20000928                _end = .
+.stack          0x2000084c      0x104 load address 0x0000469c
+                0x20000850                . = ALIGN (0x8)
+ *fill*         0x2000084c        0x4 
+                0x20000850                _sstack = .
+                0x20000950                . = (. + STACK_SIZE)
+ *fill*         0x20000850      0x100 
+                0x20000950                . = ALIGN (0x8)
+                0x20000950                _estack = .
+                0x20000950                . = ALIGN (0x4)
+                0x20000950                _end = .
 OUTPUT(gameBadge ARM.elf elf32-littlearm)
 
 .ARM.attributes
@@ -657,11 +710,21 @@ OUTPUT(gameBadge ARM.elf elf32-littlearm)
  .ARM.attributes
                 0x000001a8       0x32 main.o
  .ARM.attributes
-                0x000001da       0x2c c:/program files (x86)/atmel/studio/7.0/toolchain/arm/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v6-m\libc_nano.a(lib_a-init.o)
+                0x000001da       0x1e c:/program files (x86)/atmel/studio/7.0/toolchain/arm/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v6-m\libgcc.a(_thumb1_case_uqi.o)
  .ARM.attributes
-                0x00000206       0x2c c:/program files (x86)/atmel/studio/7.0/toolchain/arm/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v6-m\libc_nano.a(lib_a-memcpy-stub.o)
+                0x000001f8       0x1e c:/program files (x86)/atmel/studio/7.0/toolchain/arm/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v6-m\libgcc.a(_thumb1_case_uhi.o)
  .ARM.attributes
-                0x00000232       0x1e c:/program files (x86)/atmel/studio/7.0/toolchain/arm/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v6-m/crtn.o
+                0x00000216       0x1e c:/program files (x86)/atmel/studio/7.0/toolchain/arm/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v6-m\libgcc.a(_udivsi3.o)
+ .ARM.attributes
+                0x00000234       0x1e c:/program files (x86)/atmel/studio/7.0/toolchain/arm/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v6-m\libgcc.a(_dvmd_tls.o)
+ .ARM.attributes
+                0x00000252       0x2c c:/program files (x86)/atmel/studio/7.0/toolchain/arm/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v6-m\libc_nano.a(lib_a-init.o)
+ .ARM.attributes
+                0x0000027e       0x2c c:/program files (x86)/atmel/studio/7.0/toolchain/arm/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v6-m\libc_nano.a(lib_a-memcpy-stub.o)
+ .ARM.attributes
+                0x000002aa       0x2c c:/program files (x86)/atmel/studio/7.0/toolchain/arm/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v6-m\libc_nano.a(lib_a-memset.o)
+ .ARM.attributes
+                0x000002d6       0x1e c:/program files (x86)/atmel/studio/7.0/toolchain/arm/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v6-m/crtn.o
 
 .comment        0x00000000       0x59
  .comment       0x00000000       0x59 Device_Startup/startup_samd11.o
@@ -674,6 +737,8 @@ OUTPUT(gameBadge ARM.elf elf32-littlearm)
  .comment       0x00000059       0x5a game.o
  .comment       0x00000059       0x5a main.o
 
-.debug_frame    0x00000000       0x54
- .debug_frame   0x00000000       0x2c c:/program files (x86)/atmel/studio/7.0/toolchain/arm/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v6-m\libc_nano.a(lib_a-init.o)
- .debug_frame   0x0000002c       0x28 c:/program files (x86)/atmel/studio/7.0/toolchain/arm/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v6-m\libc_nano.a(lib_a-memcpy-stub.o)
+.debug_frame    0x00000000       0x94
+ .debug_frame   0x00000000       0x20 c:/program files (x86)/atmel/studio/7.0/toolchain/arm/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v6-m\libgcc.a(_udivsi3.o)
+ .debug_frame   0x00000020       0x2c c:/program files (x86)/atmel/studio/7.0/toolchain/arm/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v6-m\libc_nano.a(lib_a-init.o)
+ .debug_frame   0x0000004c       0x28 c:/program files (x86)/atmel/studio/7.0/toolchain/arm/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v6-m\libc_nano.a(lib_a-memcpy-stub.o)
+ .debug_frame   0x00000074       0x20 c:/program files (x86)/atmel/studio/7.0/toolchain/arm/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v6-m\libc_nano.a(lib_a-memset.o)
